@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 24: Final Assessment - Practice</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .exercise h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .button {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #303f9f;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .matching-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .matching-select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 24: Final Assessment - Practice</h1>
+        <div class="translation">Дарси 24: Санҷиши ниҳоӣ - Машқ</div>
+        <div class="lesson-navigation">
+            <a href="lesson24-theory.html">Назария</a>
+            <a href="lesson24-practice.html" class="active">Машқҳо</a>
+            <a href="lesson24-video.html">Видео</a>
+        </div>
+
+
+        <div class="exercise">
+            <h3>Exercise 1: Fill-in-the-Blank Drill</h3>
+            <div class="translation">Машқи 1: Пурра кардани ҷойҳои холӣ</div>
+            <div class="matching-container">
+                <div class="matching-item">
+                    <p>"Sergeant, we ___ (need) more ___ (ammunition) for the mission."</p>
+                    <input type="text" class="input-field" id="blank1" placeholder="Enter your answer">
+                </div>
+                <div class="matching-item">
+                    <p>"The ___ (medic) will arrive in 10 minutes. ___ (Stay) calm!"</p>
+                    <input type="text" class="input-field" id="blank2" placeholder="Enter your answer">
+                </div>
+            </div>
+            <button class="button" onclick="checkBlanks()">Check Answers</button>
+            <div id="blankFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 2: Military Command Conversion</h3>
+            <div class="translation">Машқи 2: Табдили фармонҳои ҳарбӣ</div>
+            <p>Convert the following sentences to military-style commands:</p>
+            <div class="translation">Ҷумлаҳои зеринро ба фармонҳои ҳарбӣ табдил диҳед:</div>
+            <div class="matching-container">
+                <div class="matching-item">
+                    <p>"You should check your equipment."</p>
+                    <input type="text" class="input-field" id="command1" placeholder="Enter military command">
+                </div>
+                <div class="matching-item">
+                    <p>"We must report to the captain."</p>
+                    <input type="text" class="input-field" id="command2" placeholder="Enter military command">
+                </div>
+            </div>
+            <button class="button" onclick="checkCommands()">Check Commands</button>
+            <div id="commandFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 3: Emergency Radio Communication</h3>
+            <div class="translation">Машқи 3: Алоқаи фаврии радиоӣ</div>
+            <p>Complete the following radio communication:</p>
+            <div class="translation">Алоқаи радиоӣи зеринро пурра кунед:</div>
+            <textarea class="input-field" rows="4" id="radioComm" placeholder="Base, this is Delta-One! We have..."></textarea>
+            <button class="button" onclick="checkRadio()">Check Communication</button>
+            <div id="radioFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 4: Terrain Description</h3>
+            <div class="translation">Машқи 4: Тавсифи замин</div>
+            <p>Describe the following mission route:</p>
+            <div class="translation">Роҳи вазифаи зеринро тавсиф кунед:</div>
+            <textarea class="input-field" rows="4" id="terrainDesc" placeholder="Advance 300m north to..."></textarea>
+            <button class="button" onclick="checkTerrain()">Check Description</button>
+            <div id="terrainFeedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        function checkBlanks() {
+            const blank1 = document.getElementById('blank1').value.toLowerCase();
+            const blank2 = document.getElementById('blank2').value.toLowerCase();
+            const feedback = document.getElementById('blankFeedback');
+
+            if (blank1 === 'need ammunition' && blank2 === 'medic stay') {
+                feedback.textContent = 'Correct! Well done!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Some answers are incorrect. Please try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        function checkCommands() {
+            const command1 = document.getElementById('command1').value.toLowerCase();
+            const command2 = document.getElementById('command2').value.toLowerCase();
+            const feedback = document.getElementById('commandFeedback');
+
+            if (command1 === 'inspect your equipment!' && command2 === 'report to the captain immediately!') {
+                feedback.textContent = 'Excellent! Your commands are correct.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Please review the military command format.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        function checkRadio() {
+            const radioComm = document.getElementById('radioComm').value;
+            const feedback = document.getElementById('radioFeedback');
+
+            if (radioComm.length >= 50 && radioComm.includes('Delta-One') && 
+                (radioComm.includes('injured') || radioComm.includes('wounded'))) {
+                feedback.textContent = 'Good job! Your radio communication is clear and complete.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Please include all required elements in your radio communication.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        function checkTerrain() {
+            const terrainDesc = document.getElementById('terrainDesc').value;
+            const feedback = document.getElementById('terrainFeedback');
+
+            if (terrainDesc.length >= 50 && terrainDesc.includes('north') && 
+                terrainDesc.includes('east') && terrainDesc.includes('river')) {
+                feedback.textContent = 'Perfect! Your terrain description is accurate.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Please include all required elements in your terrain description.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назария - Дарси 9: Telling Time</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .theory-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .theory-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .time-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .time-table th,
+        .time-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .time-table th {
+            background: #1a237e;
+            color: white;
+        }
+
+        .example-box {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .clock-display {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .analog-clock {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: relative;
+            margin: 1rem auto;
+        }
+
+        .digital-time {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .error-box {
+            background: #ffebee;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #c62828;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 9: Telling Time</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson9-theory.html" class="active">Назария</a>
+            <a href="lesson9-practice.html">Машқҳо</a>
+            <a href="lesson9-video.html">Видео</a>
+        </div>
+
+        <div class="theory-container">
+            <div class="theory-section">
+                <h2>Objective</h2>
+                <p>Students will learn to tell time in English using both analog and digital formats, ask and answer time-related questions, and describe daily schedules with proper time expressions.</p>
+            </div>
+
+            <div class="theory-section">
+                <h2>I. Key Vocabulary</h2>
+                
+                <h3>A. Time Expressions</h3>
+                <div class="example-box">
+                    <ol>
+                        <li><strong>Full hours:</strong> "o'clock" (3 o'clock) - соат се</li>
+                        <li><strong>Half hours:</strong> "half past" (half past 5) - соат панҷу ним</li>
+                        <li><strong>Quarter hours:</strong>
+                            <ul>
+                                <li>"quarter past" (quarter past 2) - соат дую понздаҳ дақиқа</li>
+                                <li>"quarter to" (quarter to 9) - соат нӯҳ кам понздаҳ дақиқа</li>
+                            </ul>
+                        </li>
+                        <li><strong>Minutes:</strong>
+                            <ul>
+                                <li>"ten past seven" (7:10) - соат ҳафту даҳ дақиқа</li>
+                                <li>"twenty to four" (3:40) - соат чор кам бист дақиқа</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>B. Numbers Review (1-60)</h3>
+                <div class="example-box">
+                    <p><strong>Tricky numbers:</strong></p>
+                    <ul>
+                        <li>12 (twelve) - дувоздаҳ</li>
+                        <li>13 (thirteen) - сездаҳ</li>
+                        <li>15 (fifteen) - понздаҳ</li>
+                        <li>20 (twenty) - бист</li>
+                        <li>30 (thirty) - сӣ</li>
+                        <li>40 (forty) - чил</li>
+                        <li>50 (fifty) - панҷоҳ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>II. Grammar Points</h2>
+                
+                <h3>A. Asking for the Time</h3>
+                <div class="example-box">
+                    <ol>
+                        <li><strong>Formal:</strong> "Excuse me, what time is it?" - Бубахшед, соат чанд?</li>
+                        <li><strong>Informal:</strong> "What's the time?" - Соат чанд?</li>
+                        <li><strong>Alternative:</strong> "Do you have the time?" - Соатро медонед?</li>
+                    </ol>
+                </div>
+
+                <h3>B. Telling the Time</h3>
+                <div class="example-box">
+                    <ol>
+                        <li><strong>Digital format:</strong>
+                            <ul>
+                                <li>"It's seven fifteen" (7:15) - Соат ҳафту понздаҳ дақиқа</li>
+                                <li>"It's fourteen thirty" (14:30) - Соат чордаҳу сӣ дақиқа</li>
+                            </ul>
+                        </li>
+                        <li><strong>Analog format:</strong>
+                            <ul>
+                                <li>"It's quarter past two" (2:15) - Соат дую понздаҳ дақиқа</li>
+                                <li>"It's ten to nine" (8:50) - Соат нӯҳ кам даҳ дақиқа</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Common Errors &amp; Corrections</h2>
+                <div class="error-box">
+                    <ol>
+                        <li><strong>"It's seven fifteen o'clock"</strong> → Remove "o'clock"</li>
+                        <li><strong>"It's half to five"</strong> → "half past four"</li>
+                        <li><strong>Confusing AM/PM</strong> → Use "morning/afternoon" initially</li>
+                        <li><strong>Military time errors</strong> → Drill "1300 = 1 PM"</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Tajik Translations for Key Terms</h2>
+                <table class="time-table">
+                    <thead>
+                        <tr>
+                            <th>English</th>
+                            <th>Tajik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>o'clock</td>
+                            <td>соат</td>
+                        </tr>
+                        <tr>
+                            <td>half past</td>
+                            <td>ним</td>
+                        </tr>
+                        <tr>
+                            <td>quarter past</td>
+                            <td>чоряки</td>
+                        </tr>
+                        <tr>
+                            <td>quarter to</td>
+                            <td>чоряки кам</td>
+                        </tr>
+                        <tr>
+                            <td>minute</td>
+                            <td>дақиқа</td>
+                        </tr>
+                        <tr>
+                            <td>hour</td>
+                            <td>соат</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+    </script>
+</body>
+</html> 

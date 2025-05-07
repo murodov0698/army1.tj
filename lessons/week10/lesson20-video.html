@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 20: Emergency Phrases - Video</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-points {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .example-dialogue {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .video-sections {
+            margin: 20px 0;
+        }
+
+        .timestamp {
+            color: #1a237e;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 20: Emergency Phrases - Video</h1>
+        <div class="translation">Дарси 20: Ибораҳои фаврӣ - Видео</div>
+        <div class="lesson-navigation">
+            <a href="lesson20-theory.html">Назария</a>
+            <a href="lesson20-practice.html">Машқҳо</a>
+            <a href="lesson20-video.html" class="active">Видео</a>
+        </div>
+
+        <div class="video-container">
+            <!-- Replace VIDEO_ID with the actual YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+
+        <div class="key-points">
+            <h2>Key Points from the Video</h2>
+            <div class="translation">Нуқтаҳои асосӣ аз видео</div>
+            <ul>
+                <li>
+                    <strong>Emergency Communication</strong>: Clear and concise communication during emergencies
+                    <div class="translation">Алоқаи фаврӣ: Алоқаи возеҳ ва мухтасар ҳангоми ҳолатҳои фаврӣ</div>
+                </li>
+                <li>
+                    <strong>Standard Protocols</strong>: Following established emergency procedures
+                    <div class="translation">Протоколҳои стандартӣ: Риояи тартиботи муқарраршудаи фаврӣ</div>
+                </li>
+                <li>
+                    <strong>Medical Response</strong>: Proper procedures for medical emergencies
+                    <div class="translation">Вокуниши тиббӣ: Тартиботи дуруст барои ҳолатҳои фаврии тиббӣ</div>
+                </li>
+                <li>
+                    <strong>Chain of Command</strong>: Reporting emergencies through proper channels
+                    <div class="translation">Занҷираи фармондеҳӣ: Хабар додан дар бораи ҳолатҳои фаврӣ тавассути каналҳои дуруст</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="example-dialogue">
+            <h2>Example Emergency Dialogue</h2>
+            <div class="translation">Намунаи муколамаи фаврӣ</div>
+            <p><strong>Soldier A</strong>: "Mayday, Mayday! This is Alpha Team. We have multiple casualties at Grid Reference 123456!"</p>
+            <div class="translation">Сарбози A: "Mayday, Mayday! Ин дастаи Алфа аст. Мо дар Истинодҳои Шабакавии 123456 якчанд талафот дорем!"</div>
+            <p><strong>Command</strong>: "Copy Alpha Team. What is your situation? Over."</p>
+            <div class="translation">Фармондеҳӣ: "Қабул шуд, дастаи Алфа. Вазъияти шумо чӣ гуна аст? Тамом."</div>
+            <p><strong>Soldier A</strong>: "Three wounded, one critical. Requesting immediate medevac. Over."</p>
+            <div class="translation">Сарбози A: "Се нафар захмӣ, як нафар вазнин. Дархости фаврии эвакуатсияи тиббӣ. Тамом."</div>
+            <p><strong>Command</strong>: "Roger that. Medevac helicopter dispatched to your location. Secure landing zone. Over."</p>
+            <div class="translation">Фармондеҳӣ: "Фаҳмидам. Чархболи эвакуатсияи тиббӣ ба мавқеи шумо фиристода шуд. Минтақаи фурудро таъмин кунед. Тамом."</div>
+        </div>
+
+        <div class="video-sections">
+            <h2>Video Sections</h2>
+            <div class="translation">Қисмҳои видео</div>
+            <ul>
+                <li>
+                    <span class="timestamp">00:00</span> - Introduction to Emergency Communication
+                    <div class="translation">Шиносоӣ бо алоқаи фаврӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">03:15</span> - Standard Emergency Protocols
+                    <div class="translation">Протоколҳои стандартии фаврӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">07:30</span> - Medical Emergency Response
+                    <div class="translation">Вокуниш ба ҳолатҳои фаврии тиббӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">12:45</span> - Practice Scenarios
+                    <div class="translation">Сенарияҳои машқӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">16:00</span> - Review and Summary
+                    <div class="translation">Баррасӣ ва хулоса</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="additional-notes">
+            <h2>Additional Notes</h2>
+            <div class="translation">Қайдҳои иловагӣ</div>
+            <ul>
+                <li>
+                    Always maintain clear and professional communication
+                    <div class="translation">Ҳамеша алоқаи возеҳ ва касбиро нигоҳ доред</div>
+                </li>
+                <li>
+                    Follow the chain of command when reporting emergencies
+                    <div class="translation">Ҳангоми хабар додан дар бораи ҳолатҳои фаврӣ занҷираи фармондеҳиро риоя кунед</div>
+                </li>
+                <li>
+                    Practice emergency protocols regularly
+                    <div class="translation">Мунтазам протоколҳои фавриро машқ кунед</div>
+                </li>
+                <li>
+                    Know your role and responsibilities during emergencies
+                    <div class="translation">Нақш ва масъулиятҳои худро ҳангоми ҳолатҳои фаврӣ донед</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

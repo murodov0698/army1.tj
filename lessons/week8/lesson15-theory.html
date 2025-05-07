@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15: Food Vocabulary - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #f5f5f5;
+        }
+
+        .example {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .activity {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .activity h4 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+
+        .grammar-point {
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .menu-example {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 15: Food Vocabulary</h1>
+        <div class="lesson-navigation">
+            <a href="lesson15-theory.html" class="active">Назария</a>
+            <a href="lesson15-practice.html">Машқҳо</a>
+            <a href="lesson15-video.html">Видео</a>
+        </div>
+        
+
+        <div class="section">
+            <h2>Objective</h2>
+            <p>Learn and practice food-related vocabulary and phrases for ordering meals, with a focus on military contexts. Students will be able to describe food items, place orders, and communicate effectively in military canteen or field scenarios.</p>
+            <div class="translation">Омӯзиш ва машқи луғат ва ибораҳои марбут ба хӯрок барои фармоиш додани таомҳо, бо диққати махсус ба контексти ҳарбӣ. Донишҷӯён метавонанд маҳсулоти хӯрокӣ, фармоиш додани таомҳо ва муколамаи муассир дар сценарийҳои ҳарбии ҷойи хӯрок ё майдонро тавсиф кунанд.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary</h2>
+            <h3>Food Items</h3>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Word</th>
+                    <th>Pronunciation</th>
+                    <th>Example</th>
+                    <th>Тарҷума</th>
+                </tr>
+                <tr>
+                    <td>Bread</td>
+                    <td>BRED</td>
+                    <td class="example">"I would like bread with my meal."</td>
+                    <td>Нон</td>
+                </tr>
+                <tr>
+                    <td>Water</td>
+                    <td>WAH-tur</td>
+                    <td class="example">"Can I have water, please?"</td>
+                    <td>Об</td>
+                </tr>
+                <tr>
+                    <td>Rice</td>
+                    <td>RAIS</td>
+                    <td class="example">"I'd like rice and meat, please."</td>
+                    <td>Биринҷ</td>
+                </tr>
+                <tr>
+                    <td>Meat</td>
+                    <td>MEET</td>
+                    <td class="example">"Is the meat ready?"</td>
+                    <td>Гӯшт</td>
+                </tr>
+                <tr>
+                    <td>Vegetables</td>
+                    <td>VEJ-tah-bulz</td>
+                    <td class="example">"I'd like vegetables with my meal."</td>
+                    <td>Сабзавот</td>
+                </tr>
+                <tr>
+                    <td>Soup</td>
+                    <td>SOOP</td>
+                    <td class="example">"Can I have soup?"</td>
+                    <td>Шӯрбо</td>
+                </tr>
+                <tr>
+                    <td>Salad</td>
+                    <td>SAL-ad</td>
+                    <td class="example">"I'd like a salad, please."</td>
+                    <td>Салат</td>
+                </tr>
+                <tr>
+                    <td>Fruit</td>
+                    <td>FROOT</td>
+                    <td class="example">"Is there any fruit available?"</td>
+                    <td>Мева</td>
+                </tr>
+                <tr>
+                    <td>Snacks</td>
+                    <td>SNACKS</td>
+                    <td class="example">"Do you have any snacks?"</td>
+                    <td>Чӯшкӣ</td>
+                </tr>
+            </table>
+
+            <h3>Military Meal-Related Terms</h3>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Word</th>
+                    <th>Pronunciation</th>
+                    <th>Example</th>
+                    <th>Тарҷума</th>
+                </tr>
+                <tr>
+                    <td>MRE (Meals Ready to Eat)</td>
+                    <td>EM AR EE</td>
+                    <td class="example">"We have MREs for field training."</td>
+                    <td>Таомҳои тайёр барои хӯрдан</td>
+                </tr>
+                <tr>
+                    <td>Rations</td>
+                    <td>RASH-uhnz</td>
+                    <td class="example">"The rations are distributed daily."</td>
+                    <td>Қисматҳои хӯрок</td>
+                </tr>
+                <tr>
+                    <td>Field Kitchen</td>
+                    <td>FEELD KITCH-un</td>
+                    <td class="example">"The field kitchen is set up."</td>
+                    <td>Ошхонаи майдонӣ</td>
+                </tr>
+                <tr>
+                    <td>Canteen</td>
+                    <td>KAN-TEEN</td>
+                    <td class="example">"Let's meet at the canteen."</td>
+                    <td>Ҷойи хӯрок</td>
+                </tr>
+                <tr>
+                    <td>Mess Hall</td>
+                    <td>MESS HALL</td>
+                    <td class="example">"The mess hall is open for breakfast."</td>
+                    <td>Ошхонаи умумӣ</td>
+                </tr>
+            </table>
+
+            <h3>Useful Phrases</h3>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Example</th>
+                    <th>Тарҷума</th>
+                </tr>
+                <tr>
+                    <td>"I'd like..."</td>
+                    <td class="example">"I'd like rice and meat, please."</td>
+                    <td>"Ман мехоҳам..."</td>
+                </tr>
+                <tr>
+                    <td>"Can I have..."</td>
+                    <td class="example">"Can I have water?"</td>
+                    <td>"Метавонам... гирам?"</td>
+                </tr>
+                <tr>
+                    <td>"What's available?"</td>
+                    <td class="example">"What's available for breakfast?"</td>
+                    <td>"Чӣ чиз мавҷуд аст?"</td>
+                </tr>
+                <tr>
+                    <td>"Where is the water?"</td>
+                    <td class="example">"Where is the water station?"</td>
+                    <td>"Об дар куҷост?"</td>
+                </tr>
+                <tr>
+                    <td>"Is the food ready?"</td>
+                    <td class="example">"Is the dinner ready?"</td>
+                    <td>"Таом тайёр аст?"</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grammar Point</h2>
+            <div class="grammar-point">
+                <h3>Ordering Food</h3>
+                <p>Learn how to use polite expressions and questions to order food in a military canteen or mess hall:</p>
+                <ul>
+                    <li>"I would like rice, please." <span class="translation">("Ман мехоҳам биринҷ, лутфан.")</span></li>
+                    <li>"Can I have water?" <span class="translation">("Метавонам об гирам?")</span></li>
+                    <li>"What is available for breakfast?" <span class="translation">("Барои нони субҳ чӣ чиз мавҷуд аст?")</span></li>
+                    <li>"Where is the bread?" <span class="translation">("Нон дар куҷост?")</span></li>
+                    <li>"Is the meat ready?" <span class="translation">("Гӯшт тайёр аст?")</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="activity">
+                <h4>1. Practice Ordering Food in a Canteen Scenario</h4>
+                <p>Work in pairs to simulate ordering food in a military canteen. Use phrases like:</p>
+                <div class="example">
+                    A: "I'd like meat and vegetables, please." <span class="translation">("Ман мехоҳам гӯшт ва сабзавот, лутфан.")</span><br>
+                    B: "Can I have soup?" <span class="translation">("Метавонам шӯрбо гирам?")</span><br>
+                    C: "Is there any fruit available?" <span class="translation">("Оё мева мавҷуд аст?")</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h4>2. Role-Play: Server and Customer</h4>
+                <p>One student acts as the server in a military mess hall, and the other as the soldier ordering food:</p>
+                <div class="example">
+                    Server: "What can I serve you today, soldier?" <span class="translation">("Имрӯз чӣ чиз метавонам ба шумо пешниҳод кунам, сарбоз?")</span><br>
+                    Soldier: "I'd like rice and meat, please." <span class="translation">("Ман мехоҳам биринҷ ва гӯшт, лутфан.")</span><br>
+                    Server: "Here you go. Enjoy your meal!" <span class="translation">("Бигиред. Навбати хӯрок хушбахт бод!")</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h4>3. Create a Military Menu</h4>
+                <div class="menu-example">
+                    <h4>Military Canteen Menu</h4>
+                    <ul>
+                        <li>Breakfast: <span class="translation">(Нони субҳ:)</span>
+                            <ul>
+                                <li>Bread and butter <span class="translation">(Нон ва равған)</span></li>
+                                <li>Eggs <span class="translation">(Тухм)</span></li>
+                                <li>Coffee <span class="translation">(Қаҳва)</span></li>
+                            </ul>
+                        </li>
+                        <li>Lunch: <span class="translation">(Нони рӯз:)</span>
+                            <ul>
+                                <li>Rice and meat <span class="translation">(Биринҷ ва гӯшт)</span></li>
+                                <li>Vegetables <span class="translation">(Сабзавот)</span></li>
+                                <li>Water <span class="translation">(Об)</span></li>
+                            </ul>
+                        </li>
+                        <li>Dinner: <span class="translation">(Нони шом:)</span>
+                            <ul>
+                                <li>Soup <span class="translation">(Шӯрбо)</span></li>
+                                <li>Salad <span class="translation">(Салат)</span></li>
+                                <li>Fruit <span class="translation">(Мева)</span></li>
+                            </ul>
+                        </li>
+                        <li>Field Rations: <span class="translation">(Қисматҳои майдонӣ:)</span>
+                            <ul>
+                                <li>MREs <span class="translation">(Таомҳои тайёр)</span></li>
+                                <li>Snacks <span class="translation">(Чӯшкӣ)</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Homework</h2>
+            <ul>
+                <li>Write a short paragraph about your favorite food and how you would order it in a military canteen.</li>
+                <li>Create a simple military-themed menu with 5 items and practice ordering from it.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Assessment</h2>
+            <ul>
+                <li><strong>Oral Assessment:</strong> Participation in role-play and ordering exercises</li>
+                <li><strong>Written Assessment:</strong> Sentences and paragraphs about food and ordering</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

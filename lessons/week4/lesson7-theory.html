@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назария - Дарси 7: Рӯтинаи Ҳаррӯза</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .theory-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .theory-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .vocabulary-table th,
+        .vocabulary-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background: #1a237e;
+            color: white;
+        }
+
+        .vocabulary-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .dialogue-box {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .dialogue-line {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-left: 1rem;
+        }
+
+        .exercise-section {
+            background: #fff3e0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .teaching-note {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2e7d32;
+        }
+
+        @media screen and (max-width: 768px) {
+            .theory-section {
+                padding: 1rem;
+            }
+
+            .vocabulary-table th,
+            .vocabulary-table td {
+                padding: 0.5rem;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 7: Daily Routine Verbs (Рӯтинаи Ҳаррӯза)</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson7-theory.html" class="active">Назария</a>
+            <a href="lesson7-practice.html">Машқҳо</a>
+            <a href="lesson7-video.html">Видео</a>
+        </div>
+
+        <div class="theory-container">
+            <div class="theory-section">
+                <h2>Objective</h2>
+                <p>Students will learn verbs for daily routines and describe military/civilian schedules using Present Simple tense.</p>
+                <p style="color: rgb(67, 67, 235);">Translate:    Афсарон феълҳоро барои реҷаҳои ҳаррӯза меомӯзанд ва ҷадвалҳои ҳарбӣ/шарвандиро бо истифода аз замони ҳозираи оддӣ тавсиф мекунанд.</p>
+            </div>
+
+            <div class="theory-section">
+                <h2>Key Vocabulary</h2>
+                <h3>1. Essential Verbs</h3>
+                <table class="vocabulary-table">
+                    <thead>
+                        <tr>
+                            <th>English</th>
+                            <th>Tajik Translation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wake up</td>
+                            <td>Аз хоб  хестан</td>
+                        </tr>
+                        <tr>
+                            <td>Eat breakfast</td>
+                            <td>Нонҳоӣ хӯрдан</td>
+                        </tr>
+                        <tr>
+                            <td>Train</td>
+                            <td>Машқ кардан</td>
+                        </tr>
+                        <tr>
+                            <td>Report</td>
+                            <td>Ҳисобот додан</td>
+                        </tr>
+                        <tr>
+                            <td>Stand guard</td>
+                            <td>Нозирӣ кардан</td>
+                        </tr>
+                        <tr>
+                            <td>Sleep</td>
+                            <td>Хобидан</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2. Military Time Terms</h3>
+                <table class="vocabulary-table">
+                    <thead>
+                        <tr>
+                            <th>English</th>
+                            <th>Tajik Translation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0500 hours</td>
+                            <td>Соат панҷ</td>
+                        </tr>
+                        <tr>
+                            <td>Before duty</td>
+                            <td>Пеш аз вазифа</td>
+                        </tr>
+                        <tr>
+                            <td>After inspection</td>
+                            <td>Баъди тафтиш</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="theory-section">
+                <h2>Grammar Point</h2>
+                <div class="dialogue-box">
+                    <h3>1. Present Simple Structure</h3>
+                    <div class="dialogue-line">
+                        <p class="speaker">English Example:</p>
+                        <p>"I wake up at 05:00 hours."</p>
+                        <p class="translation">Tajik: "Ман соати 5 бедор мешавам."</p>
+                    </div>
+                    <div class="dialogue-line">
+                        <p class="speaker">English Example:</p>
+                        <p>"Soldiers train every morning."</p>
+                        <p class="translation">Tajik: "Сарбозон ҳар субҳ машқ мекунанд."</p>
+                    </div>
+                </div>
+
+                <div class="dialogue-box">
+                    <h3>2. Negative Form</h3>
+                    <div class="dialogue-line">
+                        <p class="speaker">English Example:</p>
+                        <p>"We do not eat during patrol."</p>
+                        <p class="translation">Tajik: "Мо дар вақти патрулӣ хӯрок намехӯрем."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Role-Play Activities</h2>
+                
+                <div class="dialogue-box">
+                    <h3>1. Morning Inspection (Санҷиши Субҳона)</h3>
+                    <div class="dialogue-line">
+                        <p class="speaker">Officer:</p>
+                        <p>"Private, have you checked your equipment?"</p>
+                        <p class="translation">Афсар: "Сарбоз, силоҳи худро санҷидаӣ?"</p>
+                    </div>
+                    <div class="dialogue-line">
+                        <p class="speaker">Soldier:</p>
+                        <p>"Yes, Sergeant! I inspected my weapon at 0530."</p>
+                        <p class="translation">Сарбоз: "Бале, сержант! Ман силоҳи худро соат 5:30 санҷидам."</p>
+                    </div>
+                </div>
+
+                <div class="dialogue-box">
+                    <h3>2. Mess Hall (Саломи Ошхона)</h3>
+                    <div class="dialogue-line">
+                        <p class="speaker">Cook:</p>
+                        <p>"What do you want for breakfast?"</p>
+                        <p class="translation">Ошпаз: "Барои наҳорӣ чӣ мехоҳед?"</p>
+                    </div>
+                    <div class="dialogue-line">
+                        <p class="speaker">Soldier:</p>
+                        <p>"I want bread and tea. When does lunch start?"</p>
+                        <p class="translation">Сарбоз: "Нон ва чой мехоҳам. Хуроки нисфирӯзӣ кай оғоз мешавад?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Practice Exercises</h2>
+                <div class="exercise-section">
+                    <h3>Part 1: Matching</h3>
+                    <p>Match verbs to actions</p>
+                    <p class="translation">Феълҳоро ба амалҳо мувофиқ кунед</p>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>Part 2: Translation</h3>
+                    <p>"The lieutenant reports at 0800."</p>
+                    <p class="translation">"Лейтенант соати 8 ҳисобот медиҳад."</p>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Assessment</h2>
+                <p>English Task: "Describe your ideal military day in 5 sentences."</p>
+                <p class="translation">Tajik Task: "Дар 5 ҷумла як рӯзи идеалии ҳарбии худро тавсиф кунед."</p>
+            </div>
+
+            <div class="theory-section">
+                <h2>Teaching Notes</h2>
+                <div class="teaching-note">
+                    <h3>1. Drill Format</h3>
+                    <ul>
+                        <li>Say English phrase → Students respond in Tajik</li>
+                        <li>Show Tajik phrase → Students translate to English</li>
+                    </ul>
+                </div>
+                <div class="teaching-note">
+                    <h3>2. Military Focus</h3>
+                    <ul>
+                        <li>Use Tajik border guard scenarios for relevance</li>
+                        <li>Include mountain terrain terms (кӯҳ) when discussing patrols</li>
+                    </ul>
+                </div>
+                <div class="teaching-note">
+                    <h3>3. Visual Aids</h3>
+                    <ul>
+                        <li>Display bilingual routine charts</li>
+                        <li>Use 24-hour clock diagrams</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

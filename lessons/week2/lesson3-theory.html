@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назария - Дарси 3: Ашёҳои маъмулии ҳаррӯза</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .theory-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .theory-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .vocabulary-category {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .vocabulary-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vocabulary-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .grammar-example {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .activity {
+            border-left: 4px solid #1a237e;
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+
+        .exercise {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: #e3f2fd;
+            border-radius: 4px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .theory-section {
+                padding: 1rem;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 3: Ашёҳои маъмулии ҳаррӯза</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson3-theory.html" class="active">Назария</a>
+            <a href="lesson3-practice.html">Машқҳо</a>
+            <a href="lesson3-video.html">Видео</a>
+        </div>
+
+        <div class="theory-container">
+            <div class="theory-section">
+                <h2>Мақсади дарс</h2>
+                <p>Дар охири ин дарс, донишҷӯён метавонанд ашёҳои маъмулии дар хона, синфхона ва ҷойҳои ҷамъиятӣ бударо муайян ва номбар кунанд, инчунин онҳоро дар ҷумлаҳои оддӣ истифода баранд.</p>
+            </div>
+
+            <div class="theory-section">
+                <h2>1. Луғатҳои асосӣ</h2>
+                
+                <h3>A. Ашёҳои хона</h3>
+                <div class="vocabulary-grid">
+                    <div class="vocabulary-category">
+                        <h4>Меҳмонхона</h4>
+                        <ul class="vocabulary-list">
+                            <li>Sofa/Couch - Диван</li>
+                            <li>Television (TV) - Телевизор</li>
+                            <li>Coffee table - Мизи қаҳва</li>
+                            <li>Lamp - Чароғ</li>
+                            <li>Rug - Қолин</li>
+                        </ul>
+                    </div>
+
+                    <div class="vocabulary-category">
+                        <h4>Ошхона</h4>
+                        <ul class="vocabulary-list">
+                            <li>Refrigerator (Fridge) - Яхдон</li>
+                            <li>Stove - Плита</li>
+                            <li>Microwave - Микромавҷ</li>
+                            <li>Sink - Дастшӯяк</li>
+                            <li>Plate, Bowl, Cup - Табақ, Коса, Пиёла</li>
+                        </ul>
+                    </div>
+
+                    <div class="vocabulary-category">
+                        <h4>Хоби хоб</h4>
+                        <ul class="vocabulary-list">
+                            <li>Bed - Кат</li>
+                            <li>Pillow - Болишт</li>
+                            <li>Blanket - Кӯрпа</li>
+                            <li>Wardrobe - Ҷевон</li>
+                            <li>Mirror - Оина</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>B. Ашёҳои синфхона</h3>
+                <div class="vocabulary-category">
+                    <ul class="vocabulary-list">
+                        <li>Desk - Миз</li>
+                        <li>Chair - Курсӣ</li>
+                        <li>Whiteboard - Тахтаи сафед</li>
+                        <li>Marker - Маркер</li>
+                        <li>Notebook - Дафтар</li>
+                        <li>Pencil - Қалам</li>
+                        <li>Eraser - Резинка</li>
+                        <li>Book - Китоб</li>
+                    </ul>
+                </div>
+
+                <h3>C. Ашёҳои ҷойҳои ҷамъиятӣ</h3>
+                <div class="vocabulary-grid">
+                    <div class="vocabulary-category">
+                        <h4>Боғ</h4>
+                        <ul class="vocabulary-list">
+                            <li>Bench - Харак</li>
+                            <li>Tree - Дарахт</li>
+                            <li>Swing - Алвонҷак</li>
+                            <li>Slide - Сурғунак</li>
+                        </ul>
+                    </div>
+
+                    <div class="vocabulary-category">
+                        <h4>Кӯча</h4>
+                        <ul class="vocabulary-list">
+                            <li>Traffic light - Чароғаки роҳ</li>
+                            <li>Streetlight - Чароғи кӯча</li>
+                            <li>Sign - Аломат</li>
+                            <li>Bus stop - Истгоҳи автобус</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>2. Қоидаҳои грамматикӣ: Истифодаи "This/That/These/Those"</h2>
+                
+                <h3>Қоидаҳо:</h3>
+                <div class="grammar-example">
+                    <ul>
+                        <li><strong>This</strong> (танҳо, наздик): "This is a pen." - "Ин қалам аст."</li>
+                        <li><strong>That</strong> (танҳо, дур): "That is a tree." - "Он дарахт аст."</li>
+                        <li><strong>These</strong> (ҷамъ, наздик): "These are books." - "Инҳо китобҳо ҳастанд."</li>
+                        <li><strong>Those</strong> (ҷамъ, дур): "Those are cars." - "Онҳо мошинҳо ҳастанд."</li>
+                    </ul>
+                </div>
+
+                <h3>Мисолҳо:</h3>
+                <div class="grammar-example">
+                    <ol>
+                        <li>"This is my notebook." (Дафтар ба ман наздик аст)</li>
+                        <li>"That is her bag." (Сумка аз ман дур аст)</li>
+                        <li>"These are our pencils." (Қаламҳо ба мо наздиканд)</li>
+                        <li>"Those are their houses." (Хонаҳо аз мо дуранд)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>3. Машғулиятҳо</h2>
+
+                <div class="activity">
+                    <h3>Машғулияти 1: Муайянкунии ашёҳо</h3>
+                    <p><strong>Дастурҳо:</strong></p>
+                    <ol>
+                        <li>Муаллим расмҳои ашёҳоро нишон медиҳад</li>
+                        <li>Донишҷӯён номи онро баланд мегӯянд (масалан, "This is a chair.")</li>
+                    </ol>
+                </div>
+
+                <div class="activity">
+                    <h3>Машғулияти 2: Машқи "This/That/These/Those"</h3>
+                    <p><strong>Дастурҳо:</strong></p>
+                    <ul>
+                        <li>Муаллим ашёҳоро дар наздик ва дур мегузорад</li>
+                        <li>Донишҷӯён онҳоро бо ҷонишинҳои дуруст тавсиф мекунанд</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h3>Машғулияти 3: Нақшбозӣ (Дар бораи ашёҳо пурсидан)</h3>
+                    <p><strong>Мисоли муколама:</strong></p>
+                    <div class="grammar-example">
+                        <p>A: "What is this?"</p>
+                        <p>B: "This is a lamp."</p>
+                        <p>A: "What are those?"</p>
+                        <p>B: "Those are keys."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>5. Хатогиҳои маъмул ва маслиҳатҳо</h2>
+
+                <h3>Хатогиҳои маъмул:</h3>
+                <ul class="tips-list">
+                    <li>Омехта кардани "this" (наздик) бо "that" (дур)</li>
+                    <li>Фаромӯш кардани илова кардани "-s" барои ашёҳои ҷамъ ("These are book❌" → "These are books✔")</li>
+                </ul>
+
+                <h3>Маслиҳатҳо:</h3>
+                <ul class="tips-list">
+                    <li>Ҳангоми гуфтани "this" (наздик) ё "that" (дур) ба ашёҳо ишора кунед</li>
+                    <li>Бо ашёҳои воқеӣ дар муҳити худ машқ кунед</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h2>6. Вазифаи хонагӣ</h2>
+                <ol>
+                    <li>10 ашёро дар хонаатон ба забони англисӣ номбар кунед</li>
+                    <li>Расми 5 ашёи ҷамъиятиро гирифта, онҳоро номгузорӣ кунед</li>
+                </ol>
+            </div>
+
+            <div class="theory-section">
+                <h2>7. Саволҳои такрорӣ</h2>
+                <ol>
+                    <li>Ашёе, ки шумо дар синф менишинед, чӣ ном дорад?</li>
+                    <li>Кай "these" ва кай "those"-ро истифода мебаред?</li>
+                    <li>3 чизи дар ошхона бударо номбар кунед.</li>
+                </ol>
+            </div>
+
+            <div class="theory-section">
+                <h2>Хулоса</h2>
+                <ul>
+                    <li>✓ Зиёда аз 30 номи ашёҳои маъмулро омӯхтем</li>
+                    <li>✓ "this/that/these/those"-ро машқ кардем</li>
+                    <li>✓ Луғатҳоро дар ҳолатҳои воқеӣ истифода бурдем</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

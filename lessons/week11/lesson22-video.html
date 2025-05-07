@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 22: Travel Phrases - Video</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-points {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .example-dialogue {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .video-sections {
+            margin: 20px 0;
+        }
+
+        .timestamp {
+            color: #1a237e;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 22: Travel Phrases - Video</h1>
+        <div class="translation">Дарси 22: Ибораҳои сафар - Видео</div>
+        <div class="lesson-navigation">
+            <a href="lesson22-theory.html">Назария</a>
+            <a href="lesson22-practice.html">Машқҳо</a>
+            <a href="lesson22-video.html" class="active">Видео</a>
+        </div>
+
+        <div class="video-container">
+            <!-- Replace VIDEO_ID with the actual YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+
+        <div class="key-points">
+            <h2>Key Points from the Video</h2>
+            <div class="translation">Нуқтаҳои асосӣ аз видео</div>
+            <ul>
+                <li>
+                    <strong>Asking for Directions</strong>: How to ask for directions in military contexts
+                    <div class="translation">Пурсидани роҳ: Чӣ тавр дар контексти ҳарбӣ роҳ пурсидан</div>
+                </li>
+                <li>
+                    <strong>Booking Travel</strong>: Phrases for booking tickets and arranging transport
+                    <div class="translation">Забти сафар: Ибораҳо барои забти билет ва тартиб додани нақлиёт</div>
+                </li>
+                <li>
+                    <strong>Travel Planning</strong>: How to plan military travel effectively
+                    <div class="translation">Барномарезии сафар: Чӣ тавр сафари ҳарбиро самаранок тартиб додан</div>
+                </li>
+                <li>
+                    <strong>Emergency Situations</strong>: What to say in travel emergencies
+                    <div class="translation">Ҳолатҳои фаврӣ: Чӣ гуфтан дар ҳолатҳои фаврии сафар</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="example-dialogue">
+            <h2>Example Travel Dialogue</h2>
+            <div class="translation">Намунаи муколамаи сафар</div>
+            <p><strong>Officer</strong>: "Where is the nearest military airstrip?"</p>
+            <div class="translation"><strong>Афсар</strong>: "Наздиктарин фурудгоҳи ҳарбӣ дар куҷост?"</div>
+            <p><strong>Logistics Officer</strong>: "It's 15 kilometers north. We can arrange transport."</p>
+            <div class="translation"><strong>Афсари лоиҳа</strong>: "Он 15 километр шимолтар аст. Мо метавонем нақлиёт тартиб диҳем."</div>
+            <p><strong>Officer</strong>: "What time does the next flight leave?"</p>
+            <div class="translation"><strong>Афсар</strong>: "Парвози навбатӣ соати чанд меравад?"</div>
+            <p><strong>Logistics Officer</strong>: "At 1400 hours. We need to check in by 1300."</p>
+            <div class="translation"><strong>Афсари лоиҳа</strong>: "Соати 14. Мо бояд то соати 13 ворид шавем."</div>
+        </div>
+
+        <div class="video-sections">
+            <h2>Video Sections</h2>
+            <div class="translation">Қисмҳои видео</div>
+            <ul>
+                <li>
+                    <span class="timestamp">00:00</span> - Introduction to Travel Phrases
+                    <div class="translation">Шиносоӣ бо ибораҳои сафар</div>
+                </li>
+                <li>
+                    <span class="timestamp">03:15</span> - Asking for Directions
+                    <div class="translation">Пурсидани роҳ</div>
+                </li>
+                <li>
+                    <span class="timestamp">07:30</span> - Booking Travel
+                    <div class="translation">Забти сафар</div>
+                </li>
+                <li>
+                    <span class="timestamp">12:45</span> - Travel Planning
+                    <div class="translation">Барномарезии сафар</div>
+                </li>
+                <li>
+                    <span class="timestamp">16:00</span> - Emergency Situations
+                    <div class="translation">Ҳолатҳои фаврӣ</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="additional-notes">
+            <h2>Additional Notes</h2>
+            <div class="translation">Қайдҳои иловагӣ</div>
+            <ul>
+                <li>
+                    Always confirm travel details in advance
+                    <div class="translation">Ҳамеша тафсилоти сафарро пешакӣ тасдиқ кунед</div>
+                </li>
+                <li>
+                    Keep important documents ready
+                    <div class="translation">Ҳуҷҷатҳои муҳимро омода нигоҳ доред</div>
+                </li>
+                <li>
+                    Know emergency contact numbers
+                    <div class="translation">Рақамҳои тамос барои ҳолатҳои фавриро бидонед</div>
+                </li>
+                <li>
+                    Follow military travel protocols
+                    <div class="translation">Тартиботи сафари ҳарбиро риоя кунед</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

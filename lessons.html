@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дарсҳо - Military English</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        h2{
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .lesson-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lesson-header {
+            background: linear-gradient(to right, #000000,#4ebce7,#0a2402);
+            color: rgb(197, 36, 36);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .lesson-content {
+            padding: 1rem;
+        }
+
+        .lesson-link {
+            display: block;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: #f5f5f5;
+            border-radius: 4px;
+            color: #1a237e;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .lesson-link:hover {
+            background: #e3f2fd;
+        }
+
+        @media screen and (max-width: 768px) {
+            .lessons-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="lessons/week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="lessons/week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="lessons/week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="lessons/week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="lessons/week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="lessons/week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="lessons/week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="lessons/week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="lessons/week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="lessons/week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="lessons/week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="lessons/week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="lessons/week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="lessons/week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="lessons/week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="lessons/week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="lessons/week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="lessons/week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="lessons/week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="lessons/week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="lessons/week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="lessons/week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="lessons/week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="lessons/week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="dictionary.html">Луғат</a></li>
+                <li><a href="contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Дарсҳо</h1>
+        
+        <div class="lessons-grid">
+            <!-- Ҳафтаи 1 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 1</h2>
+                    <h2>Салом ва муаррифӣ</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week1/lesson1-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week1/lesson1-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week1/lesson1-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 2</h2>
+                    <h2>Рақамҳо, рӯзҳо ва моҳҳо</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week1/lesson2-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week1/lesson2-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week1/lesson2-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 2 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 3</h2>
+                    <h2>Ашёҳои маъмулии ҳаррӯза</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week2/lesson3-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week2/lesson3-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week2/lesson3-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 4</h2>
+                    <h2>Рутбаҳои низомӣ ва унвонҳо</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week2/lesson4-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week2/lesson4-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week2/lesson4-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 3 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 5</h2>
+                    <h2>Сохтори ҷумла</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week3/lesson5-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week3/lesson5-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week3/lesson5-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 6</h2>
+                    <h2>Саволҳо (Question Words) – Пурсидан ва Ҷавоб Додан</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week3/lesson6-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week3/lesson6-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week3/lesson6-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 4 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 7</h2>
+                    <h2>Рӯтинаи ҳаррӯза</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week4/lesson7-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week4/lesson7-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week4/lesson7-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 8</h2>
+                    <h2>Basic Commands</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week4/lesson8-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week4/lesson8-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week4/lesson8-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 5 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 9</h2>
+                    <h2>Telling Time</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week5/lesson9-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week5/lesson9-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week5/lesson9-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 10</h2>
+                    <h2>Додан ва гирифтани самтҳо</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week5/lesson10-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week5/lesson10-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week5/lesson10-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 6 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 11</h2>
+                    <h2>Incident-Related Vocabulary (Military Context)</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week6/lesson11-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week6/lesson11-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week6/lesson11-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 12</h2>
+                    <h2>Reporting Phrases</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week6/lesson12-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week6/lesson12-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week6/lesson12-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 7 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 13</h2>
+                    <h2>Family Vocabulary</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week7/lesson13-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week7/lesson13-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week7/lesson13-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 14</h2>
+                    <h2>Relationship Phrases</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week7/lesson14-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week7/lesson14-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week7/lesson14-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 8 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 15</h2>
+                    <h2>Food Vocabulary</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week8/lesson15-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week8/lesson15-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week8/lesson15-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 16</h2>
+                    <h2>Military Supplies</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week8/lesson16-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week8/lesson16-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week8/lesson16-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 9 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 17</h2>
+                    <h2>Weather Vocabulary</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week9/lesson17-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week9/lesson17-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week9/lesson17-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 18</h2>
+                    <h2>Terrain Vocabulary</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week9/lesson18-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week9/lesson18-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week9/lesson18-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 10 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 19</h2>
+                    <h2>Health-Related Vocabulary</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week10/lesson19-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week10/lesson19-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week10/lesson19-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 20</h2>
+                    <h2>Emergency Phrases for Military Communication</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week10/lesson20-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week10/lesson20-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week10/lesson20-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 11 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 21</h2>
+                    <h2>Transportation Vocabulary</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week11/lesson21-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week11/lesson21-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week11/lesson21-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 22</h2>
+                    <h2>Travel Phrases</h2>
+        
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week11/lesson22-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week11/lesson22-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week11/lesson22-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <!-- Ҳафтаи 12 -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 23</h2>
+                    <h2>Баррасии ҳамаҷониба</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week12/lesson23-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week12/lesson23-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week12/lesson23-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <h2>Дарси 24</h2>
+                    <h2>Санҷиши ниҳоӣ</h2>
+                </div>
+                <div class="lesson-content">
+                    <a href="lessons/week12/lesson24-theory.html" class="lesson-link">Маводи назариявӣ</a>
+                    <a href="lessons/week12/lesson24-practice.html" class="lesson-link">Машқҳо</a>
+                    <a href="lessons/week12/lesson24-video.html" class="lesson-link">Дидани видео</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

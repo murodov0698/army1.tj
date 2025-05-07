@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назария - Дарси 5: Сохтори ҷумла</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .theory-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .theory-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .vocabulary-item {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .vocabulary-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .example-box {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .tip-box {
+            background: #fff3e0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .activity-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .sentence-structure {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .sentence-part {
+            padding: 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .subject {
+            background: #bbdefb;
+        }
+
+        .verb {
+            background: #c8e6c9;
+        }
+
+        .object {
+            background: #ffecb3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .theory-section {
+                padding: 1rem;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 5: Сохтори ҷумла</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson5-theory.html" class="active">Назария</a>
+            <a href="lesson5-practice.html">Машқҳо</a>
+            <a href="lesson5-video.html">Видео</a>
+        </div>
+
+        <div class="theory-container">
+            <div class="theory-section">
+                <h2>Мақсади дарс</h2>
+                <p>Пас аз омӯзиши ин дарс, шумо метавонед:</p>
+                <ul>
+                    <li>Ҷумлаҳои содаро бо сохтори Subject + Verb + Object (SVO) созед</li>
+                    <li>Ҷумлаҳои манфӣро бо "do not" (don't) созед</li>
+                    <li>Ҷумлаҳоро дар контексти низомӣ ва ҳаррӯза истифода баред</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h2>Луғатҳои асосӣ</h2>
+                
+                <h3>Ашёҳо</h3>
+                <div class="vocabulary-grid">
+                    <div class="vocabulary-item">
+                        <h4>map</h4>
+                        <p>Харита</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>radio</h4>
+                        <p>Радио</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>uniform</h4>
+                        <p>Униформа</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>weapon</h4>
+                        <p>Аслиҳа</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>boots</h4>
+                        <p>Мӯзаҳо</p>
+                    </div>
+                </div>
+
+                <h3>Феълҳо</h3>
+                <div class="vocabulary-grid">
+                    <div class="vocabulary-item">
+                        <h4>carry</h4>
+                        <p>Ҳамл кардан</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>use</h4>
+                        <p>Истифода кардан</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>check</h4>
+                        <p>Санҷидан</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>report</h4>
+                        <p>Гузориш додан</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>secure</h4>
+                        <p>Амниятӣ кардан</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Қоидаҳои грамматикӣ</h2>
+                
+                <h3>1. Сохтори SVO</h3>
+                <div class="example-box">
+                    <p>Формула: <strong>Subject (кӣ?) + Verb (чӣ кард?) + Object (чӣ?)</strong></p>
+                    <div class="sentence-structure">
+                        <div class="sentence-part subject">Soldiers</div>
+                        <div class="sentence-part verb">carry</div>
+                        <div class="sentence-part object">radios</div>
+                    </div>
+                    <div class="sentence-structure">
+                        <div class="sentence-part subject">The captain</div>
+                        <div class="sentence-part verb">checks</div>
+                        <div class="sentence-part object">the map</div>
+                    </div>
+                </div>
+
+                <h3>2. Ҷумлаҳои манфӣ</h3>
+                <div class="example-box">
+                    <p>Ҷумлаҳои манфӣ бо истифодаи "do not" (don't) созида мешаванд:</p>
+                    <ul>
+                        <li>Privates <strong>do not carry</strong> weapons.</li>
+                        <li>Soldiers <strong>don't use</strong> radios.</li>
+                    </ul>
+                </div>
+
+                <h3>3. Тартиби калимаҳо</h3>
+                <div class="example-box">
+                    <p>Ҷумлаҳои нодуруст ва дуруст:</p>
+                    <ul>
+                        <li>Нодуруст: "The radio uses the soldier."</li>
+                        <li>Дуруст: "The soldier uses the radio."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Машғулиятҳо</h2>
+                
+                <div class="activity-section">
+                    <h3>1. Бозии созиши ҷумла</h3>
+                    <p>Ҷуфт-ҷуфт бозӣ кунед:</p>
+                    <ul>
+                        <li>Ҳар як гурӯҳ карточкаҳои subject, verb ва object мегирад</li>
+                        <li>Гурӯҳҳо бо ҳам рақобат мекунанд, ки карточкаҳоро дар тартиби дуруст чойгир кунанд</li>
+                        <li>Мисол: "The sergeant inspects uniforms."</li>
+                    </ul>
+                </div>
+
+                <div class="activity-section">
+                    <h3>2. Намоиши нақш: гузориши вазъият</h3>
+                    <p>Диалогҳоро бозӣ кунед:</p>
+                    <ul>
+                        <li>А: "What do you check?"</li>
+                        <li>Б: "I check the weapon."</li>
+                        <li>Варианти пешрафта: Ҷумлаҳои манфӣ ("I don't check the radio.")</li>
+                    </ul>
+                </div>
+
+                <div class="activity-section">
+                    <h3>3. Создани ҷумлаҳо бо расмҳо</h3>
+                    <p>Барои ҳар як расм ду ҷумлаи SVO созед:</p>
+                    <ul>
+                        <li>"The medic opens the kit."</li>
+                        <li>"The soldier reads the map."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Хатогиҳои маъмул</h2>
+                <div class="tip-box">
+                    <ul>
+                        <li>Фаромӯш кардани тартиби дурусти калимаҳо</li>
+                        <li>Истифодаи нодуруст "do not" дар ҷумлаҳои манфӣ</li>
+                        <li>Фаромӯш кардани subject дар ҷумла</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Маслиҳатҳо</h2>
+                <div class="tip-box">
+                    <ul>
+                        <li>Ҳамеша subject-ро дар аввал гузоред</li>
+                        <li>Баъд аз subject феъл омада, баъд аз он object меояд</li>
+                        <li>Дар шубҳа, сохтори SVO-ро тафаккур кунед</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Вазифаи хонагӣ</h2>
+                <ul>
+                    <li>Табдил додани 10 калимаи пароканда ба ҷумлаҳои дурусти SVO</li>
+                    <li>Навиштани 5 ҷумлаи SVO дар бораи амалҳо дар казарма</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h2>Хулоса</h2>
+                <ul>
+                    <li>Сохтори асосии ҷумла (SVO)</li>
+                    <li>Ҷумлаҳои манфӣ бо "do not"</li>
+                    <li>Тартиби дурусти калимаҳо</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

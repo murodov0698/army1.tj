@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 19: Health-Related Vocabulary - Practice</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .exercise h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .button {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #303f9f;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+
+        .matching-container {
+            margin: 20px 0;
+        }
+        .matching-select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .term-item {
+            margin-bottom: 20px;
+        }
+        .term-label {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 19: Health-Related Vocabulary - Practice</h1>
+        <div class="lesson-navigation">
+            <a href="lesson19-theory.html">Назария</a>
+            <a href="lesson19-practice.html" class="active">Машқҳо</a>
+            <a href="lesson19-video.html">Видео</a>
+        </div>
+        <div class="exercise">
+            <h3>Exercise 1: Describe Symptoms</h3>
+            <p>Write five sentences describing different symptoms:</p>
+            <div class="translation">Панҷ ҷумла нависед, ки аломатҳои гуногунро тавсиф мекунанд:</div>
+            <textarea class="input-field" rows="5" id="sentences"></textarea>
+            <button class="button" onclick="checkSentences()">Check Answers</button>
+            <div id="sentenceFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 2: Fill in the Blanks</h3>
+            <p>Complete these sentences with the correct medical vocabulary:</p>
+            <div class="translation">Ҷумлаҳоро бо луғати дурусти тиббӣ пур кунед:</div>
+            <ol>
+                <li>
+                    The soldier was __________ during the training exercise and needs medical attention.
+                    <div class="translation">Сарбоз дар давоми машқи таълимӣ __________ шуд ва ба ғамхорӣи тиббӣ ниёз дорад.</div>
+                    <input type="text" class="input-field" id="blank1">
+                </li>
+                <li>
+                    We need to call the __________ immediately for the wounded soldier.
+                    <div class="translation">Мо бояд барои сарбози захмӣ фавран __________-ро даъват кунем.</div>
+                    <input type="text" class="input-field" id="blank2">
+                </li>
+                <li>
+                    The patient is showing __________ of dehydration and needs fluids.
+                    <div class="translation">Бемор __________-и камобиро нишон медиҳад ва ба моеъот ниёз дорад.</div>
+                    <input type="text" class="input-field" id="blank3">
+                </li>
+            </ol>
+            <button class="button" onclick="checkBlanks()">Check Answers</button>
+            <div id="blankFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 3: Match the Terms</h3>
+            <p>Match each medical term with its correct definition:</p>
+            <div class="translation">Ҳар як истилоҳи тиббиро бо таърифи дурусташ ҳамроҳ кунед:</div>
+            <div class="matching-container">
+                <div class="terms-column">
+                    <h4>Medical Terms</h4>
+                    <div class="translation">Истилоҳоти тиббӣ</div>
+                    
+                    <div class="term-item">
+                        <div class="term-label">Concussion</div>
+                        <select id="term1" class="matching-select">
+                            <option value="">Select definition...</option>
+                            <option value="brain">Brain injury from impact</option>
+                            <option value="bone">Broken bone</option>
+                            <option value="emergency">Emergency medical care</option>
+                            <option value="evacuation">Medical evacuation</option>
+                            <option value="sign">Sign of illness</option>
+                        </select>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-label">Fracture</div>
+                        <select id="term2" class="matching-select">
+                            <option value="">Select definition...</option>
+                            <option value="brain">Brain injury from impact</option>
+                            <option value="bone">Broken bone</option>
+                            <option value="emergency">Emergency medical care</option>
+                            <option value="evacuation">Medical evacuation</option>
+                            <option value="sign">Sign of illness</option>
+                        </select>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-label">First Aid</div>
+                        <select id="term3" class="matching-select">
+                            <option value="">Select definition...</option>
+                            <option value="brain">Brain injury from impact</option>
+                            <option value="bone">Broken bone</option>
+                            <option value="emergency">Emergency medical care</option>
+                            <option value="evacuation">Medical evacuation</option>
+                            <option value="sign">Sign of illness</option>
+                        </select>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-label">Medevac</div>
+                        <select id="term4" class="matching-select">
+                            <option value="">Select definition...</option>
+                            <option value="brain">Brain injury from impact</option>
+                            <option value="bone">Broken bone</option>
+                            <option value="emergency">Emergency medical care</option>
+                            <option value="evacuation">Medical evacuation</option>
+                            <option value="sign">Sign of illness</option>
+                        </select>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-label">Symptom</div>
+                        <select id="term5" class="matching-select">
+                            <option value="">Select definition...</option>
+                            <option value="brain">Brain injury from impact</option>
+                            <option value="bone">Broken bone</option>
+                            <option value="emergency">Emergency medical care</option>
+                            <option value="evacuation">Medical evacuation</option>
+                            <option value="sign">Sign of illness</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="button" onclick="checkMatching()">Check Answers</button>
+            <div id="matchingFeedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        function checkSentences() {
+            const sentences = document.getElementById('sentences').value;
+            const feedback = document.getElementById('sentenceFeedback');
+            
+            if (sentences.split('.').filter(s => s.trim().length > 0).length >= 5) {
+                feedback.textContent = 'Correct! You have written enough sentences.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Please write at least 5 sentences.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        function checkBlanks() {
+            const answers = {
+                blank1: 'injured',
+                blank2: 'medic',
+                blank3: 'symptoms'
+            };
+
+            let allCorrect = true;
+            const feedback = document.getElementById('blankFeedback');
+
+            for (let i = 1; i <= 3; i++) {
+                const input = document.getElementById(`blank${i}`);
+                const userAnswer = input.value.toLowerCase().trim();
+                
+                if (userAnswer !== answers[`blank${i}`]) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+
+            if (allCorrect) {
+                feedback.textContent = 'Correct! All answers are right.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Some answers are incorrect. Please try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        function checkMatching() {
+            const correctAnswers = {
+                term1: 'brain',     // Concussion - Brain injury from impact
+                term2: 'bone',      // Fracture - Broken bone
+                term3: 'emergency', // First Aid - Emergency medical care
+                term4: 'evacuation', // Medevac - Medical evacuation
+                term5: 'sign'       // Symptom - Sign of illness
+            };
+
+            let allCorrect = true;
+            const feedback = document.getElementById('matchingFeedback');
+
+            for (let i = 1; i <= 5; i++) {
+                const select = document.getElementById(`term${i}`);
+                if (select.value !== correctAnswers[`term${i}`]) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+
+            if (allCorrect) {
+                feedback.textContent = 'Correct! All matches are right!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Some matches are incorrect. Please try again.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+    </script>
+</body>
+</html> 

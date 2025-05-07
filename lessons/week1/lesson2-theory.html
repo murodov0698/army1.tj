@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назария - Дарси 2: Рақамҳо, рӯзҳо ва моҳҳо</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 90px auto;
+            padding: 2rem 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .vocabulary-table th,
+        .vocabulary-table td {
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .number-item {
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .example {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            border-left: 4px solid #1a237e;
+            margin: 1rem 0;
+        }
+
+        .correct {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #f44336;
+            font-weight: bold;
+        }
+
+        .tip {
+            background-color: #fff3e0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .activity {
+            background-color: #e3f2fd;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .dialogue {
+            font-style: italic;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid #1a237e;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .calendar-item {
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .section {
+                padding: 1rem;
+            }
+
+            .vocabulary-table th,
+            .vocabulary-table td {
+                padding: 0.5rem;
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 2: Рақамҳо, рӯзҳо ва моҳҳо</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson2-theory.html" class="active">Назария</a>
+            <a href="lesson2-practice.html">Машқҳо</a>
+            <a href="lesson2-video.html">Видео</a>
+        </div>
+
+        <div class="section">
+            <h2>Мақсади дарс</h2>
+            <p>Дар охири ин дарс, донишҷӯён метавонанд рақамҳоро (1-100) истифода баранд, рӯзҳо ва моҳҳоро номбар кунанд ва дар бораи санаҳо савол диҳанд/ҷавоб диҳанд.</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Калимаҳои асосӣ</h2>
+
+            <h3>A. Рақамҳо (1-100)</h3>
+            <h4>Рақамҳои асосӣ (1-20)</h4>
+            <div class="numbers-grid">
+                <div class="number-item">1 - One</div>
+                <div class="number-item">2 - Two</div>
+                <div class="number-item">3 - Three</div>
+                <div class="number-item">4 - Four</div>
+                <div class="number-item">5 - Five</div>
+                <div class="number-item">6 - Six</div>
+                <div class="number-item">7 - Seven</div>
+                <div class="number-item">8 - Eight</div>
+                <div class="number-item">9 - Nine</div>
+                <div class="number-item">10 - Ten</div>
+                <div class="number-item">11 - Eleven</div>
+                <div class="number-item">12 - Twelve</div>
+                <div class="number-item">13 - Thirteen</div>
+                <div class="number-item">14 - Fourteen</div>
+                <div class="number-item">15 - Fifteen</div>
+                <div class="number-item">16 - Sixteen</div>
+                <div class="number-item">17 - Seventeen</div>
+                <div class="number-item">18 - Eighteen</div>
+                <div class="number-item">19 - Nineteen</div>
+                <div class="number-item">20 - Twenty</div>
+            </div>
+
+            <h4>Даҳӣ (30-100)</h4>
+            <div class="numbers-grid">
+                <div class="number-item">30 - Thirty</div>
+                <div class="number-item">40 - Forty</div>
+                <div class="number-item">50 - Fifty</div>
+                <div class="number-item">60 - Sixty</div>
+                <div class="number-item">70 - Seventy</div>
+                <div class="number-item">80 - Eighty</div>
+                <div class="number-item">90 - Ninety</div>
+                <div class="number-item">100 - One hundred</div>
+            </div>
+
+            <div class="example">
+                <h4>Рақамҳои 21-99</h4>
+                <p>Ин рақамҳо аз қоидаи зерин пайравӣ мекунанд:</p>
+                <p>[Даҳӣ] + [Воҳид]</p>
+                <p>Мисолҳо:</p>
+                <div class="numbers-grid">
+                    <div class="number-item">21 - Twenty-one</div>
+                    <div class="number-item">35 - Thirty-five</div>
+                    <div class="number-item">47 - Forty-seven</div>
+                    <div class="number-item">59 - Fifty-nine</div>
+                    <div class="number-item">68 - Sixty-eight</div>
+                    <div class="number-item">72 - Seventy-two</div>
+                    <div class="number-item">84 - Eighty-four</div>
+                    <div class="number-item">96 - Ninety-six</div>
+                </div>
+            </div>
+
+            <h3>B. Рӯзҳои ҳафта</h3>
+            <div class="calendar-grid">
+                <div class="calendar-item">Monday</div>
+                <div class="calendar-item">Tuesday</div>
+                <div class="calendar-item">Wednesday</div>
+                <div class="calendar-item">Thursday</div>
+                <div class="calendar-item">Friday</div>
+                <div class="calendar-item">Saturday</div>
+                <div class="calendar-item">Sunday</div>
+            </div>
+
+            <div class="tip">
+                <p><strong>Қайдҳои муҳим:</strong></p>
+                <ul>
+                    <li>Рӯзҳо ҳамеша бо ҳарфи калон навишта мешаванд</li>
+                    <li>Пешоянд: "on Monday", "on Tuesday" ва ғайра</li>
+                    <li>Рӯзҳои истироҳат: Saturday ва Sunday</li>
+                    <li>Рӯзҳои корӣ: Monday то Friday</li>
+                </ul>
+            </div>
+
+            <h3>C. Моҳҳои сол</h3>
+            <div class="vocabulary-table">
+                <table>
+                    <tr>
+                        <th>Моҳ</th>
+                        <th>Рӯзҳо</th>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>28/29 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>30 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>30 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>30 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>30 рӯз</td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>31 рӯз</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip">
+                <p><strong>Қайдҳои муҳим:</strong></p>
+                <ul>
+                    <li>Моҳҳо ҳамеша бо ҳарфи калон навишта мешаванд</li>
+                    <li>Пешоянд: "in January", "in February" ва ғайра</li>
+                    <li>Моҳҳои 31-рӯза: January, March, May, July, August, October, December</li>
+                    <li>Моҳҳои 30-рӯза: April, June, September, November</li>
+                    <li>February 28 рӯз дорад (29 рӯз дар соли кабиса)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Грамматика: Пурсидан дар бораи санаҳо</h2>
+
+            <div class="example">
+                <h3>Пурсидан дар бораи рӯз</h3>
+                <p><strong>Савол:</strong> "What day is it today?"</p>
+                <p><strong>Ҷавобҳо:</strong></p>
+                <ul>
+                    <li>"It is Monday."</li>
+                    <li>"Today is Tuesday."</li>
+                    <li>"It's Wednesday."</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>Пурсидан дар бораи сана</h3>
+                <p><strong>Савол:</strong> "What is the date today?"</p>
+                <p><strong>Ҷавобҳо:</strong></p>
+                <ul>
+                    <li>"It is July 5th."</li>
+                    <li>"Today is the 5th of July."</li>
+                    <li>"It's March 12th, 2024."</li>
+                </ul>
+            </div>
+
+            <h3>Рақамҳои тартибӣ барои санаҳо</h3>
+            <div class="numbers-grid">
+                <div class="number-item">1st - first</div>
+                <div class="number-item">2nd - second</div>
+                <div class="number-item">3rd - third</div>
+                <div class="number-item">4th - fourth</div>
+                <div class="number-item">5th - fifth</div>
+                <div class="number-item">10th - tenth</div>
+                <div class="number-item">20th - twentieth</div>
+                <div class="number-item">21st - twenty-first</div>
+                <div class="number-item">22nd - twenty-second</div>
+                <div class="number-item">23rd - twenty-third</div>
+                <div class="number-item">30th - thirtieth</div>
+                <div class="number-item">31st - thirty-first</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Машқҳо</h2>
+
+            <div class="activity">
+                <h3>Машқи 1: Машқи ҳисоб</h3>
+                <ol>
+                    <li>Аз 1 то 100 ҳисоб кунед</li>
+                    <li>Бо даҳӣ ҳисоб кунед: 10, 20, 30...100</li>
+                    <li>Рақамҳои тоқ: 1, 3, 5...99</li>
+                    <li>Рақамҳои ҷуфт: 2, 4, 6...100</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Машқи 2: Тартиб додани рӯзҳо ва моҳҳо</h3>
+                <ol>
+                    <li>Кортҳои рӯзҳои ҳафтаро ба тартиб гузоред</li>
+                    <li>Кортҳои моҳҳоро аз January то December ҷо ба ҷо кунед</li>
+                    <li>Моҳҳоро бо фасли худ мувофиқ кунед</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Машқи 3: Нақшбозӣ оид ба санаҳо</h3>
+                <div class="dialogue">
+                    <p><strong>A:</strong> "What day is it today?"</p>
+                    <p><strong>B:</strong> "It's Thursday."</p>
+                </div>
+                <div class="dialogue">
+                    <p><strong>A:</strong> "What's the date today?"</p>
+                    <p><strong>B:</strong> "It's February 15th."</p>
+                </div>
+                <div class="dialogue">
+                    <p><strong>A:</strong> "When is your birthday?"</p>
+                    <p><strong>B:</strong> "My birthday is on June 22nd."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Хатогиҳои маъмул ва маслиҳатҳо</h2>
+            
+            <div class="tip">
+                <p><strong>Хатогиҳои маъмул:</strong></p>
+                <ol>
+                    <li>Фаромӯш кардани ҳарфи калон дар рӯзҳо ва моҳҳо</li>
+                    <li>Истифодаи пешояндҳои нодуруст ("at Monday" ба ҷои "on Monday")</li>
+                    <li>Гуфтани "February 30th" (February ҳеҷ гоҳ 30 рӯз надорад)</li>
+                </ol>
+            </div>
+
+            <div class="tip">
+                <p><strong>Маслиҳатҳои муфид:</strong></p>
+                <ol>
+                    <li>Усули бандҳои ангушт барои дар хотир доштани дарозии моҳҳо</li>
+                    <li>Шеъри "Thirty days has September, April, June, and November..."</li>
+                    <li>Машқи санаҳо тавассути навиштани ҷадвали рӯзона</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Вазифаи хонагӣ</h2>
+            <ol>
+                <li>Рӯзи таваллуди худро пурра нависед (рӯз, сана, моҳ, сол)</li>
+                <li>Барои моҳи таваллудатон як саҳифаи тақвим созед</li>
+                <li>Аз як аъзои оила дар бораи санаи дӯстдоштааш пурсед</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Хулоса</h2>
+            <ul>
+                <li>✓ Рақамҳо аз 1 то 100</li>
+                <li>✓ Ҳамаи 7 рӯзи ҳафта</li>
+                <li>✓ Ҳамаи 12 моҳи сол</li>
+                <li>✓ Чӣ тавр дар бораи санаҳо савол додан ва ҷавоб додан</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

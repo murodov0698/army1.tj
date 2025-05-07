@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 9: Telling Time</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .practice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .clock-exercise {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .analog-clock {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: relative;
+            margin: 1rem auto;
+        }
+
+        .time-input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .schedule-creation {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .conversion-exercise {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .feedback.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .feedback.incorrect {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+
+        .button:hover {
+            background: #1565c0;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Lesson 9. Машқҳо - Telling Time</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson9-theory.html">Назария</a>
+            <a href="lesson9-practice.html" class="active">Машқҳо</a>
+            <a href="lesson9-video.html">Видео</a>
+        </div>
+
+        <div class="practice-container">
+            <!-- Clock Reading Practice -->
+            <div class="practice-section">
+                <h2>A. Clock Reading Practice</h2>
+                <div class="clock-exercise">
+                    <div class="analog-clock" id="practiceClock">
+                        <!-- Clock face will be drawn here -->
+                    </div>
+                    <input type="text" class="time-input" id="timeAnswer" placeholder="Write the time in words...">
+                    <button class="button" onclick="checkTime()">Check Answer</button>
+                    <div id="clockFeedback" class="feedback"></div>
+                </div>
+            </div>
+
+            <!-- Time Writing Exercise -->
+            <div class="practice-section">
+                <h2>B. Time Writing</h2>
+                <div class="clock-exercise">
+                    <p>Write these times in words:</p>
+                    <div>
+                        1. 4:45 → <input type="text" class="time-input" id="time1">
+                        <div id="feedback1" class="feedback"></div>
+                    </div>
+                    <div>
+                        2. 11:30 → <input type="text" class="time-input" id="time2">
+                        <div id="feedback2" class="feedback"></div>
+                    </div>
+                    <div>
+                        3. 8:15 → <input type="text" class="time-input" id="time3">
+                        <div id="feedback3" class="feedback"></div>
+                    </div>
+                    <button class="button" onclick="checkTimeWriting()">Check Answers</button>
+                </div>
+            </div>
+
+            <!-- Schedule Creation -->
+            <div class="practice-section">
+                <h2>C. Daily Schedule Creation</h2>
+                <div class="schedule-creation">
+                    <h3>Personal Schedule</h3>
+                    <p>Create your daily schedule:</p>
+                    <div>
+                        Wake up: <input type="time" class="time-input" id="wakeTime"><br>
+                        Breakfast: <input type="time" class="time-input" id="breakfastTime"><br>
+                        Start work: <input type="time" class="time-input" id="workTime"><br>
+                        Lunch break: <input type="time" class="time-input" id="lunchTime"><br>
+                        End work: <input type="time" class="time-input" id="endTime">
+                    </div>
+                    <button class="button" onclick="createSchedule()">Create Schedule</button>
+                    <div id="scheduleOutput" class="feedback"></div>
+                </div>
+            </div>
+
+            <!-- Time Conversion -->
+            <div class="practice-section">
+                <h2>D. Time Conversion</h2>
+                <div class="conversion-exercise">
+                    <p>Convert to 12-hour format:</p>
+                    <div>
+                        1. 13:00 → <input type="text" class="time-input" id="convert1">
+                        <div id="convertFeedback1" class="feedback"></div>
+                    </div>
+                    <div>
+                        2. 19:45 → <input type="text" class="time-input" id="convert2">
+                        <div id="convertFeedback2" class="feedback"></div>
+                    </div>
+                    <button class="button" onclick="checkConversion()">Check Conversion</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Clock drawing and checking functions
+        function drawClock(hours, minutes) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            const radius = canvas.height / 2;
+            ctx.translate(radius, radius);
+            
+            // Draw clock face
+            ctx.beginPath();
+            ctx.arc(0, 0, radius * 0.9, 0, 2 * Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.strokeStyle = "#333";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Draw numbers
+            ctx.font = radius * 0.15 + "px arial";
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            for(let num = 1; num <= 12; num++) {
+                const ang = num * Math.PI / 6;
+                const x = Math.sin(ang) * (radius * 0.8);
+                const y = -Math.cos(ang) * (radius * 0.8);
+                ctx.fillStyle = "#333";
+                ctx.fillText(num.toString(), x, y);
+            }
+            
+            // Draw hands
+            // Hour hand
+            const hourAngle = (hours % 12 + minutes / 60) * 30 * Math.PI / 180;
+            drawHand(ctx, hourAngle, radius * 0.5, radius * 0.07);
+            
+            // Minute hand
+            const minuteAngle = minutes * 6 * Math.PI / 180;
+            drawHand(ctx, minuteAngle, radius * 0.8, radius * 0.05);
+            
+            // Replace existing clock div content
+            const clockDiv = document.getElementById('practiceClock');
+            clockDiv.innerHTML = '';
+            clockDiv.appendChild(canvas);
+        }
+        
+        function drawHand(ctx, angle, length, width) {
+            ctx.beginPath();
+            ctx.lineWidth = width;
+            ctx.lineCap = "round";
+            ctx.moveTo(0, 0);
+            ctx.rotate(angle);
+            ctx.lineTo(0, -length);
+            ctx.stroke();
+            ctx.rotate(-angle);
+        }
+        
+        // Generate random time when page loads
+        let currentHours = Math.floor(Math.random() * 12);
+        let currentMinutes = Math.floor(Math.random() * 4) * 15; // Only 00, 15, 30, 45
+        drawClock(currentHours, currentMinutes);
+        
+        function checkTime() {
+            const answer = document.getElementById('timeAnswer').value.toLowerCase().trim();
+            let correctAnswer = '';
+            
+            if (currentMinutes === 0) {
+                correctAnswer = `${currentHours} o'clock`;
+            } else if (currentMinutes === 15) {
+                correctAnswer = `quarter past ${currentHours}`;
+            } else if (currentMinutes === 30) {
+                correctAnswer = `half past ${currentHours}`;
+            } else if (currentMinutes === 45) {
+                correctAnswer = `quarter to ${(currentHours % 12) + 1}`;
+            }
+            
+            const isCorrect = answer === correctAnswer;
+            showFeedback('clockFeedback', isCorrect, 
+                'Correct! Well done!', 
+                `Try again. The correct answer is "${correctAnswer}"`);
+                
+            if (isCorrect) {
+                // Generate new random time after correct answer
+                setTimeout(() => {
+                    currentHours = Math.floor(Math.random() * 12);
+                    currentMinutes = Math.floor(Math.random() * 4) * 15;
+                    drawClock(currentHours, currentMinutes);
+                    document.getElementById('timeAnswer').value = '';
+                    document.getElementById('clockFeedback').style.display = 'none';
+                }, 1500);
+            }
+        }
+
+        function checkTimeWriting() {
+            const time1 = document.getElementById('time1').value.toLowerCase();
+            const time2 = document.getElementById('time2').value.toLowerCase();
+            const time3 = document.getElementById('time3').value.toLowerCase();
+            
+            const correct1 = time1 === "quarter to five";
+            const correct2 = time2 === "half past eleven";
+            const correct3 = time3 === "quarter past eight";
+            
+            showFeedback('feedback1', correct1, 'Correct!', 'Try again. Remember: "quarter to"');
+            showFeedback('feedback2', correct2, 'Correct!', 'Try again. Remember: "half past"');
+            showFeedback('feedback3', correct3, 'Correct!', 'Try again. Remember: "quarter past"');
+        }
+
+        function createSchedule() {
+            const schedule = document.getElementById('scheduleOutput');
+            const wakeTime = document.getElementById('wakeTime').value;
+            const breakfastTime = document.getElementById('breakfastTime').value;
+            const workTime = document.getElementById('workTime').value;
+            const lunchTime = document.getElementById('lunchTime').value;
+            const endTime = document.getElementById('endTime').value;
+            
+            // Санҷед, ки ҳамаи майдонҳо пур карда шудаанд
+            if (!wakeTime || !breakfastTime || !workTime || !lunchTime || !endTime) {
+                schedule.textContent = 'Please fill in all time fields';
+                schedule.className = 'feedback incorrect';
+                schedule.style.display = 'block';
+                return;
+            }
+            
+            // Функсия барои табдил додани вақт ба формати 12-соата
+            function formatTime(time) {
+                const [hours, minutes] = time.split(':');
+                const hour = parseInt(hours);
+                const ampm = hour >= 12 ? 'PM' : 'AM';
+                const hour12 = hour % 12 || 12;
+                return `${hour12}:${minutes} ${ampm}`;
+            }
+            
+            // Созед матни ҷадвал
+            const scheduleText = `
+                Your Daily Schedule:
+                ⏰ Wake up: ${formatTime(wakeTime)}
+                🍳 Breakfast: ${formatTime(breakfastTime)}
+                💼 Start work: ${formatTime(workTime)}
+                🍽️ Lunch break: ${formatTime(lunchTime)}
+                🏁 End work: ${formatTime(endTime)}
+            `;
+            
+            // Нишон додани ҷадвал
+            schedule.textContent = scheduleText;
+            schedule.className = 'feedback correct';
+            schedule.style.display = 'block';
+            
+            // Илова кардани тугмаи нусхабардорӣ
+            const copyButton = document.createElement('button');
+            copyButton.textContent = 'Copy Schedule';
+            copyButton.className = 'button';
+            copyButton.style.marginTop = '1rem';
+            copyButton.onclick = () => {
+                navigator.clipboard.writeText(scheduleText.trim())
+                    .then(() => {
+                        copyButton.textContent = 'Copied!';
+                        setTimeout(() => {
+                            copyButton.textContent = 'Copy Schedule';
+                        }, 2000);
+                    });
+            };
+            
+            schedule.appendChild(document.createElement('br'));
+            schedule.appendChild(copyButton);
+        }
+
+        function checkConversion() {
+            const convert1 = document.getElementById('convert1').value.toLowerCase();
+            const convert2 = document.getElementById('convert2').value.toLowerCase();
+            
+            const correct1 = convert1 === "1 o'clock pm";
+            const correct2 = convert2 === "quarter to eight pm";
+            
+            showFeedback('convertFeedback1', correct1, 'Correct!', 'Try again. Remember: 13:00 = 1 PM');
+            showFeedback('convertFeedback2', correct2, 'Try again. Remember: 19:45 = 7:45 PM');
+        }
+
+        function showFeedback(elementId, isCorrect, correctMessage, incorrectMessage) {
+            const feedback = document.getElementById(elementId);
+            feedback.textContent = isCorrect ? correctMessage : incorrectMessage;
+            feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.style.display = 'block';
+        }
+
+        // Mobile menu functionality
+        // ... existing mobile menu code ...
+    </script>
+</body>
+</html> 

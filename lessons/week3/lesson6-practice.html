@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 6: Калимаҳои саволӣ</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .practice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .question-card {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .question-options {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .question-option {
+            padding: 0.5rem 1rem;
+            background: #e3f2fd;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .question-option:hover {
+            background: #bbdefb;
+            transform: translateY(-2px);
+        }
+
+        .question-option.selected {
+            background: #1a237e;
+            color: white;
+        }
+
+        .input-group {
+            margin: 1rem 0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background: #1565c0;
+        }
+
+        .feedback {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .feedback.incorrect {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .score-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .role-play-area {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .role-play-dialogue {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .role-play-line {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .role-play-line.speaker-a {
+            background: #e3f2fd;
+        }
+
+        .role-play-line.speaker-b {
+            background: #f3e5f5;
+            margin-left: 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .practice-section {
+                padding: 1rem;
+            }
+
+            .question-options {
+                flex-direction: column;
+            }
+        }
+
+        .lesson-content{
+            margin-top: 100px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Машқҳо - Дарси 6: Калимаҳои саволӣ</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson6-theory.html">Назария</a>
+            <a href="lesson6-practice.html" class="active">Машқҳо</a>
+            <a href="lesson6-video.html">Видео</a>
+        </div>
+
+        <div class="practice-container">
+            <div class="practice-section">
+                <h2>1. Question Word Selection</h2>
+                <p>Choose the correct question word:</p>
+                <div class="score-container">
+                    <span>Score: <span id="score">0</span></span>
+                    <button class="button" onclick="resetQuestions()">Restart</button>
+                </div>
+                <div id="questions-container"></div>
+                <div class="feedback" id="question-feedback"></div>
+            </div>
+
+            <div class="practice-section">
+                <h2>2. Question Formation</h2>
+                <p>Create questions using the given words:</p>
+                <div class="input-group">
+                    <p>1. commander / who / is → <input type="text" id="sentence1" placeholder="question"></p>
+                    <p>2. operation / when / starts → <input type="text" id="sentence2" placeholder="question"></p>
+                    <p>3. equipment / where / is → <input type="text" id="sentence3" placeholder="question"></p>
+                </div>
+                <button class="button" onclick="checkSentences()">Check</button>
+                <div class="feedback" id="sentence-feedback"></div>
+            </div>
+
+            <div class="practice-section">
+                <h2>3. Role Play - Military Debriefing</h2>
+                <div class="role-play-area">
+                    <p>Select the correct responses:</p>
+                    <div class="role-play-dialogue">
+                        <div class="role-play-line speaker-a">
+                            Commander: "When did the patrol return?"
+                        </div>
+                        <div class="role-play-line speaker-b">
+                            <select id="answer1">
+                                <option value="">Choose an answer...</option>
+                                <option value="correct">At 22:00 hours, sir.</option>
+                                <option value="wrong1">Yes, they did.</option>
+                                <option value="wrong2">The patrol is good.</option>
+                            </select>
+                        </div>
+                        <div class="role-play-line speaker-a">
+                            Commander: "Where did you observe enemy activity?"
+                        </div>
+                        <div class="role-play-line speaker-b">
+                            <select id="answer2">
+                                <option value="">Choose an answer...</option>
+                                <option value="correct">Near the northern ridge, sir.</option>
+                                <option value="wrong1">Yes, we did.</option>
+                                <option value="wrong2">The enemy is active.</option>
+                            </select>
+                        </div>
+                        <div class="role-play-line speaker-a">
+                            Commander: "How many personnel were involved?"
+                        </div>
+                        <div class="role-play-line speaker-b">
+                            <select id="answer3">
+                                <option value="">Choose an answer...</option>
+                                <option value="correct">Approximately 5-6 individuals, sir.</option>
+                                <option value="wrong1">They were personnel.</option>
+                                <option value="wrong2">Yes, they were involved.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="button" onclick="checkDialogue()">Check</button>
+                    <div class="feedback" id="dialogue-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+
+        // Машқи интихоби калимаи саволӣ
+        const questions = [
+            {
+                text: "_____ is your commanding officer?",
+                options: ["What", "Where", "Who", "When"],
+                correct: "Who"
+            },
+            {
+                text: "_____ is the mission briefing?",
+                options: ["What", "When", "Where", "Who"],
+                correct: "When"
+            },
+            {
+                text: "_____ are the weapons stored?",
+                options: ["Where", "What", "When", "Why"],
+                correct: "Where"
+            },
+            {
+                text: "_____ do you need backup?",
+                options: ["Why", "Where", "What", "Who"],
+                correct: "Why"
+            },
+            {
+                text: "_____ do you maintain radio contact?",
+                options: ["How", "What", "Where", "When"],
+                correct: "How"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function createQuestionCard() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            const question = questions[currentQuestion];
+            const card = document.createElement('div');
+            card.className = 'question-card';
+
+            const text = document.createElement('p');
+            text.textContent = question.text;
+            card.appendChild(text);
+
+            const options = document.createElement('div');
+            options.className = 'question-options';
+
+            question.options.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'question-option';
+                button.textContent = option;
+                button.onclick = () => checkAnswer(option);
+                options.appendChild(button);
+            });
+
+            card.appendChild(options);
+            container.appendChild(card);
+            document.getElementById('question-feedback').style.display = 'none';
+        }
+
+        function checkAnswer(selected) {
+            const correct = questions[currentQuestion].correct;
+            if (selected === correct) {
+                score += 20;
+                document.getElementById('score').textContent = score;
+                
+                if (currentQuestion === questions.length - 1) {
+                    showFeedback('correct', 'Табрик! Шумо ҳамаи саволҳоро дуруст ҷавоб додед! Акнун метавонед ба машқи дигар гузаред.');
+                    document.getElementById('questions-container').innerHTML = '';
+                } else {
+                    showFeedback('correct', 'Дуруст!');
+                    setTimeout(() => {
+                        currentQuestion++;
+                        createQuestionCard();
+                    }, 1500);
+                }
+            } else {
+                showFeedback('incorrect', 'Нодуруст. Боз кӯшиш кунед!');
+            }
+        }
+
+        function showFeedback(type, message) {
+            const feedback = document.getElementById('question-feedback');
+            feedback.textContent = message;
+            feedback.className = `feedback ${type}`;
+            feedback.style.display = 'block';
+        }
+
+        function resetQuestions() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('score').textContent = score;
+            createQuestionCard();
+            document.getElementById('question-feedback').style.display = 'none';
+        }
+
+        // Машқи сохтани саволҳо
+        function checkSentences() {
+            const answers = {
+                sentence1: "who is the commander",
+                sentence2: "when does the operation start",
+                sentence3: "where is the equipment"
+            };
+
+            let correct = 0;
+            const feedback = document.getElementById('sentence-feedback');
+
+            for (let i = 1; i <= 3; i++) {
+                const input = document.getElementById(`sentence${i}`);
+                if (input.value.toLowerCase().replace(/[?.,!]/g, '') === answers[`sentence${i}`]) {
+                    correct++;
+                    input.style.backgroundColor = '#c8e6c9';
+                } else {
+                    input.style.backgroundColor = '#ffcdd2';
+                }
+            }
+
+            if (correct === 3) {
+                feedback.textContent = 'Correct! All answers are correct!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = `${correct} out of 3 answers are correct. Try again!`;
+                feedback.className = 'feedback incorrect';
+            }
+
+            feedback.style.display = 'block';
+        }
+
+        // Машқи бозии нақш
+        function checkDialogue() {
+            let correct = 0;
+            const feedback = document.getElementById('dialogue-feedback');
+
+            for (let i = 1; i <= 3; i++) {
+                const answer = document.getElementById(`answer${i}`);
+                if (answer.value === 'correct') {
+                    correct++;
+                    answer.style.backgroundColor = '#c8e6c9';
+                } else {
+                    answer.style.backgroundColor = '#ffcdd2';
+                }
+            }
+
+            if (correct === 3) {
+                feedback.textContent = 'Correct! All answers are correct!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = `${correct} out of 3 answers are correct. Try again!`;
+                feedback.className = 'feedback incorrect';
+            }
+
+            feedback.style.display = 'block';
+        }
+
+        // Оғози машқҳо
+        createQuestionCard();
+    </script>
+</body>
+</html> 

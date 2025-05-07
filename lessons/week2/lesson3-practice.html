@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 3: Ашёҳои маъмулии ҳаррӯза</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .practice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .matching-game {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .matching-card {
+            background: white;
+            border: 2px solid #1a237e;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .matching-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background-color: #f5f5f5;
+        }
+
+        .matching-card.selected {
+            background-color: #1a237e;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .matching-card.matched {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+            cursor: default;
+        }
+
+        .matching-card.error {
+            background-color: #f44336;
+            border-color: #f44336;
+            color: white;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .score-display {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .restart-button {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .restart-button:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px);
+        }
+
+        .sentence-exercise {
+            margin: 1rem 0;
+        }
+
+        .sentence-input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 2px solid #1a237e;
+            border-radius: 4px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .image-card {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .image-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .check-button {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background-color: #303f9f;
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            display: block;
+        }
+
+        .feedback.correct {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .feedback.incorrect {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+
+        @media screen and (max-width: 768px) {
+            .practice-section {
+                padding: 1rem;
+            }
+
+            .matching-game {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Машқҳо - Дарси 3: Ашёҳои маъмулии ҳаррӯза</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson3-theory.html">Назария</a>
+            <a href="lesson3-practice.html" class="active">Машқҳо</a>
+            <a href="lesson3-video.html">Видео</a>
+        </div>
+
+        <div class="practice-container">
+            <div class="practice-section">
+                <h2>Машқи 1: Мувофиқкунӣ</h2>
+                <p>Ашёро бо номи он мувофиқ кунед:</p>
+                <div class="game-controls">
+                    <div class="score-display">
+                        Холҳо: <span id="matching-score">0</span>
+                    </div>
+                    <button class="restart-button" onclick="restartMatchingGame()">
+                        Бозӣ аз нав
+                    </button>
+                </div>
+                <div class="matching-game" id="matching-game">
+                    <!-- JavaScript бо ин элементҳо кор мекунад -->
+                </div>
+                <div id="matching-feedback" class="feedback"></div>
+            </div>
+
+            <div class="practice-section">
+                <h2>Машқи 2: Ҷумласозӣ</h2>
+                <p>Аз "this/that/these/those" истифода бурда, ҷумлаҳоро пурра кунед:</p>
+                <div class="sentence-exercise">
+                    <div>
+                        <p>1. "_____ is a dog." (Саг наздик аст)</p>
+                        <input type="text" class="sentence-input" data-answer="This">
+                    </div>
+                    <div>
+                        <p>2. "_____ are flowers." (Гулҳо дур ҳастанд)</p>
+                        <input type="text" class="sentence-input" data-answer="Those">
+                    </div>
+                    <div>
+                        <p>3. "_____ is my computer." (Компютер наздик аст)</p>
+                        <input type="text" class="sentence-input" data-answer="This">
+                    </div>
+                    <div>
+                        <p>4. "_____ are their books." (Китобҳо наздик ҳастанд)</p>
+                        <input type="text" class="sentence-input" data-answer="These">
+                    </div>
+                    <button class="check-button" onclick="checkSentences()">Санҷидан</button>
+                </div>
+                <div id="sentence-feedback" class="feedback"></div>
+            </div>
+
+            <div class="practice-section">
+                <h2>Машқи 3: Номгузории синфхона</h2>
+                <p>5 ашёи синфхонаро бо забони англисӣ нависед:</p>
+                <div class="sentence-exercise">
+                    <div>
+                        <p>1. Ашё:</p>
+                        <input type="text" class="sentence-input classroom-item">
+                    </div>
+                    <div>
+                        <p>2. Ашё:</p>
+                        <input type="text" class="sentence-input classroom-item">
+                    </div>
+                    <div>
+                        <p>3. Ашё:</p>
+                        <input type="text" class="sentence-input classroom-item">
+                    </div>
+                    <div>
+                        <p>4. Ашё:</p>
+                        <input type="text" class="sentence-input classroom-item">
+                    </div>
+                    <div>
+                        <p>5. Ашё:</p>
+                        <input type="text" class="sentence-input classroom-item">
+                    </div>
+                    <button class="check-button" onclick="checkClassroomItems()">Санҷидан</button>
+                </div>
+                <div id="classroom-feedback" class="feedback"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Маълумот барои бозии мувофиқкунӣ
+        const matchingItems = [
+            { english: "Sofa", tajik: "Диван" },
+            { english: "Television", tajik: "Телевизор" },
+            { english: "Lamp", tajik: "Чароғ" },
+            { english: "Chair", tajik: "Курсӣ" },
+            { english: "Book", tajik: "Китоб" },
+            { english: "Desk", tajik: "Миз" }
+        ];
+
+        // Маълумот барои санҷиши ашёҳои синфхона
+        const classroomItems = [
+            "desk", "chair", "whiteboard", "marker", "notebook", 
+            "pencil", "eraser", "book", "pen", "ruler"
+        ];
+
+        let matchingScore = 0;
+        let selectedCards = [];
+
+        function restartMatchingGame() {
+            matchingScore = 0;
+            document.getElementById('matching-score').textContent = matchingScore;
+            createMatchingGame();
+            document.getElementById('matching-feedback').className = 'feedback';
+            document.getElementById('matching-feedback').textContent = '';
+        }
+
+        // Функсия барои омехта кардани массив
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Функсия барои сохтани бозии мувофиқкунӣ
+        function createMatchingGame() {
+            const gameContainer = document.getElementById('matching-game');
+            gameContainer.innerHTML = '';
+            selectedCards = [];
+            
+            const allCards = [
+                ...matchingItems.map(item => ({ text: item.english, type: 'english', pair: item.tajik })),
+                ...matchingItems.map(item => ({ text: item.tajik, type: 'tajik', pair: item.english }))
+            ];
+            
+            const shuffledCards = shuffleArray([...allCards]);
+            
+            shuffledCards.forEach((card, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'matching-card';
+                cardElement.textContent = card.text;
+                cardElement.dataset.index = index;
+                cardElement.dataset.pair = card.pair;
+                cardElement.addEventListener('click', () => selectCard(cardElement));
+                gameContainer.appendChild(cardElement);
+            });
+        }
+
+        // Функсия барои интихоби корт
+        function selectCard(card) {
+            if (card.classList.contains('matched') || 
+                card.classList.contains('selected') || 
+                selectedCards.length === 2) return;
+            
+            card.classList.add('selected');
+            selectedCards.push(card);
+            
+            if (selectedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+        }
+
+        // Функсия барои санҷиши мувофиқат
+        function checkMatch() {
+            const [card1, card2] = selectedCards;
+            const isMatch = card1.textContent === card2.dataset.pair || 
+                          card2.textContent === card1.dataset.pair;
+            
+            if (isMatch) {
+                card1.classList.remove('selected');
+                card2.classList.remove('selected');
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchingScore += 10;
+                document.getElementById('matching-score').textContent = matchingScore;
+                document.getElementById('matching-feedback').textContent = 'Офарин! Шумо ҷуфти дурустро ёфтед!';
+                document.getElementById('matching-feedback').className = 'feedback correct';
+            } else {
+                card1.classList.add('error');
+                card2.classList.add('error');
+                setTimeout(() => {
+                    card1.classList.remove('selected', 'error');
+                    card2.classList.remove('selected', 'error');
+                }, 1000);
+                document.getElementById('matching-feedback').textContent = 'Нодуруст. Боз кӯшиш кунед!';
+                document.getElementById('matching-feedback').className = 'feedback incorrect';
+            }
+            
+            selectedCards = [];
+
+            // Санҷед, ки оё бозӣ ба охир расидааст
+            const allMatched = document.querySelectorAll('.matched').length === matchingItems.length * 2;
+            if (allMatched) {
+                document.getElementById('matching-feedback').textContent = 'Табрик! Шумо ҳамаи ҷуфтҳоро ёфтед!';
+                document.getElementById('matching-feedback').className = 'feedback correct';
+            }
+        }
+
+        // Функсия барои санҷиши ҷумлаҳо
+        function checkSentences() {
+            const inputs = document.querySelectorAll('.sentence-input:not(.classroom-item)');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const isCorrect = input.value.trim().toLowerCase() === input.dataset.answer.toLowerCase();
+                input.style.borderColor = isCorrect ? '#2e7d32' : '#c62828';
+                if (!isCorrect) allCorrect = false;
+            });
+            
+            const feedback = document.getElementById('sentence-feedback');
+            if (allCorrect) {
+                feedback.textContent = 'Офарин! Ҳамаи ҷавобҳо дуруст!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Баъзе ҷавобҳо нодуруст. Боз кӯшиш кунед!';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        // Функсия барои санҷиши ашёҳои синфхона
+        function checkClassroomItems() {
+            const inputs = document.querySelectorAll('.classroom-item');
+            let correctCount = 0;
+            
+            inputs.forEach(input => {
+                const value = input.value.trim().toLowerCase();
+                const isCorrect = classroomItems.includes(value);
+                input.style.borderColor = isCorrect ? '#2e7d32' : '#c62828';
+                if (isCorrect) correctCount++;
+            });
+            
+            const feedback = document.getElementById('classroom-feedback');
+            if (correctCount === inputs.length) {
+                feedback.textContent = 'Офарин! Ҳамаи ҷавобҳо дуруст!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = `Шумо ${correctCount} ҷавоби дуруст доред. Боз кӯшиш кунед!`;
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+
+        // Оғози бозӣ
+        createMatchingGame();
+    </script>
+</body>
+</html> 

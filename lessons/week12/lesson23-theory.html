@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 23: Comprehensive Review - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 23: Comprehensive Review</h1>
+        <div class="translation">Дарси 23: Баррасии ҳамаҷониба</div>
+        <div class="lesson-navigation">
+            <a href="lesson23-theory.html" class="active">Назария</a>
+            <a href="lesson23-practice.html">Машқҳо</a>
+            <a href="lesson23-video.html">Видео</a>
+        </div>
+
+
+        <div class="section">
+            <h2>Objective</h2>
+            <div class="translation">Мақсад</div>
+            <p>Reinforce all material covered in the course through practical, military-focused applications.</p>
+            <div class="translation">Мустаҳкам кардани ҳамаи маводҳои дарсӣ тавассути татбиқоти амалӣ ва ҳарбӣ.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary &amp; Phrases by Topic</h2>
+            <div class="translation">Луғат ва ибораҳои асосӣ аз рӯи мавзӯъ</div>
+
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Topic</th>
+                    <th>Example Sentences</th>
+                    <th>Translation</th>
+                </tr>
+                <tr>
+                    <td>Greetings &amp; Introductions</td>
+                    <td>
+                        "Good morning, Sergeant. My name is Private Harris."
+                        <br>
+                        "Sir, this is Captain Miller from the 5th Battalion."
+                    </td>
+                    <td>
+                        "Субҳ ба хайр, Сарбоз. Номи ман Сарбози Харрис аст."
+                        <br>
+                        "Ҷаноб, ин Капитан Миллер аз баталиони 5-ум аст."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Military Ranks &amp; Reporting</td>
+                    <td>
+                        "General, the troops are ready for inspection."
+                        <br>
+                        "Report to Major Smith immediately for debriefing."
+                    </td>
+                    <td>
+                        "Генерал, қӯшунҳо барои тафтиш омодаанд."
+                        <br>
+                        "Ба Майор Смит фавран барои ҳисобот гузаред."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Directions &amp; Terrain</td>
+                    <td>
+                        "Advance 200 meters north to the rendezvous point."
+                        <br>
+                        "The enemy position is 50 meters east of the river."
+                    </td>
+                    <td>
+                        "200 метр ба шимол ба нуқтаи вохӯрӣ пеш равед."
+                        <br>
+                        "Ҷойгиршавии душман 50 метр шарқтар аз дарё аст."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Incidents &amp; Emergencies</td>
+                    <td>
+                        "We have a wounded soldier at grid Alpha-Seven. Request medic!"
+                        <br>
+                        "Sir, there's an IED on the road ahead. Take alternate route."
+                    </td>
+                    <td>
+                        "Мо як сарбози захмӣ дар ҳудуди Alpha-Seven дорем. Доктор талаб мекунам!"
+                        <br>
+                        "Ҷаноб, дар роҳи пеш як бомбаи ҳамлакунанда ҳаст. Роҳи дигарро интихоб кунед."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Supplies &amp; Equipment</td>
+                    <td>
+                        "I need additional ammunition and a first aid kit."
+                        <br>
+                        "The radio battery is dead. Replace it ASAP."
+                    </td>
+                    <td>
+                        "Ман ба тирҳои иловагӣ ва ҷузъдончаи аввалин ёрӣ ниёз дорам."
+                        <br>
+                        "Батареяи радио тамом шудааст. Онро ҳатто ба зудӣ иваз кунед."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Weather &amp; Time</td>
+                    <td>
+                        "The mission is delayed due to heavy fog."
+                        <br>
+                        "Squad will move out at 0600 hours."
+                    </td>
+                    <td>
+                        "Вазифа бо сабаби тумани зиёд ба таъхир афтодааст."
+                        <br>
+                        "Гурӯҳ соати 6 субҳ ҳаракат мекунад."
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="translation">Фаъолиятҳо</div>
+
+            <h3>1. Group Discussions (Military Scenarios)</h3>
+            <div class="translation">1. Муҳокимаи гурӯҳӣ (Сенарияҳои ҳарбӣ)</div>
+            <p><strong>Topic 1</strong>: Describe a patrol mission using terrain vocabulary.</p>
+            <div class="translation"><strong>Мавзӯи 1</strong>: Вазифаи патрулро бо истифода аз луғати замин нақл кунед.</div>
+            <p>Example: "We crossed the desert and reached the forest by 1400 hours. The terrain was rocky."</p>
+            <div class="translation">Мисол: "Мо биёбонро гузаштем ва то соати 14 ба ҷангал расидем. Замин санглох буд."</div>
+
+            <p><strong>Topic 2</strong>: Role-play reporting an incident to a superior.</p>
+            <div class="translation"><strong>Мавзӯи 2</strong>: Бозии нақшҳо дар бораи гузориш додан ба мақом.</div>
+            <p>Example: "Captain, we encountered hostile forces near the bridge. Request reinforcements."</p>
+            <div class="translation">Мисол: "Капитан, мо қувваҳои душманро наздикии пул дидем. Қувваҳои қӯшунӣ талаб мекунам."</div>
+
+            <h3>2. Role-Play Simulations</h3>
+            <div class="translation">2. Бозии нақшҳо</div>
+            <p><strong>Scenario A</strong>: Giving Directions in Combat Zone</p>
+            <div class="translation"><strong>Сенарияи A</strong>: Роҳнамоӣ дар минтақаи ҷанг</div>
+            <p>Soldier A: "Turn left at the destroyed building and proceed to the checkpoint."</p>
+            <div class="translation">Сарбоз A: "Дар бинои вайрон чап бигардед ва ба назоратгоҳ биравед."</div>
+            <p>Soldier B: "Confirmed. Moving to checkpoint Delta."</p>
+            <div class="translation">Сарбоз B: "Тасдиқ шуд. Ба назоратгоҳи Delta ҳаракат мекунам."</div>
+
+            <p><strong>Scenario B</strong>: Medical Emergency</p>
+            <div class="translation"><strong>Сенарияи B</strong>: Ҳолати фаврии тиббӣ</div>
+            <p>Medic: "Where is the injured soldier?"</p>
+            <div class="translation">Доктор: "Сарбози захмӣ дар куҷост?"</div>
+            <p>Soldier: "He's behind the sandbags. Leg wound, bleeding heavily."</p>
+            <div class="translation">Сарбоз: "Ӯ пушти қуттиҳои регӣ аст. Захми пой, хунравии зиёд."</div>
+
+            <h3>3. Review Games</h3>
+            <div class="translation">3. Бозиҳои баррасӣ</div>
+            <p><strong>Vocabulary Bingo</strong>:</p>
+            <div class="translation"><strong>Бингои луғат</strong>:</div>
+            <p>Terms: ammunition, sergeant, river, evacuation, helmet.</p>
+            <div class="translation">Ифодаҳо: тир, сарбоз, дарё, эвакуатсия, хӯди ҳарбӣ.</div>
+            <p>Sentence requirement: "The sergeant ordered us to check our helmets."</p>
+            <div class="translation">Ҷумлаи талабӣ: "Сарбоз ба мо фармуд, ки хӯди ҳарбӣ ниёз дорад."</div>
+
+            <p><strong>Sentence-Building Race</strong>:</p>
+            <div class="translation"><strong>Мусобиқаи сохтани ҷумла</strong>:</div>
+            <p>Teams compete to create sentences from word cards (e.g., "radio" + "broken" + "request" = "The radio is broken. Request a replacement.")</p>
+            <div class="translation">Гурӯҳҳо барои сохтани ҷумлаҳо аз кортҳои калима мусобиқа мекунанд (масалан, "радио" + "шикаст" + "талоб" = "Радио шикаст шудааст. Ивазкунӣ талаб мекунам.")</div>
+        </div>
+
+        <div class="section">
+            <h2>Practice Exercise</h2>
+            <div class="translation">Машқи амалӣ</div>
+            <p>Write a Paragraph (Military Context)</p>
+            <div class="translation">Параграф нависед (Контексти ҳарбӣ)</div>
+            <p>Example:</p>
+            <div class="translation">Мисол:</div>
+            <p>"During the mission, our squad moved through the forest at dawn. Corporal Lee spotted enemy movement near the river. I reported to Lieutenant Diaz using my radio. He ordered us to retreat to the extraction point. We arrived at 1100 hours despite heavy rain."</p>
+            <div class="translation">"Дар давоми вазифа, гурӯҳи мо субҳгоҳ аз ҷангал гузашт. Сарбози Ли ҳаракати душманро наздикии дарё дид. Ман ба Лейтенант Диаз бо радио гузориш додам. Ӯ ба мо фармуд, ки ба нуқтаи барқароршавӣ бозгаштем. Мо бо вуҷуди боронҳои зиёд соати 11 расидем."</div>
+
+            <p>Prompt for Students:</p>
+            <div class="translation">Қайд барои хонандагон:</div>
+            <p>Summarize a simulated mission using:</p>
+            <div class="translation">Вазифаи нақлшударо бо истифода аз зерин ҳулосабандӣ кунед:</div>
+            <ul>
+                <li>3 vocabulary words (e.g., "checkpoint," "sergeant," "supplies")</li>
+                <div class="translation">3 калимаи луғат (масалан, "назоратгоҳ," "сарбоз," "захираҳо")</div>
+                <li>2 grammar points (e.g., past tense, imperative commands)</li>
+                <div class="translation">2 нуқтаи грамматикӣ (масалан, замони гузашта, фармонҳои амрӣ)</div>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Additional Reinforcement</h2>
+            <div class="translation">Мустаҳкамкунии иловагӣ</div>
+            <ul>
+                <li>Flashcards: Military terms on one side, example sentences on the reverse.</li>
+                <div class="translation">Кортҳои ёдгирӣ: Ифодаҳои ҳарбӣ дар як тараф, ҷумлаҳои намуна дар тарафи дигар.</div>
+                <li>Error Correction: "He need a helmet" → "He needs a helmet."</li>
+                <div class="translation">Ислоҳи хато: "Ӯ ба хӯди ҳарбӣ ниёз дорад" → "Ӯ ба хӯди ҳарбӣ ниёз дорад."</div>
+                <li>Real-World Task: Listen to a mock radio transmission and write a report.</li>
+                <div class="translation">Вазифаи воқеӣ: Ба паёмҳои нақлиётии радио гӯш диҳед ва гузориш нависед.</div>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

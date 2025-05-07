@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military English Dictionary</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .dictionary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .term-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .term {
+            color: #1a237e;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .example {
+            font-size: 0.9em;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .category {
+            color: #666;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Military English Dictionary</h1>
+        <div class="translation">Луғати забони англисии ҳарбӣ</div>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for terms..." onkeyup="searchTerms()">
+            <div class="translation">Ҷустуҷӯи истилоҳот...</div>
+        </div>
+
+        <div class="dictionary-grid" id="dictionaryGrid">
+            <!-- Ranks -->
+            <div class="term-card">
+                <div class="category">Ranks</div>
+                <div class="term">General</div>
+                <div class="translation">Генерал</div>
+                <div class="example">"General, the troops are ready for deployment."</div>
+                <div class="translation">"Генерал, қӯшунҳо барои фиристода шудан омодаанд."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Ranks</div>
+                <div class="term">Colonel</div>
+                <div class="translation">Полковник</div>
+                <div class="example">"Colonel Smith will lead the operation."</div>
+                <div class="translation">"Полковник Смит амалиётро роҳбарӣ мекунад."</div>
+            </div>
+
+            <!-- Equipment -->
+            <div class="term-card">
+                <div class="category">Equipment</div>
+                <div class="term">Ammunition</div>
+                <div class="translation">Тир</div>
+                <div class="example">"Check your ammunition before the mission."</div>
+                <div class="translation">"Пеш аз вазифа тирҳои худро санҷед."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Equipment</div>
+                <div class="term">Radio</div>
+                <div class="translation">Радио</div>
+                <div class="example">"Keep your radio on channel 3."</div>
+                <div class="translation">"Радиои худро дар канали 3 нигоҳ доред."</div>
+            </div>
+
+            <!-- Commands -->
+            <div class="term-card">
+                <div class="category">Commands</div>
+                <div class="term">Advance</div>
+                <div class="translation">Пеш рафтан</div>
+                <div class="example">"Advance to the next checkpoint!"</div>
+                <div class="translation">"Ба назоратгоҳи навбатӣ пеш равед!"</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Commands</div>
+                <div class="term">Hold Position</div>
+                <div class="translation">Ҷойи худро нигоҳ доред</div>
+                <div class="example">"Hold position until further orders!"</div>
+                <div class="translation">"Ҷойи худро то фармонҳои иловагӣ нигоҳ доред!"</div>
+            </div>
+
+            <!-- Locations -->
+            <div class="term-card">
+                <div class="category">Locations</div>
+                <div class="term">Checkpoint</div>
+                <div class="translation">Назоратгоҳ</div>
+                <div class="example">"Report to checkpoint Alpha."</div>
+                <div class="translation">"Ба назоратгоҳи Alpha гузориш диҳед."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Locations</div>
+                <div class="term">Headquarters</div>
+                <div class="translation">Қароргоҳи асосӣ</div>
+                <div class="example">"All units report to headquarters."</div>
+                <div class="translation">"Ҳамаи воҳидҳо ба қароргоҳи асосӣ гузориш диҳанд."</div>
+            </div>
+
+            <!-- Emergency -->
+            <div class="term-card">
+                <div class="category">Emergency</div>
+                <div class="term">Medevac</div>
+                <div class="translation">Эвакуатсияи тиббӣ</div>
+                <div class="example">"Request medevac for injured soldiers."</div>
+                <div class="translation">"Эвакуатсияи тиббӣ барои сарбозони захмӣ талаб мекунам."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Emergency</div>
+                <div class="term">Backup</div>
+                <div class="translation">Қувваҳои қӯшунӣ</div>
+                <div class="example">"Request immediate backup!"</div>
+                <div class="translation">"Қувваҳои қӯшунӣ талаб мекунам!"</div>
+            </div>
+
+            <!-- Terrain -->
+            <div class="term-card">
+                <div class="category">Terrain</div>
+                <div class="term">Mountain</div>
+                <div class="translation">Кӯҳ</div>
+                <div class="example">"The mountain is steep and rocky."</div>
+                <div class="translation">"Кӯҳ серфароз ва санглох аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Terrain</div>
+                <div class="term">Forest</div>
+                <div class="translation">Ҷангал</div>
+                <div class="example">"The forest is dense and difficult to navigate."</div>
+                <div class="translation">"Ҷангал зич ва ҳаракат дар он душвор аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Terrain</div>
+                <div class="term">River</div>
+                <div class="translation">Дарё</div>
+                <div class="example">"The river is directly ahead."</div>
+                <div class="translation">"Дарё рост пеш аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Terrain</div>
+                <div class="term">Desert</div>
+                <div class="translation">Биёбон</div>
+                <div class="example">"The desert is vast and dry."</div>
+                <div class="translation">"Биёбон васеъ ва хушк аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Terrain</div>
+                <div class="term">Swamp</div>
+                <div class="translation">Батлоқ</div>
+                <div class="example">"The swamp is difficult to cross."</div>
+                <div class="translation">"Гузариш аз батлоқ душвор аст."</div>
+            </div>
+
+            <!-- Weather -->
+            <div class="term-card">
+                <div class="category">Weather</div>
+                <div class="term">Sunny</div>
+                <div class="translation">Офтобӣ</div>
+                <div class="example">"It is sunny today."</div>
+                <div class="translation">"Имрӯз ҳаво офтобӣ аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Weather</div>
+                <div class="term">Rainy</div>
+                <div class="translation">Боронӣ</div>
+                <div class="example">"The weather is rainy."</div>
+                <div class="translation">"Ҳаво боронӣ аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Weather</div>
+                <div class="term">Windy</div>
+                <div class="translation">Шамолӣ</div>
+                <div class="example">"It's very windy today."</div>
+                <div class="translation">"Имрӯз шамол қавӣ аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Weather</div>
+                <div class="term">Foggy</div>
+                <div class="translation">Туманӣ</div>
+                <div class="example">"The weather is foggy."</div>
+                <div class="translation">"Ҳаво туманӣ аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Weather</div>
+                <div class="term">Stormy</div>
+                <div class="translation">Тӯфонӣ</div>
+                <div class="example">"The weather is stormy with heavy rain."</div>
+                <div class="translation">"Ҳаво тӯфонӣ бо борони зиёд аст."</div>
+            </div>
+
+            <!-- Relationships -->
+            <div class="term-card">
+                <div class="category">Relationships</div>
+                <div class="term">Comrade</div>
+                <div class="translation">Ҳамрада</div>
+                <div class="example">"He is my comrade."</div>
+                <div class="translation">"Ӯ ҳамрадаи ман аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Relationships</div>
+                <div class="term">Fellow Soldier</div>
+                <div class="translation">Ҳамрадаи ҳарбӣ</div>
+                <div class="example">"She is my fellow soldier."</div>
+                <div class="translation">"Ӯ ҳамрадаи ҳарбии ман аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Relationships</div>
+                <div class="term">Teammate</div>
+                <div class="translation">Ҳамдаста</div>
+                <div class="example">"They are my teammates."</div>
+                <div class="translation">"Онҳо ҳамдастагони ман ҳастанд."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Relationships</div>
+                <div class="term">Squad Leader</div>
+                <div class="translation">Сардаста</div>
+                <div class="example">"He is my squad leader."</div>
+                <div class="translation">"Ӯ сардастаи ман аст."</div>
+            </div>
+
+            <!-- Military Slang -->
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">11 Bang-Bang</div>
+                <div class="translation">Сарбози пехота</div>
+                <div class="example">"The 11 Bang-Bang unit is ready for deployment."</div>
+                <div class="translation">"Воҳиди пехота барои фиристода шудан омода аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">40 Mike-Mike</div>
+                <div class="translation">Тӯпандози гранатаи M203</div>
+                <div class="example">"Load the 40 Mike-Mike for the mission."</div>
+                <div class="translation">"Тӯпандози гранатаро барои вазифа бор кунед."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Air Picket</div>
+                <div class="translation">Системаи ҳавоӣ барои кашф ва пайгирии ҳаракатҳои душман</div>
+                <div class="example">"The air picket detected enemy movement."</div>
+                <div class="translation">"Системаи ҳавоӣ ҳаракати душманро кашф кард."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Alpha Charlie</div>
+                <div class="translation">Таънир додан, бад кардан</div>
+                <div class="example">"The sergeant gave him an Alpha Charlie for being late."</div>
+                <div class="translation">"Сардӯр барои дер омаданаш ӯро таънир дод."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Bird</div>
+                <div class="translation">Чархбол</div>
+                <div class="example">"The bird is coming in for landing."</div>
+                <div class="translation">"Чархбол барои фуруд омада истодааст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Blue Falcon</div>
+                <div class="translation">Ҳамрадаи хайнкор</div>
+                <div class="example">"Don't trust him, he's a Blue Falcon."</div>
+                <div class="translation">"Ба ӯ бовар макунед, ӯ ҳамрадаи хайнкор аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Charlie Foxtrot</div>
+                <div class="translation">Вазифаи нокомшуда, ҳолати номураттаб</div>
+                <div class="example">"This mission turned into a Charlie Foxtrot."</div>
+                <div class="translation">"Ин вазифа ба ҳолати номураттаб табдил ёфт."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Dust-off</div>
+                <div class="translation">Эвакуатсияи тиббӣ бо чархбол</div>
+                <div class="example">"Request dust-off for wounded soldiers."</div>
+                <div class="translation">"Эвакуатсияи тиббӣ барои сарбозони захмӣ талаб мекунам."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">FOB</div>
+                <div class="translation">Пойгоҳи амалиётии пешӣ</div>
+                <div class="example">"We're returning to the FOB for resupply."</div>
+                <div class="translation">"Мо ба пойгоҳи амалиётии пешӣ барои такмили захираҳо бармегардем."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">IED</div>
+                <div class="translation">Воситаи таркандаи ичодӣ</div>
+                <div class="example">"Watch out for IEDs on the road."</div>
+                <div class="translation">"Дар роҳ ҳушёр бошед, бошад воситаи таркандаи ичодӣ бошад."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Joe</div>
+                <div class="translation">Сарбоз</div>
+                <div class="example">"The Joes are ready for the mission."</div>
+                <div class="translation">"Сарбозҳо барои вазифа омодаанд."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Klicks</div>
+                <div class="translation">Километр</div>
+                <div class="example">"The target is 5 klicks away."</div>
+                <div class="translation">"Ҳадаф 5 километр дур аст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Mustang</div>
+                <div class="translation">Зобит, ки аз сафи сарбозон баланд шудааст</div>
+                <div class="example">"The captain is a mustang officer."</div>
+                <div class="translation">"Капитан зобитест, ки аз сафи сарбозон баланд шудааст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">PCS</div>
+                <div class="translation">Интиқоли доимӣ ба макони нав</div>
+                <div class="example">"I'm getting PCS orders next month."</div>
+                <div class="translation">"Моҳи оянда фармони интиқоли ман ба макони нав меояд."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Ruck Up</div>
+                <div class="translation">Омода шудан барои ҳаракат</div>
+                <div class="example">"Ruck up, we're moving out in 5."</div>
+                <div class="translation">"Омода шавед, мо дар 5 дақиқа ҳаракат мекунем."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Sandbox</div>
+                <div class="translation">Минтақаи биёбонӣ (Ироқ ё Кувайт)</div>
+                <div class="example">"He's been deployed to the sandbox twice."</div>
+                <div class="translation">"Ӯ ду бор ба минтақаи биёбонӣ фиристода шудааст."</div>
+            </div>
+
+            <div class="term-card">
+                <div class="category">Military Slang</div>
+                <div class="term">Zoomie</div>
+                <div class="translation">Ҳавопайморан</div>
+                <div class="example">"The zoomies are providing air support."</div>
+                <div class="translation">"Ҳавопайморан дастгирии ҳавоӣ медиҳанд."</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        function searchTerms() {
+            const input = document.querySelector('.search-input');
+            const filter = input.value.toUpperCase();
+            const cards = document.querySelectorAll('.term-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toUpperCase();
+                if (text.indexOf(filter) > -1) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

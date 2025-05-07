@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 8: Basic Commands</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .practice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .exercise {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .fill-blanks input {
+            width: 120px;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .error-correction {
+            background: #ffebee;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .scenario-creation {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .feedback.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .feedback.incorrect {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+
+        .button:hover {
+            background: #1565c0;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 8: Машқҳо - Фармонҳои асосӣ</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson8-theory.html">Назария</a>
+            <a href="lesson8-practice.html" class="active">Машқҳо</a>
+            <a href="lesson8-video.html">Видео</a>
+        </div>
+
+        <div class="practice-container">
+            <!-- Part 1: Fill in the Blanks -->
+            <div class="practice-section">
+                <h2>Қисми 1: Калимаҳои асосии фармон</h2>
+                <div class="exercise fill-blanks">
+                    <p>Фармонҳои зеринро пурра кунед:</p>
+                    <div>
+                        1. "<input type="text" id="blank1"> at ease!" (Истодан)
+                        <div id="feedback1" class="feedback"></div>
+                    </div>
+                    <div>
+                        2. "<input type="text" id="blank2"> to the commander!" (Ҳисобот диҳед)
+                        <div id="feedback2" class="feedback"></div>
+                    </div>
+                    <button class="button" onclick="checkBlanks()">Санҷидан</button>
+                </div>
+            </div>
+
+            <!-- Part 2: Correct the Errors -->
+            <div class="practice-section">
+                <h2>Қисми 2: Ислоҳи хатоҳо</h2>
+                <div class="exercise error-correction">
+                    <p>Фармонҳои нодурустро ислоҳ кунед:</p>
+                    <div>
+                        1. "You standing up!" → <input type="text" id="error1">
+                        <div id="feedback3" class="feedback"></div>
+                    </div>
+                    <div>
+                        2. "Not move!" → <input type="text" id="error2">
+                        <div id="feedback4" class="feedback"></div>
+                    </div>
+                    <button class="button" onclick="checkErrors()">Санҷидан</button>
+                </div>
+            </div>
+
+            <!-- Part 3: Create Commands -->
+            <div class="practice-section">
+                <h2>Қисми 3: Сохтани фармонҳо</h2>
+                <div class="exercise scenario-creation">
+                    <p>Барои вазъияти посбонӣ 5 фармони асл нависед:</p>
+                    <div>
+                        1. <input type="text" id="command1" placeholder="Stand up" oninput="checkCommand(1)"><br>
+                        2. <input type="text" id="command2" placeholder="Фармонро нависед.." oninput="checkCommand(2)"><br>
+                        3. <input type="text" id="command3" placeholder="Фармонро нависед.." oninput="checkCommand(3)"><br>
+                        4. <input type="text" id="command4" placeholder="Фармонро нависед..." oninput="checkCommand(4)"><br>
+                        5. <input type="text" id="command5" placeholder="Фармонро нависед..." oninput="checkCommand(5)">
+                      <div id="feedback5" class="feedback"></div>
+                    </div>
+                    <div id="commandsFeedback" class="feedback"></div>
+                </div>
+            </div>
+
+            <!-- Assessment Section -->
+            <div class="practice-section">
+                <h2>Санҷиш</h2>
+                <div class="exercise">
+                    <h3>Санҷиши хаттӣ (40%)</h3>
+                    <p>Ин фармонҳоро ба англисӣ тарҷума кунед:</p>
+                    <div>
+                        1. "Истодан!" → <input type="text" id="translate1"><br>
+                        2. "Гӯш кунед!" → <input type="text" id="translate2"><br>
+                        3. "Ист!" → <input type="text" id="translate3">
+                    </div>
+                    <button class="button" onclick="checkTranslations()">Супоридан</button>
+                    <div id="translationsFeedback" class="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        function checkBlanks() {
+            const blank1 = document.getElementById('blank1').value.toLowerCase();
+            const blank2 = document.getElementById('blank2').value.toLowerCase();
+            
+            showFeedback('feedback1', blank1 === 'stand', 'Дуруст!', 'Боз кӯшиш кунед. Маслиҳат: Ин шакли асосии "standing" аст');
+            showFeedback('feedback2', blank2 === 'report', 'Дуруст!', 'Боз кӯшиш кунед. Дар бораи додани маълумот ба касе фикр кунед.');
+        }
+
+        function checkErrors() {
+            const error1 = document.getElementById('error1').value.toLowerCase();
+            const error2 = document.getElementById('error2').value.toLowerCase();
+            
+            showFeedback('feedback3', error1 === 'stand up', 'Дуруст!', 'Боз кӯшиш кунед. Шакли асосии феълро истифода баред.');
+            showFeedback('feedback4', error2 === 'do not move', 'Дуруст!', 'Боз кӯшиш кунед. Шакли инкории фармонро дар хотир доред.');
+        }
+
+        const correctCommands = {
+            1: "stand up",
+            2: "sit down",
+            3: "listen",
+            4: "attention",
+            5: "at ease"
+        };
+
+        function checkCommand(number) {
+            const input = document.getElementById(`command${number}`);
+            const feedback = document.getElementById(`feedback${number}`);
+            const userCommand = input.value.toLowerCase().trim();
+            
+            if (userCommand === correctCommands[number]) {
+                input.style.backgroundColor = '#c8e6c9';
+                showFeedback(`feedback${number}`, true, 'Офарин! Фармон дуруст аст!');
+            } else if (userCommand.length > 0) {
+                input.style.backgroundColor = '#ffcdd2';
+                showFeedback(`feedback${number}`, false, 'Нодуруст. Боз кӯшиш кунед!');
+            } else {
+                input.style.backgroundColor = '';
+                feedback.style.display = 'none';
+            }
+            
+            checkAllCommands();
+        }
+
+        function checkAllCommands() {
+            let allCorrect = true;
+            for (let i = 1; i <= 5; i++) {
+                const input = document.getElementById(`command${i}`);
+                const userCommand = input.value.toLowerCase().trim();
+                if (userCommand !== correctCommands[i]) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+            
+            const feedback = document.getElementById('commandsFeedback');
+            if (allCorrect) {
+                feedback.textContent = 'Табрик! Шумо ҳамаи фармонҳоро дуруст навиштед!';
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+            } else {
+                feedback.style.display = 'none';
+            }
+        }
+
+        function checkTranslations() {
+            const trans1 = document.getElementById('translate1').value.toLowerCase();
+            const trans2 = document.getElementById('translate2').value.toLowerCase();
+            const trans3 = document.getElementById('translate3').value.toLowerCase();
+            
+            const allCorrect = trans1 === 'stand up' && trans2 === 'listen' && trans3 === 'stop';
+            
+            showFeedback('translationsFeedback', allCorrect, 
+                'Тарҷумаҳои аъло!', 
+                'Тарҷумаҳоро аз нав дида бароед. Шаклҳои асосии фармонро истифода баред.');
+        }
+
+        function showFeedback(elementId, isCorrect, message) {
+            const feedback = document.getElementById(elementId);
+            feedback.textContent = message;
+            feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.style.display = 'block';
+        }
+
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+    </script>
+</body>
+</html> 

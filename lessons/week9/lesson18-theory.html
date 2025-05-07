@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18: Terrain Vocabulary - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #f5f5f5;
+        }
+
+        .example {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .activity {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .activity h4 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+
+        .grammar-point {
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 18: Terrain Vocabulary</h1>
+        <div class="lesson-navigation">
+            <a href="lesson18-theory.html" class="active">Назария</a>
+            <a href="lesson18-practice.html">Машқҳо</a>
+            <a href="lesson18-video.html">Видео</a>
+        </div>
+        <div class="section">
+            <h2>Objective</h2>
+            <p>In this lesson, students will learn and practice vocabulary related to different types of terrain. Understanding terrain is essential for military operations, as it influences mission planning, navigation, and strategy.</p>
+            <div class="translation">Дар ин дарс донишҷӯён луғати марбут ба навъҳои гуногуни саҳроро меомӯзанд ва машқ мекунанд. Фаҳмидани саҳр барои амалиётҳои ҳарбӣ зарур аст, зеро он ба тарҳрезии миссия, ҳаракат ва стратегия таъсир мерасонад.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary</h2>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Word</th>
+                    <th>Definition</th>
+                    <th>Example</th>
+                    <th>Тарҷума</th>
+                </tr>
+                <tr>
+                    <td>Mountain</td>
+                    <td>A natural elevation of the earth's surface</td>
+                    <td class="example">"The soldiers had to climb the mountain to establish a strategic observation point."</td>
+                    <td>Кӯҳ - Баромади табиии сатҳи замин</td>
+                </tr>
+                <tr>
+                    <td>Forest</td>
+                    <td>A large area dominated by trees and vegetation</td>
+                    <td class="example">"The forest provided cover for the soldiers during their stealth mission."</td>
+                    <td>Ҷангал - Минтақаи васеъ бо дарахтон ва наботот</td>
+                </tr>
+                <tr>
+                    <td>River</td>
+                    <td>A natural flowing body of water</td>
+                    <td class="example">"The soldiers crossed the river using inflatable boats."</td>
+                    <td>Дарё - Ҷисми оби табиӣ</td>
+                </tr>
+                <tr>
+                    <td>Desert</td>
+                    <td>A dry and often sandy region</td>
+                    <td class="example">"The soldiers had to navigate through the desert with limited water supplies."</td>
+                    <td>Биёбон - Минтақаи хушк ва аксар вақт регзор</td>
+                </tr>
+                <tr>
+                    <td>Road</td>
+                    <td>A wide way leading from one place to another</td>
+                    <td class="example">"The soldiers followed the road to reach the base camp."</td>
+                    <td>Роҳ - Роҳи васеъ аз як ҷой ба ҷойи дигар</td>
+                </tr>
+                <tr>
+                    <td>Hill</td>
+                    <td>A natural elevation smaller than a mountain</td>
+                    <td class="example">"The soldiers set up their sniper position on the top of the hill."</td>
+                    <td>Теппа - Баромади табиӣ хурдтар аз кӯҳ</td>
+                </tr>
+                <tr>
+                    <td>Valley</td>
+                    <td>A low area between hills or mountains</td>
+                    <td class="example">"The soldiers moved through the valley to avoid detection."</td>
+                    <td>Водӣ - Минтақаи паст байни теппаҳо ё кӯҳҳо</td>
+                </tr>
+                <tr>
+                    <td>Swamp</td>
+                    <td>A wetland covered with water and vegetation</td>
+                    <td class="example">"The soldiers had to cross the swamp carefully to avoid sinking."</td>
+                    <td>Батлоқ - Замини нам бо об ва наботот</td>
+                </tr>
+                <tr>
+                    <td>Jungle</td>
+                    <td>A tropical region with dense vegetation</td>
+                    <td class="example">"The soldiers used machetes to cut through the thick jungle."</td>
+                    <td>Ҷангали тропикӣ - Минтақаи тропикӣ бо набототи зич</td>
+                </tr>
+                <tr>
+                    <td>Plains</td>
+                    <td>A flat or gently undulating land surface</td>
+                    <td class="example">"The soldiers conducted a reconnaissance mission across the open plains."</td>
+                    <td>Ҳамвориҳо - Сатҳи замини ҳамвор ё нисбатан ҳамвор</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grammar Point</h2>
+            <div class="grammar-point">
+                <h3>Describing Terrain</h3>
+                <p>Learn how to describe terrain using these structures:</p>
+                <ul>
+                    <li>"The mountain is steep." <span class="translation">("Кӯҳ серфароз аст.")</span></li>
+                    <li>"We are moving through the forest." <span class="translation">("Мо аз ҷангал мегузарем.")</span></li>
+                    <li>"The river is directly ahead." <span class="translation">("Дарё рост пеш аст.")</span></li>
+                    <li>"The forest is dense and difficult to navigate." <span class="translation">("Ҷангал зич ва ҳаракат дар он душвор аст.")</span></li>
+                    <li>"We need to climb the mountain." <span class="translation">("Мо бояд кӯҳро пеш кунем.")</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="activity">
+                <h4>1. Vocabulary Practice</h4>
+                <p>Match each vocabulary word with its definition and discuss terrain challenges:</p>
+                <div class="example">
+                    "Why is it important for soldiers to know how to navigate through a swamp?" <span class="translation">("Чаро муҳим аст, ки сарбозон бидонанд чӣ тавр аз батлоқ гузаранд?")</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h4>2. Role-Play</h4>
+                <p>Practice terrain description and mission planning:</p>
+                <div class="example">
+                    Soldier: "The mountain is steep and rocky." <span class="translation">("Сарбоз: Кӯҳ серфароз ва санглох аст.")</span><br>
+                    Mission Planner: "We'll need ropes and climbing gear." <span class="translation">("Тарҳрез: Мо ба арқон ва асбобҳои баромад ниёз дорем.")</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h4>3. Scenario-Based Practice</h4>
+                <p>Create a simulated military scenario with terrain navigation:</p>
+                <div class="example">
+                    "A group of soldiers needs to move through a dense forest to reach their objective." <span class="translation">("Гурӯҳе аз сарбозон бояд аз ҷангали зич гузаранд то ба ҳадафи худ бирасанд.")</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Homework</h2>
+            <ul>
+                <li>Write a paragraph describing terrain navigation during a mission</li>
+                <li>Create vocabulary flashcards</li>
+                <li>Research terrain importance in military operations</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Assessment</h2>
+            <ul>
+                <li><strong>Oral Assessment:</strong> Role-play terrain description scenarios</li>
+                <li><strong>Written Assessment:</strong> Terrain report for a military operation</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

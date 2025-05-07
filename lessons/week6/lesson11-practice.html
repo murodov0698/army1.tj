@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: Incident-Related Vocabulary - Practice</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .exercise {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .exercise h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .scenario {
+            background-color: #f0f4ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #303f9f;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+
+        .role-play-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .option {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #e8eaf6;
+        }
+
+        .selected {
+            background-color: #c5cae9;
+            border-color: #1a237e;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 11. Practice Exercises: Incident-Related Vocabulary</h1>
+        <div class="lesson-navigation">
+            <a href="lesson11-theory.html">Назария</a>
+            <a href="lesson11-practice.html" class="active">Машқҳо</a>
+            <a href="lesson11-video.html">Видео</a>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 1: Incident Report Writing</h3>
+            <div class="scenario">
+                <p><strong>Scenario:</strong> A training accident has occurred during a live-fire exercise. Write a brief report using the vocabulary learned.</p>
+            </div>
+            <div class="input-group">
+                <label for="report">Your Report:</label>
+                <textarea id="report" rows="5" placeholder="Write your report here..."></textarea>
+            </div>
+            <button onclick="checkReport()">Submit Report</button>
+            <div id="reportFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 2: Emergency Response</h3>
+            <p>Complete the sentences using appropriate vocabulary:</p>
+            <div class="input-group">
+                <label>1. During the patrol, we encountered an _______ situation requiring immediate evacuation.</label>
+                <input type="text" id="response1" placeholder="Enter the missing word">
+            </div>
+            <div class="input-group">
+                <label>2. There is _______ from enemy fire in the northern sector.</label>
+                <input type="text" id="response2" placeholder="Enter the missing word">
+            </div>
+            <div class="input-group">
+                <label>3. We need _______ with the wounded soldiers immediately.</label>
+                <input type="text" id="response3" placeholder="Enter the missing word">
+            </div>
+            <button onclick="checkResponses()">Check Answers</button>
+            <div id="responseFeedback" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 3: Role-Play Response</h3>
+            <div class="scenario">
+                <p><strong>Situation:</strong> You receive a report of an armed robbery near the military base. Choose the most appropriate response:</p>
+            </div>
+            <div class="role-play-options">
+                <div class="option" onclick="selectOption(this, 1)">
+                    "I will check it tomorrow morning."
+                </div>
+                <div class="option" onclick="selectOption(this, 2)">
+                    "This is an emergency situation. I need immediate backup and secure the perimeter."
+                </div>
+                <div class="option" onclick="selectOption(this, 3)">
+                    "Let's wait and see what happens."
+                </div>
+            </div>
+            <button onclick="checkRolePlay()">Submit Response</button>
+            <div id="rolePlayFeedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle menu
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Exercise 1: Report checking
+        function checkReport() {
+            const report = document.getElementById('report').value.toLowerCase();
+            const feedback = document.getElementById('reportFeedback');
+            const requiredWords = ['accident', 'emergency', 'help'];
+            
+            let usedWords = requiredWords.filter(word => report.includes(word));
+            
+            if (report.length < 20) {
+                feedback.textContent = 'Please write a more detailed report.';
+                feedback.className = 'feedback incorrect';
+            } else if (usedWords.length >= 2) {
+                feedback.textContent = 'Excellent report! You used the vocabulary correctly.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Try to use more of the vocabulary words we learned.';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        // Exercise 2: Emergency response
+        function checkResponses() {
+            const answers = {
+                response1: 'emergency',
+                response2: 'danger',
+                response3: 'help'
+            };
+            
+            let correct = 0;
+            const feedback = document.getElementById('responseFeedback');
+            
+            for (let i = 1; i <= 3; i++) {
+                const response = document.getElementById('response' + i).value.toLowerCase();
+                if (response === answers['response' + i]) {
+                    correct++;
+                }
+            }
+            
+            if (correct === 3) {
+                feedback.textContent = 'Perfect! All answers are correct.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = `You got ${correct} out of 3 correct. Try again!`;
+                feedback.className = 'feedback incorrect';
+            }
+        }
+
+        // Exercise 3: Role-play
+        let selectedOption = null;
+
+        function selectOption(element, option) {
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedOption = option;
+        }
+
+        function checkRolePlay() {
+            const feedback = document.getElementById('rolePlayFeedback');
+            
+            if (selectedOption === 2) {
+                feedback.textContent = 'Correct! This is the most appropriate response for an emergency situation.';
+                feedback.className = 'feedback correct';
+            } else if (selectedOption === null) {
+                feedback.textContent = 'Please select a response.';
+                feedback.className = 'feedback incorrect';
+            } else {
+                feedback.textContent = 'This situation requires immediate action. Try again!';
+                feedback.className = 'feedback incorrect';
+            }
+        }
+    </script>
+</body>
+</html> 

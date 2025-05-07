@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 22: Travel Phrases - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 22: Travel Phrases</h1>
+        <div class="translation">Дарси 22: Ибораҳои сафар</div>
+        <div class="lesson-navigation">
+            <a href="lesson22-theory.html" class="active">Назария</a>
+            <a href="lesson22-practice.html">Машқҳо</a>
+            <a href="lesson22-video.html">Видео</a>
+        </div>
+
+
+        <div class="section">
+            <h2>Objective</h2>
+            <div class="translation">Мақсад</div>
+            <p>Learn essential phrases for planning and discussing travel.</p>
+            <div class="translation">Омӯзиши ибораҳои асосӣ барои барномарезии ва муҳокимаи сафар.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary</h2>
+            <div class="translation">Луғати асосӣ</div>
+
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Travel Phrase</th>
+                    <th>Example Sentence</th>
+                    <th>Translation</th>
+                </tr>
+                <tr>
+                    <td>Where is the airport?</td>
+                    <td>"Where is the military airstrip?"</td>
+                    <td>"Фурудгоҳи ҳарбӣ дар куҷост?"</td>
+                </tr>
+                <tr>
+                    <td>I need a ticket.</td>
+                    <td>"I need a ticket to the military base."</td>
+                    <td>"Ман ба билети ба пойгоҳи ҳарбӣ ниёз дорам."</td>
+                </tr>
+                <tr>
+                    <td>Where is the bus station?</td>
+                    <td>"Where is the nearest bus station to the training camp?"</td>
+                    <td>"Наздиктарин истгоҳи автобус ба лагерҳои машқ дар куҷост?"</td>
+                </tr>
+                <tr>
+                    <td>How do I get to the hotel?</td>
+                    <td>"How do I get to the military barracks?"</td>
+                    <td>"Чӣ тавр ба казармаи ҳарбӣ биравам?"</td>
+                </tr>
+                <tr>
+                    <td>What time does the train leave?</td>
+                    <td>"What time does the supply train depart?"</td>
+                    <td>"Роҳи оҳани захираҳо соати чанд меравад?"</td>
+                </tr>
+                <tr>
+                    <td>Can you help me with the map?</td>
+                    <td>"Can you help me with the mission map?"</td>
+                    <td>"Оё шумо метавонед бо харитаи вазифа ба ман кумак кунед?"</td>
+                </tr>
+                <tr>
+                    <td>I want to go to the city.</td>
+                    <td>"I want to go to the nearby city for leave."</td>
+                    <td>"Ман мехоҳам ба шаҳри наздик барои иҷозат биравам."</td>
+                </tr>
+                <tr>
+                    <td>Do you have a schedule?</td>
+                    <td>"Do you have the flight schedule for the deployment?"</td>
+                    <td>"Оё шумо барномаи парвози ҳамларо доред?"</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grammar Point</h2>
+            <div class="translation">Нуқтаи грамматикӣ</div>
+
+            <h3>Using "Need" and "Want"</h3>
+            <div class="translation">Истифодаи "Need" ва "Want"</div>
+            <ul>
+                <li>
+                    "I need a ticket to the city."
+                    <div class="translation">"Ман ба билети ба шаҳр ниёз дорам."</div>
+                </li>
+                <li>
+                    "I want to go to the military base."
+                    <div class="translation">"Ман мехоҳам ба пойгоҳи ҳарбӣ биравам."</div>
+                </li>
+                <li>
+                    "We need a map to navigate the area."
+                    <div class="translation">"Мо ба харита барои ҳаракат дар минтақа ниёз дорем."</div>
+                </li>
+                <li>
+                    "They want to book a seat on the plane."
+                    <div class="translation">"Онҳо мехоҳанд ҷойи худро дар ҳавопаймо забт кунанд."</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="translation">Фаъолиятҳо</div>
+
+            <h3>1. Role-Play: Planning a Military Mission</h3>
+            <div class="translation">1. Бозии нақшҳо: Барномарезии вазифаи ҳарбӣ</div>
+            <p>Students act as military personnel planning a trip.</p>
+            <div class="translation">Хонандагон ҳамчун афсарони ҳарбӣ, ки сафари худро тартиб медиҳанд, нақш мебозанд.</div>
+            <ul>
+                <li>
+                    <strong>Soldier A</strong>: "Where is the nearest airstrip?"
+                    <div class="translation"><strong>Сарбоз A</strong>: "Наздиктарин фурудгоҳ дар куҷост?"</div>
+                </li>
+                <li>
+                    <strong>Soldier B</strong>: "It's 10 kilometers north of here. We can take the convoy."
+                    <div class="translation"><strong>Сарбоз B</strong>: "Он 10 километр шимолтар аз ин ҷо аст. Мо метавонем бо корвон биравем."</div>
+                </li>
+            </ul>
+
+            <h3>2. Create a Travel Dialogue</h3>
+            <div class="translation">2. Сохтани муколамаи сафар</div>
+            <p>Write a short conversation between two soldiers planning a trip.</p>
+            <div class="translation">Муколамаи кӯтоҳи байни ду сарбоз, ки сафари худро тартиб медиҳанд, нависед.</div>
+            <ul>
+                <li>
+                    <strong>Soldier 1</strong>: "I need a ticket to the eastern base."
+                    <div class="translation"><strong>Сарбоз 1</strong>: "Ман ба билети ба пойгоҳи шарқӣ ниёз дорам."</div>
+                </li>
+                <li>
+                    <strong>Soldier 2</strong>: "The next plane leaves at 0900 hours."
+                    <div class="translation"><strong>Сарбоз 2</strong>: "Ҳавопаймои навбатӣ соати 9 меравад."</div>
+                </li>
+            </ul>
+
+            <h3>3. Map Navigation Exercise</h3>
+            <div class="translation">3. Машқи ҳаракат бо харита</div>
+            <p>Use a map to give directions to a partner.</p>
+            <div class="translation">Бо истифода аз харита роҳнамоӣ ба ҳамкор кунед.</div>
+            <p>Example: "Go straight for 5 kilometers, then turn left at the checkpoint."</p>
+            <div class="translation">Мисол: "5 километр рост биравед, сипас дар назоратгоҳ чап бигардед."</div>
+
+            <h3>4. Role-Play: Booking Travel</h3>
+            <div class="translation">4. Бозии нақшҳо: Забти сафар</div>
+            <p>Practice phrases for booking tickets or arranging transport.</p>
+            <div class="translation">Ибораҳои забти билет ё тартиб додани нақлиётро машқ кунед.</div>
+            <ul>
+                <li>
+                    <strong>Officer</strong>: "Do you have a schedule for the cargo planes?"
+                    <div class="translation"><strong>Афсар</strong>: "Оё шумо барномаи ҳавопаймоҳои борро доред?"</div>
+                </li>
+                <li>
+                    <strong>Agent</strong>: "Yes, the next flight departs in two hours."
+                    <div class="translation"><strong>Агент</strong>: "Бале, парвози навбатӣ дар ду соат меравад."</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Practice Exercise</h2>
+            <div class="translation">Машқи амалӣ</div>
+            <p>Write 5 travel-related sentences using the key phrases in military contexts.</p>
+            <div class="translation">5 ҷумлаи марбут ба сафарро бо истифода аз ибораҳои асосӣ дар контексти ҳарбӣ нависед.</div>
+            <ul>
+                <li>
+                    "Where is the military airstrip?"
+                    <div class="translation">"Фурудгоҳи ҳарбӣ дар куҷост?"</div>
+                </li>
+                <li>
+                    "I need a ticket to the eastern base."
+                    <div class="translation">"Ман ба билети ба пойгоҳи шарқӣ ниёз дорам."</div>
+                </li>
+                <li>
+                    "What time does the supply train depart?"
+                    <div class="translation">"Роҳи оҳани захираҳо соати чанд меравад?"</div>
+                </li>
+                <li>
+                    "Can you help me with the mission map?"
+                    <div class="translation">"Оё шумо метавонед бо харитаи вазифа ба ман кумак кунед?"</div>
+                </li>
+                <li>
+                    "We want to book seats on the cargo plane."
+                    <div class="translation">"Мо мехоҳем ҷойҳои худро дар ҳавопаймои борӣ забт кунем."</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Additional Exercise: Create a Military Travel Plan</h2>
+            <div class="translation">Машқи иловагӣ: Сохтани барномаи сафари ҳарбӣ</div>
+            <p>Write a short paragraph describing how you would plan a trip for a military mission, using at least 5 key phrases.</p>
+            <div class="translation">Параграфи кӯтоҳе нависед, ки чӣ тавр шумо сафари вазифаи ҳарбиро тартиб медиҳед, бо истифода аз ҳадди ақал 5 ибораи асосӣ.</div>
+            <p>Example: "First, I need a ticket to the eastern base. I also need a map to navigate the area. Where is the nearest airstrip? I want to book a seat on the cargo plane. Can you help me with the flight schedule?"</p>
+            <div class="translation">Мисол: "Аввал, ман ба билети ба пойгоҳи шарқӣ ниёз дорам. Ман инчунин ба харита барои ҳаракат дар минтақа ниёз дорам. Наздиктарин фурудгоҳ дар куҷост? Ман мехоҳам ҷойи худро дар ҳавопаймои борӣ забт кунам. Оё шумо метавонед бо барномаи парвоз ба ман кумак кунед?"</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

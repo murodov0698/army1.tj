@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 19: Health-Related Vocabulary - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #f5f5f5;
+        }
+
+        .example {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .activity {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .activity h4 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+
+        .grammar-point {
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 19: Health-Related Vocabulary</h1>   
+        <div class="lesson-navigation">
+            <a href="lesson19-theory.html" class="active">Назария</a>
+            <a href="lesson19-practice.html">Машқҳо</a>
+            <a href="lesson19-video.html">Видео</a>
+        </div>
+        
+        <div class="section">
+            <h2>Objective</h2>
+            <p>To learn and practice health-related vocabulary and grammar necessary for effective communication in military contexts. This lesson will focus on describing symptoms, explaining medical conditions, and using military-specific terminology.</p>
+            <div class="translation">Омӯхтан ва машқ кардани луғат ва грамматикаи марбут ба саломатӣ барои алоқаи муассир дар контекстҳои ҳарбӣ. Ин дарс ба тавсифи аломатҳо, шарҳи ҳолатҳои тиббӣ ва истифодаи истилоҳоти махсуси ҳарбӣ диққат медиҳад.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary</h2>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Word</th>
+                    <th>Definition</th>
+                    <th>Example</th>
+                    <th>Тарҷума</th>
+                </tr>
+                <tr>
+                    <td>Sick (ill)</td>
+                    <td>Not in good health</td>
+                    <td class="example">"I feel sick with a fever and need to see the medic."</td>
+                    <td>Бемор - Дар ҳолати хуб нест</td>
+                </tr>
+                <tr>
+                    <td>Injured (wounded)</td>
+                    <td>Hurt or harmed</td>
+                    <td class="example">"The soldier was injured during the training exercise."</td>
+                    <td>Зардард - Осебдида ё захмӣ</td>
+                </tr>
+                <tr>
+                    <td>Doctor (medic)</td>
+                    <td>Medical professional</td>
+                    <td class="example">"We need the medic to check the soldier's injury."</td>
+                    <td>Духтур (тиббӣ) - Корманди тиббӣ</td>
+                </tr>
+                <tr>
+                    <td>Hospital</td>
+                    <td>Medical facility</td>
+                    <td class="example">"The injured soldier was airlifted to the hospital."</td>
+                    <td>Беморхона - Муассисаи тиббӣ</td>
+                </tr>
+                <tr>
+                    <td>Pain</td>
+                    <td>Physical suffering</td>
+                    <td class="example">"I have a sharp pain in my chest."</td>
+                    <td>Дард - Озари ҷисмонӣ</td>
+                </tr>
+                <tr>
+                    <td>Symptom</td>
+                    <td>Sign of illness</td>
+                    <td class="example">"The soldier reported symptoms of fever and fatigue."</td>
+                    <td>Аломат - Нишонаи беморӣ</td>
+                </tr>
+                <tr>
+                    <td>Concussion</td>
+                    <td>Brain injury</td>
+                    <td class="example">"The soldier suffered a concussion during the explosion."</td>
+                    <td>Зарбаи мағз - Осеби мағз</td>
+                </tr>
+                <tr>
+                    <td>Fracture</td>
+                    <td>Broken bone</td>
+                    <td class="example">"The soldier has a fractured leg."</td>
+                    <td>Шикастагӣ - Устухони шикаста</td>
+                </tr>
+                <tr>
+                    <td>First Aid</td>
+                    <td>Emergency medical care</td>
+                    <td class="example">"The medic provided first aid to the injured soldier."</td>
+                    <td>Ёрии аввалин - Ғамхорӣи тиббии фавран</td>
+                </tr>
+                <tr>
+                    <td>Medevac</td>
+                    <td>Medical evacuation</td>
+                    <td class="example">"The injured soldier was medevaced to the nearest hospital."</td>
+                    <td>Эвакуатсияи тиббӣ - Баровардани тиббӣ</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grammar Point</h2>
+            <div class="grammar-point">
+                <h3>Describing Symptoms</h3>
+                <ul>
+                    <li>"I feel sick with a fever." <span class="translation">("Ман бо таб бемор ҳастам.")</span></li>
+                    <li>"My arm hurts; I think it's fractured." <span class="translation">("Дастам дард мекунад; ман фикр мекунам ки шикаста аст.")</span></li>
+                    <li>"He has a headache and feels dizzy." <span class="translation">("Ӯ сардард дорад ва ҳис мекунад ки гардон мезанад.")</span></li>
+                </ul>
+
+                <h3>Reporting Medical Conditions</h3>
+                <ul>
+                    <li>"The soldier is experiencing symptoms of dehydration." <span class="translation">("Сарбоз аломатҳои камобиро ҳис мекунад.")</span></li>
+                    <li>"We need to medevac the wounded immediately." <span class="translation">("Мо бояд захмӣро фавран эвакуатсия кунем.")</span></li>
+                    <li>"The patient is stable but requires further treatment." <span class="translation">("Бемор устувор аст, аммо ба табобати иловагӣ ниёз дорад.")</span></li>
+                </ul>
+
+                <h3>Asking for Medical Assistance</h3>
+                <ul>
+                    <li>"We need a medic here now!" <span class="translation">("Мо ҳозир дар ин ҷо ба тиббӣ ниёз дорем!")</span></li>
+                    <li>"Can you administer first aid?" <span class="translation">("Оё шумо метавонед ёрии аввалин расонида?")</span></li>
+                    <li>"We have a casualty with a severe injury." <span class="translation">("Мо як захмӣ бо осеби вазнин дорем.")</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="activity">
+                <h4>1. Partner Practice</h4>
+                <p>Practice describing symptoms with a partner:</p>
+                <div class="example">
+                    "I feel sick with a headache and a sore throat." <span class="translation">("Ман бо сардард ва гулӯдард бемор ҳастам.")</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h4>2. Role-Play</h4>
+                <p>Practice medical scenarios:</p>
+                <div class="example">
+                    Soldier: "I have a sharp pain in my chest." <span class="translation">("Сарбоз: Ман дар синаам дарди тез дорам.")</span><br>
+                    Medic: "Where exactly does it hurt?" <span class="translation">("Тиббӣ: Дар кадом ҷо дард мекунад?")</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h4>3. Group Discussion</h4>
+                <p>Discuss health challenges in military settings:</p>
+                <div class="example">
+                    "Common issues include dehydration, injuries, and mental health concerns." <span class="translation">("Масъалаҳои умумӣ камобӣ, осебҳо ва мушкилоти рӯҳӣ мебошанд.")</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Homework</h2>
+            <ul>
+                <li>Write 5 sentences describing symptoms</li>
+                <li>Create a dialogue between a soldier and medic</li>
+                <li>Write a medical incident report</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Assessment</h2>
+            <ul>
+                <li><strong>Oral Assessment:</strong> Role-play medical scenarios</li>
+                <li><strong>Written Assessment:</strong> Medical reports and dialogues</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

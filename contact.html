@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Асосӣ</a></li>
+                <li><a href="lessons.html">Дарсҳо</a></li>
+                <li><a href="contact.html">Контакт</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Контакт</h1>
+        <p>Маълумоти худро бо ҳамроҳи ман ба ман таҳрир диҳед.</p>
+        <form action="submit_form.php" method="post">
+            <label for="name">Номи шумо:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Имэйл шумо:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Мессеҷ:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Таҳрир диҳед</button>
+        </form>
+    </main>
+    <div style="text-align:center; margin: 30px 0;">
+        <a href="https://wa.me/992915774815" target="_blank" style="display:inline-block; margin:0 10px; text-decoration:none;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:32px; vertical-align:middle;"> WhatsApp
+        </a>
+        <a href="https://t.me/hamzamurodov" target="_blank" style="display:inline-block; margin:0 10px; text-decoration:none;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" style="width:32px; vertical-align:middle;"> Telegram
+        </a>
+        <a href="https://youtube.com/" target="_blank" style="display:inline-block; margin:0 10px; text-decoration:none;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="width:32px; vertical-align:middle;"> YouTube
+        </a>
+    </div>
+    <footer>
+        <p>Асосӣ 2025</p>
+    </footer>
+    <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Саҳифа нав намешавад
+
+        // Маълумотро гиред
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Натиҷаро нишон диҳед
+        alert('Ташаккур, ' + name + '!\nEmail: ' + email + '\nПаём: ' + message);
+
+        // Агар хоҳед, форма тоза шавад:
+        // event.target.reset();
+    });
+    </script>
+</body>
+</html> 

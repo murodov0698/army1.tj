@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 20: Emergency Phrases - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 20: Emergency Phrases for Military Communication</h1>
+        <div class="translation">Дарси 20: Ибораҳои фаврӣ барои алоқаи ҳарбӣ</div>
+        <div class="lesson-navigation">
+            <a href="lesson20-theory.html" class="active">Назария</a>
+            <a href="lesson20-practice.html">Машқҳо</a>
+            <a href="lesson20-video.html">Видео</a>
+        </div>
+
+        <div class="section">
+            <h2>Objective</h2>
+            <div class="translation">Мақсад</div>
+            <p>To learn and practice emergency phrases necessary for handling and communicating effectively in emergency situations, particularly in military contexts. This lesson will focus on using imperative forms and military-specific terminology to address emergencies with clarity and precision.</p>
+            <div class="translation">Омӯзиш ва машқи ибораҳои фаврӣ, ки барои идора ва алоқаи самаранок дар ҳолатҳои фаврӣ, махсусан дар контексти ҳарбӣ зарур мебошанд. Ин дарс ба истифодаи шаклҳои фармоишӣ ва истилоҳоти махсуси ҳарбӣ барои ҳалли ҳолатҳои фаврӣ бо возеҳӣ ва дақиқӣ диққат медиҳад.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary</h2>
+            <div class="translation">Луғати асосӣ</div>
+
+            <h3>1. General Emergency Phrases</h3>
+            <div class="translation">1. Ибораҳои умумии фаврӣ</div>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>English</th>
+                    <th>Translation</th>
+                </tr>
+                <tr>
+                    <td>Call for help</td>
+                    <td>Барои кӯмак занг занед</td>
+                </tr>
+                <tr>
+                    <td>We need a medic</td>
+                    <td>Ба мо духтур лозим аст</td>
+                </tr>
+                <tr>
+                    <td>Evacuate the area</td>
+                    <td>Минтақаро тахлия кунед</td>
+                </tr>
+                <tr>
+                    <td>Stay calm</td>
+                    <td>Ором бошед</td>
+                </tr>
+                <tr>
+                    <td>Do not move</td>
+                    <td>Ҳаракат накунед</td>
+                </tr>
+            </table>
+
+            <h3>2. Military-Specific Emergency Terms</h3>
+            <div class="translation">2. Истилоҳоти махсуси фаврии ҳарбӣ</div>
+            <table class="vocabulary-table">
+                <tr>
+                    <th>English</th>
+                    <th>Translation</th>
+                </tr>
+                <tr>
+                    <td>Mayday! (Life-threatening emergency)</td>
+                    <td>Mayday! (Ҳолати фаврии таҳдидкунандаи ҳаёт)</td>
+                </tr>
+                <tr>
+                    <td>Sitrep (Situation Report)</td>
+                    <td>Sitrep (Гузориши вазъият)</td>
+                </tr>
+                <tr>
+                    <td>Casualty</td>
+                    <td>Талафот</td>
+                </tr>
+                <tr>
+                    <td>Medevac (Medical Evacuation)</td>
+                    <td>Medevac (Эвакуатсияи тиббӣ)</td>
+                </tr>
+                <tr>
+                    <td>Secure the perimeter</td>
+                    <td>Атрофро муҳофизат кунед</td>
+                </tr>
+                <tr>
+                    <td>Fall back</td>
+                    <td>Ақибнишинӣ кунед</td>
+                </tr>
+                <tr>
+                    <td>Sound the alarm</td>
+                    <td>Сигнали хатарро ба кор андозед</td>
+                </tr>
+                <tr>
+                    <td>Report to the command center</td>
+                    <td>Ба маркази фармондеҳӣ хабар диҳед</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grammar Point</h2>
+            <div class="translation">Нуқтаи грамматикӣ</div>
+
+            <h3>Using the Imperative Form</h3>
+            <div class="translation">Истифодаи шакли фармоишӣ</div>
+            <ul>
+                <li>"Call for help!" <div class="translation">"Барои кӯмак занг занед!"</div></li>
+                <li>"Stay calm!" <div class="translation">"Ором бошед!"</div></li>
+                <li>"Evacuate the area immediately!" <div class="translation">"Фавран минтақаро тахлия кунед!"</div></li>
+                <li>"Do not move the injured soldier!" <div class="translation">"Сарбози захмдорро ҳаракат надиҳед!"</div></li>
+                <li>"Secure the perimeter!" <div class="translation">"Атрофро муҳофизат кунед!"</div></li>
+            </ul>
+
+            <h3>Reporting an Emergency</h3>
+            <div class="translation">Хабар додан дар бораи ҳолати фаврӣ</div>
+            <ul>
+                <li>"We have a casualty!" <div class="translation">"Мо талафот дорем!"</div></li>
+                <li>"There's an emergency at the base!" <div class="translation">"Дар пойгоҳ ҳолати фаврӣ рух дод!"</div></li>
+                <li>"We need a medic here now!" <div class="translation">"Ба мо ҳозир ин ҷо духтур лозим аст!"</div></li>
+            </ul>
+
+            <h3>Giving Orders in an Emergency</h3>
+            <div class="translation">Додани фармон дар ҳолати фаврӣ</div>
+            <ul>
+                <li>"Seal the perimeter and search the area!" <div class="translation">"Атрофро муҳосира кунед ва минтақаро кофтуков кунед!"</div></li>
+                <li>"Do not enter the building until it's cleared!" <div class="translation">"То тоза нашудани бино ба он надароед!"</div></li>
+                <li>"Prepare for medevac!" <div class="translation">"Барои эвакуатсияи тиббӣ омода шавед!"</div></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="translation">Фаъолиятҳо</div>
+
+            <h3>1. Partner Practice (Emergency Phrases)</h3>
+            <div class="translation">1. Машқи ҷуфтӣ (Ибораҳои фаврӣ)</div>
+            <p>Learners pair up and take turns practicing emergency phrases. For example:</p>
+            <div class="translation">Хонандагон ҷуфт шуда, навбат ба навбат ибораҳои фавриро машқ мекунанд. Масалан:</div>
+            <ul>
+                <li><strong>Learner 1</strong>: "Call for help!" <div class="translation"><strong>Хонанда 1</strong>: "Барои кӯмак занг занед!"</div></li>
+                <li><strong>Learner 2</strong>: "We need a medic!" <div class="translation"><strong>Хонанда 2</strong>: "Ба мо духтур лозим аст!"</div></li>
+            </ul>
+
+            <h3>2. Role-Play (Emergency Scenario)</h3>
+            <div class="translation">2. Бозии нақшҳо (Сенарияи фаврӣ)</div>
+            <p>Divide learners into groups and assign roles (e.g., soldier, medic, officer). Simulate an emergency scenario.</p>
+            <div class="translation">Хонандагонро ба гурӯҳҳо тақсим карда, нақшҳо (масалан, сарбоз, духтур, афсар) тақсим кунед. Сенарияи фавриро шабеҳсозӣ кунед.</div>
+            <ul>
+                <li><strong>Soldier</strong>: "We have a casualty!" <div class="translation"><strong>Сарбоз</strong>: "Мо талафот дорем!"</div></li>
+                <li><strong>Medic</strong>: "Where is the injured soldier?" <div class="translation"><strong>Духтур</strong>: "Сарбози захмдор дар куҷост?"</div></li>
+                <li><strong>Officer</strong>: "Evacuate the area immediately!" <div class="translation"><strong>Афсар</strong>: "Фавран минтақаро тахлия кунед!"</div></li>
+            </ul>
+
+            <h3>3. Group Discussion (Emergency Procedures)</h3>
+            <div class="translation">3. Муҳокимаи гурӯҳӣ (Тартиботи фаврӣ)</div>
+            <p>Discuss common emergency situations in military settings and how to handle them effectively.</p>
+            <div class="translation">Ҳолатҳои маъмули фаврӣ дар муҳити ҳарбӣ ва тарзи самараноки ҳалли онҳоро муҳокима кунед.</div>
+
+            <h3>4. Scenario-Based Role-Play</h3>
+            <div class="translation">4. Бозии нақшҳо дар асоси сенария</div>
+            <p>Present learners with a military-specific emergency scenario and have them:</p>
+            <div class="translation">Ба хонандагон сенарияи махсуси фаврии ҳарбиро пешниҳод кунед ва онҳо бояд:</div>
+            <ul>
+                <li>Call for help <div class="translation">Барои кӯмак занг зананд</div></li>
+                <li>Provide first aid <div class="translation">Кӯмаки аввалия расонанд</div></li>
+                <li>Secure the area <div class="translation">Минтақаро муҳофизат кунанд</div></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Example Sentences Using Key Vocabulary</h2>
+            <div class="translation">Ҷумлаҳои мисолӣ бо истифодаи луғати асосӣ</div>
+
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Example Sentences</th>
+                    <th>Translation</th>
+                </tr>
+                <tr>
+                    <td>Call for Help</td>
+                    <td>
+                        "We need to call for help immediately!"<br>
+                        "Someone call for help! We have an injured soldier!"
+                    </td>
+                    <td>
+                        "Мо бояд фавран барои кӯмак занг занем!"<br>
+                        "Касе барои кӯмак занг занад! Мо сарбози захмдор дорем!"
+                    </td>
+                </tr>
+                <tr>
+                    <td>We Need a Medic</td>
+                    <td>
+                        "We need a medic here now!"<br>
+                        "The injured soldier requires a medic's attention!"
+                    </td>
+                    <td>
+                        "Ба мо ҳозир ин ҷо духтур лозим аст!"<br>
+                        "Сарбози захмдор ба таваҷҷуҳи духтур ниёз дорад!"
+                    </td>
+                </tr>
+                <tr>
+                    <td>Evacuate the Area</td>
+                    <td>
+                        "Evacuate the area immediately!"<br>
+                        "We need to evacuate the building now!"
+                    </td>
+                    <td>
+                        "Фавран минтақаро тахлия кунед!"<br>
+                        "Мо бояд ҳозир биноро тахлия кунем!"
+                    </td>
+                </tr>
+                <tr>
+                    <td>Stay Calm</td>
+                    <td>
+                        "Stay calm and follow my instructions."<br>
+                        "Stay calm; help is on the way."
+                    </td>
+                    <td>
+                        "Ором бошед ва дастурҳои маро иҷро кунед."<br>
+                        "Ором бошед; кӯмак дар роҳ аст."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Do Not Move</td>
+                    <td>
+                        "Do not move the injured soldier!"<br>
+                        "Stay still; we need to assess your injuries."
+                    </td>
+                    <td>
+                        "Сарбози захмдорро ҳаракат надиҳед!"<br>
+                        "Беҳаракат истед; мо бояд ҷароҳатҳои шуморо баҳо диҳем."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mayday</td>
+                    <td>
+                        "Mayday! We have a life-threatening emergency!"<br>
+                        "Send help immediately—Mayday!"
+                    </td>
+                    <td>
+                        "Mayday! Мо ҳолати фаврии таҳдидкунандаи ҳаёт дорем!"<br>
+                        "Фавран кӯмак фиристонед—Mayday!"
+                    </td>
+                </tr>
+                <tr>
+                    <td>Casualty</td>
+                    <td>
+                        "We have a casualty on the battlefield."<br>
+                        "The medic is treating the casualty now."
+                    </td>
+                    <td>
+                        "Мо дар майдони ҷанг талафот дорем."<br>
+                        "Духтур ҳоло ба ҷабрдида ёрӣ мерасонад."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Medevac</td>
+                    <td>
+                        "We need to medevac the wounded soldier."<br>
+                        "Prepare the injured for medevac."
+                    </td>
+                    <td>
+                        "Мо бояд сарбози захмдорро эвакуатсияи тиббӣ кунем."<br>
+                        "Захмдорро барои эвакуатсияи тиббӣ омода кунед."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Secure the Perimeter</td>
+                    <td>
+                        "Secure the perimeter before moving the casualty!"<br>
+                        "We need to secure the area for medevac."
+                    </td>
+                    <td>
+                        "Пеш аз ҳаракат додани ҷабрдида атрофро муҳофизат кунед!"<br>
+                        "Мо бояд барои эвакуатсияи тиббӣ минтақаро муҳофизат кунем."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fall Back</td>
+                    <td>
+                        "Fall back to a safe position!"<br>
+                        "Everyone, fall back and regroup!"
+                    </td>
+                    <td>
+                        "Ба мавқеи бехатар ақибнишинӣ кунед!"<br>
+                        "Ҳама, ақибнишинӣ кунед ва аз нав гурӯҳбандӣ шавед!"
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sound the Alarm</td>
+                    <td>
+                        "Sound the alarm! We have an intruder on the base."<br>
+                        "The alarm sounded, signaling an emergency drill."
+                    </td>
+                    <td>
+                        "Сигнали хатарро ба кор андозед! Мо дар пойгоҳ шахси бегона дорем."<br>
+                        "Сигнали хатар ба кор даромад, ки машқи фавриро нишон медиҳад."
+                    </td>
+                </tr>
+                <tr>
+                    <td>Report to the Command Center</td>
+                    <td>
+                        "Report to the command center immediately!"<br>
+                        "All personnel, report to the command center for further instructions."
+                    </td>
+                    <td>
+                        "Фавран ба маркази фармондеҳӣ хабар диҳед!"<br>
+                        "Тамоми ҳайати шахсӣ, барои дастурҳои минбаъда ба маркази фармондеҳӣ ҳозир шаванд."
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Assessment</h2>
+            <div class="translation">Арзёбӣ</div>
+            <ul>
+                <li>
+                    <strong>Participation in Activities</strong>: Observe learners during role-play and group discussions to assess their ability to use the phrases effectively.
+                    <div class="translation"><strong>Иштирок дар фаъолиятҳо</strong>: Мушоҳидаи хонандагон ҳангоми бозии нақшҳо ва муҳокимаҳои гурӯҳӣ барои арзёбии қобилияти истифодаи самараноки ибораҳо.</div>
+                </li>
+                <li>
+                    <strong>Written Exercise</strong>: Review dialogues and reports for clarity and proper use of emergency phrases.
+                    <div class="translation"><strong>Машқи хаттӣ</strong>: Баррасии муколамаҳо ва гузоришҳо барои возеҳӣ ва истифодаи дурусти ибораҳои фаврӣ.</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <div class="translation">Хулоса</div>
+            <p>This lesson provides learners with essential emergency phrases and military-specific terminology to handle real-life emergency situations. By practicing these phrases in realistic scenarios, learners will be better prepared to communicate effectively and respond effectively in critical moments.</p>
+            <div class="translation">Ин дарс ба хонандагон ибораҳои асосии фаврӣ ва истилоҳоти махсуси ҳарбиро барои ҳалли ҳолатҳои фаврии воқеӣ пешниҳод мекунад. Бо машқи ин ибораҳо дар сенарияҳои воқеӣ, хонандагон барои алоқаи самаранок ва вокуниши самаранок дар лаҳзаҳои муҳим беҳтар омода мешаванд.</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

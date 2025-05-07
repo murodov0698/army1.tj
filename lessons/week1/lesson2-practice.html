@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 2: Рақамҳо, рӯзҳо ва моҳҳо</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content{
+            margin-top: 100px;
+        }
+        .game-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .game-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .game-card {
+            background-color: #fff;
+            border: 2px solid #1a237e;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .game-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .game-card.selected {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .game-card.matched {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+            cursor: default;
+        }
+
+        .score-container {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+        }
+
+        .timer-container {
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .game-button {
+            padding: 0.8rem 2rem;
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .game-button:hover {
+            background-color: #303f9f;
+        }
+
+        .game-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .game-type-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-type-button {
+            padding: 0.5rem 1rem;
+            background-color: #f5f5f5;
+            border: 2px solid #1a237e;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .game-type-button.active {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .game-card {
+                font-size: 1rem;
+                min-height: 80px;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Машқҳо - Дарси 2: Рақамҳо, рӯзҳо ва моҳҳо</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson2-theory.html">Назария</a>
+            <a href="lesson2-practice.html" class="active">Машқҳо</a>
+            <a href="lesson2-video.html">Видео</a>
+        </div>
+
+        <div class="game-container">
+            <div class="game-section">
+                <h2>Бозии мувофиқкунӣ</h2>
+                <p>Калимаҳоро бо тарҷумаашон мувофиқ кунед.</p>
+
+                <div class="game-type-selector">
+                    <button class="game-type-button active" data-type="numbers">Рақамҳо</button>
+                    <button class="game-type-button" data-type="days">Рӯзҳои ҳафта</button>
+                    <button class="game-type-button" data-type="months">Моҳҳо</button>
+                </div>
+
+                <div class="score-container">
+                    Холҳо: <span id="score">0</span>
+                </div>
+
+                <div class="timer-container">
+                    Вақт: <span id="timer">00:00</span>
+                </div>
+
+                <div id="game-grid" class="game-grid">
+                    <!-- Кортҳо тавассути JavaScript илова карда мешаванд -->
+                </div>
+
+                <div class="game-controls">
+                    <button id="start-button" class="game-button">Оғози бозӣ</button>
+                    <button id="reset-button" class="game-button" disabled>Бозӣ аз нав</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Маълумоти бозӣ
+        const gameData = {
+            numbers: [
+                { english: "One", tajik: "Як" },
+                { english: "Two", tajik: "Ду" },
+                { english: "Three", tajik: "Се" },
+                { english: "Four", tajik: "Чор" },
+                { english: "Five", tajik: "Панҷ" },
+                { english: "Ten", tajik: "Даҳ" },
+                { english: "Twenty", tajik: "Бист" },
+                { english: "Thirty", tajik: "Сӣ" }
+            ],
+            days: [
+                { english: "Monday", tajik: "Душанбе" },
+                { english: "Tuesday", tajik: "Сешанбе" },
+                { english: "Wednesday", tajik: "Чоршанбе" },
+                { english: "Thursday", tajik: "Панҷшанбе" },
+                { english: "Friday", tajik: "Ҷумъа" },
+                { english: "Saturday", tajik: "Шанбе" },
+                { english: "Sunday", tajik: "Якшанбе" }
+            ],
+            months: [
+                { english: "January", tajik: "Январ" },
+                { english: "February", tajik: "Феврал" },
+                { english: "March", tajik: "Март" },
+                { english: "April", tajik: "Апрел" },
+                { english: "May", tajik: "Май" },
+                { english: "June", tajik: "Июн" }
+            ]
+        };
+
+        let currentGameType = 'numbers';
+        let selectedCards = [];
+        let matchedPairs = 0;
+        let score = 0;
+        let timer = null;
+        let seconds = 0;
+        let isPlaying = false;
+
+        // DOM элементҳо
+        const gameGrid = document.getElementById('game-grid');
+        const scoreElement = document.getElementById('score');
+        const timerElement = document.getElementById('timer');
+        const startButton = document.getElementById('start-button');
+        const resetButton = document.getElementById('reset-button');
+        const gameTypeButtons = document.querySelectorAll('.game-type-button');
+
+        // Функсия барои омехта кардани массив
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Функсия барои сохтани кортҳои бозӣ
+        function createCards() {
+            gameGrid.innerHTML = '';
+            const currentData = gameData[currentGameType];
+            
+            // Сохтани массиви ҳамаи кортҳо
+            const allCards = [
+                ...currentData.map(item => ({ text: item.english, type: 'english', pair: item.tajik })),
+                ...currentData.map(item => ({ text: item.tajik, type: 'tajik', pair: item.english }))
+            ];
+
+            // Омехта кардани кортҳо
+            const shuffledCards = shuffleArray(allCards);
+
+            // Илова кардани кортҳо ба DOM
+            shuffledCards.forEach((card, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'game-card';
+                cardElement.textContent = card.text;
+                cardElement.dataset.index = index;
+                cardElement.dataset.pair = card.pair;
+                cardElement.addEventListener('click', () => selectCard(cardElement, card));
+                gameGrid.appendChild(cardElement);
+            });
+        }
+
+        // Функсия барои интихоби корт
+        function selectCard(cardElement, card) {
+            if (!isPlaying || cardElement.classList.contains('matched') || 
+                cardElement.classList.contains('selected') || selectedCards.length === 2) {
+                return;
+            }
+
+            cardElement.classList.add('selected');
+            selectedCards.push({ element: cardElement, card: card });
+
+            if (selectedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+        }
+
+        // Функсия барои санҷиши мувофиқат
+        function checkMatch() {
+            const [card1, card2] = selectedCards;
+            const isMatch = card1.card.text === card2.card.pair || card2.card.text === card1.card.pair;
+
+            if (isMatch) {
+                card1.element.classList.add('matched');
+                card2.element.classList.add('matched');
+                matchedPairs++;
+                score += 10;
+                scoreElement.textContent = score;
+
+                if (matchedPairs === gameData[currentGameType].length) {
+                    endGame();
+                }
+            }
+
+            card1.element.classList.remove('selected');
+            card2.element.classList.remove('selected');
+            selectedCards = [];
+        }
+
+        // Функсия барои навсозии таймер
+        function updateTimer() {
+            seconds++;
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+
+        // Функсия барои оғози бозӣ
+        function startGame() {
+            isPlaying = true;
+            score = 0;
+            matchedPairs = 0;
+            seconds = 0;
+            scoreElement.textContent = score;
+            timerElement.textContent = '00:00';
+            
+            createCards();
+            
+            startButton.disabled = true;
+            resetButton.disabled = false;
+            
+            if (timer) clearInterval(timer);
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        // Функсия барои анҷоми бозӣ
+        function endGame() {
+            isPlaying = false;
+            clearInterval(timer);
+            startButton.disabled = false;
+            
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            const timeString = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+            
+            setTimeout(() => {
+                alert(`Табрик! Шумо ҳамаи ҷуфтҳоро ёфтед!\nХолҳо: ${score}\nВақт: ${timeString}`);
+            }, 300);
+        }
+
+        // Функсия барои иваз кардани навъи бозӣ
+        function changeGameType(type) {
+            currentGameType = type;
+            gameTypeButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.type === type);
+            });
+            if (isPlaying) {
+                startGame();
+            } else {
+                createCards();
+            }
+        }
+
+        // Event listeners
+        startButton.addEventListener('click', startGame);
+        resetButton.addEventListener('click', startGame);
+        
+        gameTypeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                changeGameType(button.dataset.type);
+            });
+        });
+
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+
+        // Оғози бозӣ
+        createCards();
+    </script>
+</body>
+</html> 

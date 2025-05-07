@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 21: Transportation Vocabulary - Theory</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .vocabulary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .vocabulary-table th, .vocabulary-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .vocabulary-table th {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .vocabulary-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 21: Transportation Vocabulary</h1>
+        <div class="translation">Дарси 21: Луғати нақлиёт</div>
+        <div class="lesson-navigation">
+            <a href="lesson21-theory.html" class="active">Назария</a>
+            <a href="lesson21-practice.html">Машқҳо</a>
+            <a href="lesson21-video.html">Видео</a>
+        </div>
+
+        <div class="section">
+            <h2>Objective</h2>
+            <div class="translation">Мақсад</div>
+            <p>To learn vocabulary related to travel and transportation in military contexts.</p>
+            <div class="translation">Омӯзиши луғат дар бораи сафар ва нақлиёт дар контексти ҳарбӣ.</div>
+        </div>
+
+        <div class="section">
+            <h2>Key Vocabulary</h2>
+            <div class="translation">Луғати асосӣ</div>
+
+            <table class="vocabulary-table">
+                <tr>
+                    <th>Transportation</th>
+                    <th>Example Sentence</th>
+                    <th>Translation</th>
+                </tr>
+                <tr>
+                    <td>Car</td>
+                    <td>"I drove my car to the military base."</td>
+                    <td>"Ман бо мошинам ба пойгоҳи ҳарбӣ рафтам."</td>
+                </tr>
+                <tr>
+                    <td>Truck</td>
+                    <td>"The truck is transporting ammunition to the front lines."</td>
+                    <td>"Камион тирҳоро ба хатти пеш мефиристад."</td>
+                </tr>
+                <tr>
+                    <td>Plane</td>
+                    <td>"The military plane is flying soldiers to the mission zone."</td>
+                    <td>"Ҳавопаймои ҳарбӣ сарбозонро ба минтақаи вазифа мефиристад."</td>
+                </tr>
+                <tr>
+                    <td>Ship</td>
+                    <td>"The naval ship is carrying supplies to the island base."</td>
+                    <td>"Киштии ҳарбии баҳрӣ захираҳоро ба пойгоҳи ҷазира мефиристад."</td>
+                </tr>
+                <tr>
+                    <td>Train</td>
+                    <td>"The train is carrying military equipment to the eastern border."</td>
+                    <td>"Роҳи оҳан таҷҳизоти ҳарбиро ба сарҳади шарқӣ мефиристад."</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grammar Point</h2>
+            <div class="translation">Нуқтаи грамматикӣ</div>
+
+            <h3>Asking about Travel</h3>
+            <div class="translation">Пурсиш дар бораи сафар</div>
+            <ul>
+                <li>
+                    "How do I get to the base?"
+                    <div class="translation">"Чӣ тавр ба пойгоҳ биравам?"</div>
+                </li>
+                <li>
+                    "Where is the airport?"
+                    <div class="translation">"Фурудгоҳ дар куҷост?"</div>
+                </li>
+                <li>
+                    "What is the safest route to the command center?"
+                    <div class="translation">"Безопастарин роҳ ба маркази фармондеҳӣ кадом аст?"</div>
+                </li>
+            </ul>
+
+            <h3>Describing Movement</h3>
+            <div class="translation">Тавсифи ҳаракат</div>
+            <ul>
+                <li>
+                    "The convoy is moving north."
+                    <div class="translation">"Корвон ба шимол ҳаракат мекунад."</div>
+                </li>
+                <li>
+                    "The plane is en route to the destination."
+                    <div class="translation">"Ҳавопаймо дар роҳ ба мақсад аст."</div>
+                </li>
+                <li>
+                    "The ship is docked at the harbor."
+                    <div class="translation">"Киштӣ дар бандар қарор дорад."</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Activities</h2>
+            <div class="translation">Фаъолиятҳо</div>
+
+            <h3>1. Role-Play: Planning a Military Mission</h3>
+            <div class="translation">1. Бозии нақшҳо: Барномарезии вазифаи ҳарбӣ</div>
+            <p>Students act as military officers planning transportation logistics.</p>
+            <div class="translation">Хонандагон ҳамчун афсарони ҳарбӣ, ки лоиҳаи нақлиётро тартиб медиҳанд, нақш мебозанд.</div>
+            <ul>
+                <li>
+                    <strong>Officer A</strong>: "We need to transport 50 soldiers to the east base."
+                    <div class="translation"><strong>Афсар A</strong>: "Мо бояд 50 сарбозро ба пойгоҳи шарқӣ интиқол диҳем."</div>
+                </li>
+                <li>
+                    <strong>Officer B</strong>: "We can use two helicopters and a convoy of trucks."
+                    <div class="translation"><strong>Афсар B</strong>: "Мо метавонем аз ду чархбол ва як корвон камион истифода кунем."</div>
+                </li>
+            </ul>
+
+            <h3>2. Create a Travel Itinerary</h3>
+            <div class="translation">2. Сохтани барномаи сафар</div>
+            <p>Plan a trip for soldiers, using different modes of transportation.</p>
+            <div class="translation">Барномаи сафари сарбозонро бо истифода аз намудҳои гуногуни нақлиёт тартиб диҳед.</div>
+            <p>Example: "The soldiers will take a plane to the airport, then a truck to the base."</p>
+            <div class="translation">Мисол: "Сарбозон бо ҳавопаймо ба фурудгоҳ мераванд, сипас бо камион ба пойгоҳ."</div>
+
+            <h3>3. Dialogue Completion</h3>
+            <div class="translation">3. Пурра кардани муколама</div>
+            <p>Complete short conversations using transportation vocabulary.</p>
+            <div class="translation">Муколамаҳои кӯтоҳро бо истифода аз луғати нақлиёт пурра кунед.</div>
+            <ul>
+                <li>
+                    <strong>Soldier 1</strong>: "How do I get to the training area?"
+                    <div class="translation"><strong>Сарбоз 1</strong>: "Чӣ тавр ба минтақаи машқ биравам?"</div>
+                </li>
+                <li>
+                    <strong>Soldier 2</strong>: "You can take the bus or walk."
+                    <div class="translation"><strong>Сарбоз 2</strong>: "Шумо метавонед бо автобус ё пешо равед."</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Practice Exercise</h2>
+            <div class="translation">Машқи амалӣ</div>
+            <p>Write 5 sentences about travel or transportation in a military context.</p>
+            <div class="translation">5 ҷумла дар бораи сафар ё нақлиёт дар контексти ҳарбӣ нависед.</div>
+            <ul>
+                <li>
+                    "The military convoy is transporting ammunition to the front lines."
+                    <div class="translation">"Корвони ҳарбӣ тирҳоро ба хатти пеш мефиристад."</div>
+                </li>
+                <li>
+                    "The plane will be refueled mid-flight to ensure it reaches the destination."
+                    <div class="translation">"Ҳавопаймо дар ҳолати парвоз сӯзишворӣ мегирад, то ба мақсад бирасад."</div>
+                </li>
+                <li>
+                    "The soldiers rode in a truck to the training area."
+                    <div class="translation">"Сарбозон бо камион ба минтақаи машқ рафтанд."</div>
+                </li>
+                <li>
+                    "The helicopter is the fastest way to deliver supplies to the mountain base."
+                    <div class="translation">"Чархбол зудтарин роҳи расонидани захираҳо ба пойгоҳи кӯҳӣ аст."</div>
+                </li>
+                <li>
+                    "The ship is carrying troops and equipment across the ocean."
+                    <div class="translation">"Киштӣ қӯшун ва таҷҳизотро аз уқёнус мегузаронад."</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

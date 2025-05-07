@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 1</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content{
+            margin-top: 100px;
+        }
+        .game-container {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 1rem;
+        }
+       
+        .matching-game {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .word-card {
+            background-color: #fff;
+            border: 2px solid #1a237e;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .word-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .word-card.selected {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        .word-card.matched {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+            cursor: default;
+        }
+
+        .score-container {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+        }
+
+        .reset-button {
+            display: block;
+            margin: 2rem auto;
+            padding: 0.8rem 2rem;
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .reset-button:hover {
+            background-color: #303f9f;
+        }
+
+        @media screen and (max-width: 768px) {
+            .matching-game {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Машқҳо - Дарси 1: Салом ва муаррифӣ</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson1-theory.html">Назария</a>
+            <a href="lesson1-practice.html" class="active">Машқҳо</a>
+            <a href="lesson1-video.html">Видео</a>
+        </div>
+
+        <div class="game-container">
+            <h2>Бозии мувофиқкунии калимаҳо</h2>
+            <p>Калимаҳои англисиро бо тарҷумаи тоҷикиашон мувофиқ кунед.</p>
+            
+            <div class="score-container">
+                Холҳо: <span id="score">0</span>
+            </div>
+
+            <div id="matching-game" class="matching-game">
+                <!-- Кортҳо тавассути JavaScript илова карда мешаванд -->
+            </div>
+
+            <button class="reset-button" onclick="resetGame()">Бозӣ аз нав</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Маълумоти бозӣ
+        const words = [
+            { english: "Hello", tajik: "Салом" },
+            { english: "Hi", tajik: "Салом (ғайрирасмӣ)" },
+            { english: "Good morning", tajik: "Субҳ ба хайр" },
+            { english: "Good afternoon", tajik: "Рӯз ба хайр" },
+            { english: "Good evening", tajik: "Шом ба хайр" }
+        ];
+
+        let selectedCards = [];
+        let matchedPairs = 0;
+        let score = 0;
+
+        // Функсия барои омехта кардани массив
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Функсия барои сохтани кортҳои бозӣ
+        function createCards() {
+            const gameContainer = document.getElementById('matching-game');
+            gameContainer.innerHTML = '';
+
+            // Сохтани массиви ҳамаи кортҳо
+            const allCards = [
+                ...words.map(word => ({ text: word.english, type: 'english', pair: word.tajik })),
+                ...words.map(word => ({ text: word.tajik, type: 'tajik', pair: word.english }))
+            ];
+
+            // Омехта кардани кортҳо
+            const shuffledCards = shuffleArray(allCards);
+
+            // Илова кардани кортҳо ба DOM
+            shuffledCards.forEach((card, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'word-card';
+                cardElement.textContent = card.text;
+                cardElement.dataset.index = index;
+                cardElement.dataset.pair = card.pair;
+                cardElement.addEventListener('click', () => selectCard(cardElement, card));
+                gameContainer.appendChild(cardElement);
+            });
+        }
+
+        // Функсия барои интихоби корт
+        function selectCard(cardElement, card) {
+            // Агар корт аллакай мувофиқ шуда бошад ё интихоб шуда бошад
+            if (cardElement.classList.contains('matched') || cardElement.classList.contains('selected')) {
+                return;
+            }
+
+            // Агар аллакай ду корт интихоб шуда бошанд
+            if (selectedCards.length === 2) {
+                return;
+            }
+
+            // Интихоби корт
+            cardElement.classList.add('selected');
+            selectedCards.push({ element: cardElement, card: card });
+
+            // Санҷиши мувофиқат
+            if (selectedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+        }
+
+        // Функсия барои санҷиши мувофиқат
+        function checkMatch() {
+            const [card1, card2] = selectedCards;
+            const isMatch = card1.card.text === card2.card.pair || card2.card.text === card1.card.pair;
+
+            if (isMatch) {
+                card1.element.classList.add('matched');
+                card2.element.classList.add('matched');
+                matchedPairs++;
+                score += 10;
+                updateScore();
+
+                // Санҷиши ғалаба
+                if (matchedPairs === words.length) {
+                    setTimeout(() => {
+                        alert('Табрик! Шумо ҳамаи ҷуфтҳоро ёфтед!');
+                    }, 300);
+                }
+            }
+
+            // Тоза кардани интихоб
+            card1.element.classList.remove('selected');
+            card2.element.classList.remove('selected');
+            selectedCards = [];
+        }
+
+        // Функсия барои навсозии холҳо
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+        }
+
+        // Функсия барои оғози бозии нав
+        function resetGame() {
+            matchedPairs = 0;
+            score = 0;
+            selectedCards = [];
+            updateScore();
+            createCards();
+        }
+
+        // Оғози бозӣ
+        createCards();
+
+        // JavaScript барои менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

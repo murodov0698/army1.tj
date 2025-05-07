@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назария - Дарси 4: Рутбаҳои низомӣ ва унвонҳо</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .theory-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .theory-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .vocabulary-item {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .vocabulary-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .example-box {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .tip-box {
+            background: #fff3e0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .activity-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .rank-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .rank-table th, .rank-table td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .rank-table th {
+            background: #f5f5f5;
+        }
+
+        @media screen and (max-width: 768px) {
+            .theory-section {
+                padding: 1rem;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1>Дарси 4: Рутбаҳои низомӣ ва унвонҳо</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson4-theory.html" class="active">Назария</a>
+            <a href="lesson4-practice.html">Машқҳо</a>
+            <a href="lesson4-video.html">Видео</a>
+        </div>
+
+        <div class="theory-container">
+            <div class="theory-section">
+                <h2>Мақсади дарс</h2>
+                <p>Пас аз омӯзиши ин дарс, шумо метавонед:</p>
+                <ul>
+                    <li>Рутбаҳои низомӣро дар забони англисӣ шиносед</li>
+                    <li>Унвонҳои мувофиқро истифода баред</li>
+                    <li>Ҷумлаҳо дар бораи иерархияи низомӣ созед</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h2>Луғатҳои асосӣ</h2>
+                
+                <h3>Рутбаҳои низомӣ (аз паст ба баланд)</h3>
+                
+                <h4>1. Артиш ва Корпуси дарёӣ</h4>
+                <table class="rank-table">
+                    <tr>
+                        <th>Категорияи рутба</th>
+                        <th>Артиш</th>
+                        <th>Корпуси дарёӣ</th>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Private (PVT)</td>
+                        <td>Private (Pvt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Private 2 (PV2)</td>
+                        <td>Private 1st Class (PFC)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Private 1st Class (PFC)</td>
+                        <td>Lance Corporal (LCpl)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Corporal (CPL)</td>
+                        <td>Corporal (Cpl)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Sergeant (SGT)</td>
+                        <td>Sergeant (Sgt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Staff Sergeant (SSG)</td>
+                        <td>Staff Sergeant (SSgt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>Second Lieutenant (2LT)</td>
+                        <td>Second Lieutenant (2ndLt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>First Lieutenant (1LT)</td>
+                        <td>First Lieutenant (1stLt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>Captain (CPT)</td>
+                        <td>Captain (Capt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>Brigadier General (BG)</td>
+                        <td>Brigadier General (BGen)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>Major General (MG)</td>
+                        <td>Major General (MajGen)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>Lieutenant General (LTG)</td>
+                        <td>Lieutenant General (LtGen)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>General (GEN)</td>
+                        <td>General (Gen)</td>
+                    </tr>
+                </table>
+
+                <h4>2. Нерӯи дарёӣ ва Гуардияи соҳилӣ</h4>
+                <table class="rank-table">
+                    <tr>
+                        <th>Категорияи рутба</th>
+                        <th>Нерӯи дарёӣ</th>
+                        <th>Гуардияи соҳилӣ</th>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Seaman Recruit (SR)</td>
+                        <td>Seaman Recruit (SR)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Seaman Apprentice (SA)</td>
+                        <td>Seaman Apprentice (SA)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Seaman (SN)</td>
+                        <td>Seaman (SN)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>Ensign (ENS)</td>
+                        <td>Ensign (ENS)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>Lieutenant (LT)</td>
+                        <td>Lieutenant (LT)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои адмиралӣ</td>
+                        <td>Rear Admiral (RADM)</td>
+                        <td>Rear Admiral (RADM)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои адмиралӣ</td>
+                        <td>Vice Admiral (VADM)</td>
+                        <td>Vice Admiral (VADM)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои адмиралӣ</td>
+                        <td>Admiral (ADM)</td>
+                        <td>Admiral (ADM)</td>
+                    </tr>
+                </table>
+
+                <h4>3. Нерӯи ҳавоӣ ва Нерӯи фазоӣ</h4>
+                <table class="rank-table">
+                    <tr>
+                        <th>Категорияи рутба</th>
+                        <th>Нерӯи ҳавоӣ</th>
+                        <th>Нерӯи фазоӣ</th>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Airman Basic (AB)</td>
+                        <td>Specialist 1 (Spc1)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Airman (Amn)</td>
+                        <td>Specialist 2 (Spc2)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои аскарӣ</td>
+                        <td>Airman 1st Class (A1C)</td>
+                        <td>Specialist 3 (Spc3)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>Second Lieutenant (2d Lt)</td>
+                        <td>Second Lieutenant (2d Lt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои офицерӣ</td>
+                        <td>First Lieutenant (1st Lt)</td>
+                        <td>First Lieutenant (1st Lt)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>Brigadier General (Brig Gen)</td>
+                        <td>Brigadier General (Brig Gen)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>Major General (Maj Gen)</td>
+                        <td>Major General (Maj Gen)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>Lieutenant General (Lt Gen)</td>
+                        <td>Lieutenant General (Lt Gen)</td>
+                    </tr>
+                    <tr>
+                        <td>Рутбаҳои генералӣ</td>
+                        <td>General (Gen)</td>
+                        <td>General (Gen)</td>
+                    </tr>
+                </table>
+
+                <h3>Унвонҳо барои муроҷиат ба роҳбарон</h3>
+                <div class="vocabulary-grid">
+                    <div class="vocabulary-item">
+                        <h4>Sir/Ma'am</h4>
+                        <p>Барои ҳамаи офицерҳо (мас., "Yes, sir!" / "No, ma'am!")</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>Рутба + Номи охир</h4>
+                        <p>Муроҷиати расмӣ (мас., "Captain Smith")</p>
+                    </div>
+                    <div class="vocabulary-item">
+                        <h4>Sergeant/Lieutenant</h4>
+                        <p>Метардад танҳо дар вазъиятҳои ғайрирасмӣ истифода карда шавад</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Қоидаҳои грамматикӣ</h2>
+                <h3>Муроҷиат ба роҳбарон</h3>
+                <div class="example-box">
+                    <p>Ҳангоми муроҷиат ба роҳбарон:</p>
+                    <ul>
+                        <li>Аскарон: Одатан бо рутба муроҷиат мекунанд (мас., "Sergeant", "Petty Officer")</li>
+                        <li>Офицерҳо: "Sir/Ma'am" ё бо рутбаи пурра муроҷиат мекунанд (мас., "Yes, Captain Reynolds")</li>
+                        <li>Генералҳо/Адмиралҳо: Ҳамеша бо унвони пурра муроҷиат мекунанд (мас., "General Miller", на танҳо "General")</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Машғулиятҳо</h2>
+                
+                <div class="activity-section">
+                    <h3>1. Машқи мувофиқкунии рутбаҳо</h3>
+                    <p>Рутбаҳоро аз паст ба баланд тартиб диҳед:</p>
+                    <ul>
+                        <li>Private → Corporal → Sergeant → Captain → General</li>
+                        <li>Варианти пешрафта: Мувофиқ кардани рутбаҳои баробар дар нерӯҳои гуногун</li>
+                    </ul>
+                </div>
+
+                <div class="activity-section">
+                    <h3>2. Намоиши нақш: муроҷиат ба роҳбарон</h3>
+                    <p>Ҷуфт-ҷуфт бозӣ кунед:</p>
+                    <ul>
+                        <li>Як нафар роҳбар (мас., Major) аст</li>
+                        <li>Дигар нафар бо унвони мувофиқ ҷавоб медиҳад</li>
+                        <li>Мисоли диалог:</li>
+                        <ul>
+                            <li>Роҳбар: "Is the mission clear?"</li>
+                            <li>Ҷавоб: "Yes, Lieutenant Commander!"</li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="activity-section">
+                    <h3>3. Создани ҷумлаҳо бо рутбаҳо</h3>
+                    <p>Ҷумлаҳо бо ҳар як рутба созед:</p>
+                    <ul>
+                        <li>"The admiral commanded the fleet."</li>
+                        <li>"A staff sergeant trains new recruits."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Хатогиҳои маъмул</h2>
+                <div class="tip-box">
+                    <ul>
+                        <li>Фаромӯш кардани унвонҳо дар муроҷиат</li>
+                        <li>Истифодаи нодуруст рутбаҳо</li>
+                        <li>Истифодаи "sir/ma'am" дар ҷойи рутба</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Маслиҳатҳо</h2>
+                <div class="tip-box">
+                    <ul>
+                        <li>Ҳамеша рутбаи баландтаринро истифода баред</li>
+                        <li>Дар шубҳа, "sir" ё "ma'am" гӯед</li>
+                        <li>Ҳангоми муроҷиат ба роҳбарон, ҳамеша бо унвони мувофиқ ҷавоб диҳед</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h2>Вазифаи хонагӣ</h2>
+                <ul>
+                    <li>Таҳқиқот: Муқоисаи рутбаҳо дар ду нерӯи гуногун (мас., Артиш ва Нерӯи дарёӣ)</li>
+                    <li>Навиштани гузориши расмии низомӣ бо истифодаи камтар аз панҷ рутба</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h2>Хулоса</h2>
+                <ul>
+                    <li>Рутбаҳои асосии низомӣ дар нерӯҳои гуногун</li>
+                    <li>Унвонҳои мувофиқ барои муроҷиат</li>
+                    <li>Қоидаҳои грамматикӣ дар муроҷиат</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Менюи мобилӣ
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !event.target.closest('nav')) {
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

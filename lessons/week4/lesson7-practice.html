@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машқҳо - Дарси 7: Рӯтинаи Ҳаррӯза</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .lesson-content {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 2rem 1rem;
+        }
+        .practice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .timeline-container {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .timeline-slot {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .timeline-time {
+            width: 100px;
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .timeline-activity {
+            flex-grow: 1;
+        }
+
+        .timeline-activity input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .role-play-area {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .role-play-dialogue {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .role-play-line {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .role-play-line.speaker-a {
+            background: #e3f2fd;
+        }
+
+        .role-play-line.speaker-b {
+            background: #f3e5f5;
+            margin-left: 2rem;
+        }
+
+        .button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background: #1565c0;
+        }
+
+        .feedback {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .feedback.incorrect {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        @media screen and (max-width: 768px) {
+            .practice-section {
+                padding: 1rem;
+            }
+
+            .timeline-slot {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-time {
+                margin-bottom: 0.5rem;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-content">
+        <h1> Дарси 7: Daily Routine Verbs - Practice Exercises</h1>
+        
+        <div class="lesson-navigation">
+            <a href="lesson7-theory.html">Назария</a>
+            <a href="lesson7-practice.html" class="active">Машқҳо</a>
+            <a href="lesson7-video.html">Видео</a>
+        </div>
+
+        <div class="practice-container">
+            <div class="practice-section">
+                <h2>1. Timeline Creation</h2>
+                <p>Create your daily schedule from 05:00 to 22:00</p>
+                <div class="timeline-container">
+                    <div class="timeline-slot">
+                        <div class="timeline-time">05:00</div>
+                        <div class="timeline-activity">
+                            <input type="text" placeholder="What do you do at 05:00?">
+                        </div>
+                    </div>
+                    <div class="timeline-slot">
+                                <div class="timeline-time">06:00</div>
+                        <div class="timeline-activity">
+                            <input type="text" placeholder="What do you do at 06:00?">
+                        </div>
+                    </div>
+                    <div class="timeline-slot">
+                        <div class="timeline-time">08:00</div>
+                <div class="timeline-activity">
+                    <input type="text" placeholder="What do you do at 08:00?">
+                </div>
+            </div>
+                    <!-- Add more time slots -->
+                </div>
+                <button class="button" onclick="checkTimeline()">Check Schedule</button>
+                <div class="feedback" id="timeline-feedback"></div>
+            </div>
+
+            <div class="practice-section">
+                <h2>2. Role-Play: Morning Report</h2>
+                <div class="role-play-area">
+                    <div class="role-play-dialogue">
+                        <div class="role-play-line speaker-a">
+                            Officer: "When did you complete your morning tasks?"
+                        </div>
+                        <div class="role-play-line speaker-b">
+                            <select id="answer1">
+                                <option value="">Choose an answer...</option>
+                                <option value="correct">I completed them at 07:00, sir.</option>
+                                <option value="wrong1">Yes, I did them.</option>
+                                <option value="wrong2">The tasks are complete.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="button" onclick="checkDialogue()">Check</button>
+                    <div class="feedback" id="dialogue-feedback"></div>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h2>3. Daily Routine Translation</h2>
+                <div class="translation-exercise">
+                    <p>Translate the following sentences:</p>
+                    <div class="input-group">
+                        <p>1. "I wake up at 05:00." → <input type="text" id="trans1"></p>
+                        <p>2. "We train every morning." → <input type="text" id="trans2"></p>
+                        <p>3. "The soldiers report at 08:00." → <input type="text" id="trans3"></p>
+                    </div>
+                    <button class="button" onclick="checkTranslations()">Check</button>
+                    <div class="feedback" id="translation-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Military English. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        // Exercise functionality
+        function checkTimeline() {
+            // Add timeline checking logic
+            const feedback = document.getElementById('timeline-feedback');
+            feedback.textContent = 'Schedule checked! Make sure you included all required activities.';
+            feedback.className = 'feedback correct';
+            feedback.style.display = 'block';
+        }
+
+        function checkDialogue() {
+            const answer = document.getElementById('answer1').value;
+            const feedback = document.getElementById('dialogue-feedback');
+            
+            if (answer === 'correct') {
+                feedback.textContent = 'Correct! Good response.';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Try again. Remember to be specific with time.';
+                feedback.className = 'feedback incorrect';
+            }
+            feedback.style.display = 'block';
+        }
+
+        function checkTranslations() {
+            // Add translation checking logic
+            const feedback = document.getElementById('translation-feedback');
+            feedback.textContent = 'Keep practicing your translations!';
+            feedback.className = 'feedback correct';
+            feedback.style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

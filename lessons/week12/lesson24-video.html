@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 24: Final Assessment - Video</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-points {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .example-dialogue {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .video-sections {
+            margin: 20px 0;
+        }
+
+        .timestamp {
+            color: #1a237e;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .header-container {
+            background-color: #1a237e;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #303f9f;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a237e;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOGO</div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Асосӣ</a></li>
+                <li class="dropdown">
+                    <a href="../../lessons.html">Дарсҳо</a>
+                    <div class="dropdown-content">
+                        <a href="../week1/lesson1-theory.html">Дарси 1</a>
+                        <a href="../week1/lesson2-theory.html">Дарси 2</a>
+                        <a href="../week2/lesson3-theory.html">Дарси 3</a>
+                        <a href="../week2/lesson4-theory.html">Дарси 4</a>
+                        <a href="../week3/lesson5-theory.html">Дарси 5</a>
+                        <a href="../week3/lesson6-theory.html">Дарси 6</a>
+                        <a href="../week4/lesson7-theory.html">Дарси 7</a>
+                        <a href="../week4/lesson8-theory.html">Дарси 8</a>
+                        <a href="../week5/lesson9-theory.html">Дарси 9</a>
+                        <a href="../week5/lesson10-theory.html">Дарси 10</a>
+                        <a href="../week6/lesson11-theory.html">Дарси 11</a>
+                        <a href="../week6/lesson12-theory.html">Дарси 12</a>
+                        <a href="../week7/lesson13-theory.html">Дарси 13</a>
+                        <a href="../week7/lesson14-theory.html">Дарси 14</a>
+                        <a href="../week8/lesson15-theory.html">Дарси 15</a>
+                        <a href="../week8/lesson16-theory.html">Дарси 16</a>
+                        <a href="../week9/lesson17-theory.html">Дарси 17</a>
+                        <a href="../week9/lesson18-theory.html">Дарси 18</a>
+                        <a href="../week10/lesson19-theory.html">Дарси 19</a>
+                        <a href="../week10/lesson20-theory.html">Дарси 20</a>
+                        <a href="../week11/lesson21-theory.html">Дарси 21</a>
+                        <a href="../week11/lesson22-theory.html">Дарси 22</a>
+                        <a href="../week12/lesson23-theory.html">Дарси 23</a>
+                        <a href="../week12/lesson24-theory.html">Дарси 24</a>
+                    </div>
+                </li>
+                <li><a href="../../dictionary.html">Луғат</a></li>
+                <li><a href="../../contact.html">Тамос</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <h1>Lesson 24: Final Assessment - Video</h1>
+        <div class="translation">Дарси 24: Санҷиши ниҳоӣ - Видео</div>
+        <div class="lesson-navigation">
+            <a href="lesson24-theory.html">Назария</a>
+            <a href="lesson24-practice.html">Машқҳо</a>
+            <a href="lesson24-video.html" class="active">Видео</a>
+        </div>
+
+
+        <div class="video-container">
+            <!-- Replace VIDEO_ID with the actual YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+
+        <div class="key-points">
+            <h2>Key Points from the Video</h2>
+            <div class="translation">Нуқтаҳои асосӣ аз видео</div>
+            <ul>
+                <li>
+                    <strong>Assessment Overview</strong>: Understanding the final evaluation process
+                    <div class="translation">Баррасии умумии санҷиш: Фаҳмидани раванди арзёбии ниҳоӣ</div>
+                </li>
+                <li>
+                    <strong>Written Test Components</strong>: Vocabulary, grammar, and scenario writing
+                    <div class="translation">Қисмҳои санҷиши хаттӣ: Луғат, грамматика ва навиштани сенария</div>
+                </li>
+                <li>
+                    <strong>Oral Test Preparation</strong>: Radio communication and terrain briefing
+                    <div class="translation">Омодагӣ барои санҷиши шифтӣ: Алоқаи радиоӣ ва маълумот дар бораи замин</div>
+                </li>
+                <li>
+                    <strong>Military Context</strong>: Proper use of terminology and commands
+                    <div class="translation">Контексти ҳарбӣ: Истифодаи дурусти истилоҳот ва фармонҳо</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="example-dialogue">
+            <h2>Example Assessment Scenario</h2>
+            <div class="translation">Намунаи сенарияи санҷиш</div>
+            <p><strong>Instructor</strong>: "Describe your mission route and report any enemy activity."</p>
+            <div class="translation"><strong>Муаллим</strong>: "Роҳи вазифаи худро тавсиф кунед ва ҳамаи фаъолияти душманро гузориш диҳед."</div>
+            <p><strong>Student</strong>: "We advanced 200m north to the forest. Spotted enemy movement at grid Bravo-Two. Requesting backup."</p>
+            <div class="translation"><strong>Хонанда</strong>: "Мо 200 метр ба шимол ба ҷангал пеш рафтем. Ҳаракати душманро дар ҳудуди Bravo-Two дидем. Қувваҳои қӯшунӣ талаб мекунам."</div>
+            <p><strong>Instructor</strong>: "Good report. Now convert this to a radio message."</p>
+            <div class="translation"><strong>Муаллим</strong>: "Гузориши хуб. Ҳоло инро ба паёми радиоӣ табдил диҳед."</div>
+            <p><strong>Student</strong>: "Base, this is Alpha-One. Enemy spotted at Bravo-Two. Request immediate backup. Over."</p>
+            <div class="translation"><strong>Хонанда</strong>: "Пойгоҳ, ин Alpha-One аст. Душман дар Bravo-Two дида шуд. Қувваҳои қӯшунӣ талаб мекунам. Тамом."</div>
+        </div>
+
+        <div class="video-sections">
+            <h2>Video Sections</h2>
+            <div class="translation">Қисмҳои видео</div>
+            <ul>
+                <li>
+                    <span class="timestamp">00:00</span> - Introduction to Final Assessment
+                    <div class="translation">Шиносоӣ бо санҷиши ниҳоӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">05:30</span> - Written Test Components
+                    <div class="translation">Қисмҳои санҷиши хаттӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">12:15</span> - Oral Test Preparation
+                    <div class="translation">Омодагӣ барои санҷиши шифтӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">18:45</span> - Military Communication Examples
+                    <div class="translation">Намунаҳои алоқаи ҳарбӣ</div>
+                </li>
+                <li>
+                    <span class="timestamp">25:00</span> - Assessment Tips and Strategies
+                    <div class="translation">Маслиҳатҳо ва стратегияҳои санҷиш</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="additional-notes">
+            <h2>Additional Notes</h2>
+            <div class="translation">Қайдҳои иловагӣ</div>
+            <ul>
+                <li>
+                    Practice clear and concise communication
+                    <div class="translation">Алоқаи равшан ва мухтасарро машқ кунед</div>
+                </li>
+                <li>
+                    Review military terminology before the test
+                    <div class="translation">Пеш аз санҷиш истилоҳоти ҳарбиро баррасӣ кунед</div>
+                </li>
+                <li>
+                    Follow proper radio communication protocols
+                    <div class="translation">Тартиботи дурусти алоқаи радиоӣро риоя кунед</div>
+                </li>
+                <li>
+                    Use correct military time format
+                    <div class="translation">Формати дурусти вақти ҳарбиро истифода кунед</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 
