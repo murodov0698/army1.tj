@@ -1,0 +1,505 @@
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f7fa;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 100px;
+        }
+       /* Header ва Navigation */
+       header {
+        background: linear-gradient(135deg, #0b81f7, #0550b4);
+        color: #fff;
+        padding: 12px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1200;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: white;
+            color: #0b81f7;
+        }  
+        .burger-container {
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1300;
+        }
+
+        .burger {
+            width: 32px;
+            height: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .burger span {
+            width: 100%;
+            height: 3.5px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .burger-container.active .burger span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .burger-container.active .burger span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .burger-container.active .burger span:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+        .full-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 380px;
+          max-width: 85%;
+          height: 100vh;
+          background: rgba(11, 23, 44, 0.98);
+          backdrop-filter: blur(10px);
+          z-index: 1100;
+          padding: 95px 20px 30px;
+          overflow-y: auto;
+          transform: translateX(-100%);
+          transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+          box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .full-menu.open {
+          transform: translateX(0);
+        }
+
+        .full-menu ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .full-menu a {
+          display: block;
+          color: #e0e0ff;
+          text-decoration: none;
+          padding: 12px 15px;
+          background: rgba(255, 255, 255, 0.04);
+          border-radius: 8px;
+          text-align: left;
+          font-size: 1.1rem;
+          font-weight: 500;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          transition: all 0.25s ease;
+        }
+
+        .full-menu a:hover {
+          background: #00d4ff;
+          color: #0b172c;
+          transform: translateX(8px);
+          box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+          border-color: #00d4ff;
+        }
+
+        /* Footer */
+        footer {
+         background-color: #1a237e;
+         color: white;
+         text-align: center;
+         padding: 1rem;
+         font-size: 0.9rem;
+         opacity: 0.8;
+        }
+        footer {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 1010px;
+        }
+
+        section{
+            color: #0b81f7;
+            margin-top: 200px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 30px 40px;
+            width: 800px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            line-height: 1.5;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Top Header Section (Дарси 93) */
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header-section .lesson-title {
+            background-color: #ffe0b2; /* Light orange/peach */
+            border: 2px solid #ff9800; /* Darker orange */
+            border-radius: 20px;
+            padding: 5px 20px;
+            display: inline-block;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Letter Section (Б б) */
+        .letter-section {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .letter-box {
+            background-color: #ffeb3b; /* Yellow */
+            padding: 10px 20px;
+            margin-right: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .letter-box h2 {
+            margin: 0;
+            font-size: 3em;
+            color: #333;
+        }
+        .handwriting-lines {
+            flex-grow: 1;
+        }
+        .handwriting-lines div {
+            border-bottom: 1px dashed #a0d8f0; /* Light blue dashed lines */
+            height: 25px; /* Adjust line spacing */
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .handwriting-lines .red-stroke {
+            color: red;
+            position: absolute;
+            left: 0;
+            top: 5px; /* Adjust vertical position */
+            font-size: 1.8em; /* Adjust size of the letter stroke */
+            font-family: 'Brush Script MT', ' cursive'; /* Attempt a cursive font */
+        }
+        .handwriting-lines .green-stroke {
+            color: green;
+            position: absolute;
+            left: 20px; /* Adjust horizontal position */
+            top: 5px; /* Adjust vertical position */
+            font-size: 1.8em; /* Adjust size of the letter stroke */
+            font-family: 'Brush Script MT', ' cursive';
+        }
+
+
+        /* Image-Word Pairs */
+        .image-word-pair-section {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        .image-item {
+            text-align: center;
+            margin: 0 20px;
+            margin-bottom: 20px;
+        }
+        .image-item img {
+            width: 120px; /* Adjust image size */
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .color-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 1px solid #333;
+            margin: 0 3px;
+        }
+        .dot.red { background-color: red; }
+        .dot.green { background-color: green; }
+        .image-item .word-label {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            color: #333;
+        }
+        
+
+        /* Text Columns Section */
+        .text-columns-section {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            color:black;
+        }
+        .text-column {
+            width: 30%; /* Adjust width for 3 columns */
+            min-width: 180px; /* Ensure columns don't get too narrow */
+            margin: 10px;
+            padding: 0 10px;
+            box-sizing: border-box; /* Include padding in width */
+            color: black;
+        }
+        .text-column:not(:last-child) {
+            border-right: 1px solid #eee; /* Separator lines between columns */
+        }
+        .text-column div {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #000000;
+        }
+
+        /* Middle Handwriting Section */
+        .middle-handwriting-section {
+            margin-bottom: 40px;
+        }
+        .middle-handwriting-section .handwriting-line {
+            border-bottom: 1px dashed #a0d8f0;
+            height: 30px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .middle-handwriting-section .handwriting-text {
+            color: green;
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            font-size: 1.8em;
+            font-family: 'Brush Script MT', ' cursive';
+        }
+
+
+        /* Bottom Image and Handwriting Section */
+        .bottom-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .bottom-section img {
+            width: 300px; /* Adjust size */
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .bottom-section .color-dots {
+            margin-bottom: 10px;
+        }
+        .bottom-section .word-label {
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Final Handwriting Lines */
+        .final-handwriting-section .handwriting-line {
+            border-bottom: 1px dashed #a0d8f0;
+            height: 30px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .barra{
+            margin-top: 100px;
+            
+        }
+        .b{
+            color: red;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .final-handwriting-section .handwriting-text {
+            color: #32062a; /* Assuming black for final lines */
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            font-size: 1.8em;
+            font-family: 'Brush Script MT', ' cursive';
+        }
+        .alifbo{
+         font-family: Arial, sans-serif;
+         font-size: 4rem;
+  
+        }
+        .alifbo_text {
+         color: #000;
+
+         background: linear-gradient(45deg,
+         red,green);
+          -webkit-background-clip: text;
+         -webkit-text-fill-color: 
+         transparent;
+        }
+        .alifbo_text {
+         color: #000;
+
+         background: linear-gradient(45deg,
+         red,green);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: 
+         transparent;
+        }
+        .alifbo_text {
+          color: #000;
+
+          background: linear-gradient(45deg,
+          red,green);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: 
+          transparent;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px 20px;
+            }
+            .letter-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .letter-box {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .text-column {
+                width: 90%; /* Stack columns on small screens */
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+            .text-column:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+        .word {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        /* anivation style when word is clicked */
+        .playing {
+            color: white;
+            background-color: #2196f3;
+            border-radius: 8px;
+            padding: 2px 6px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #1a237e;
+            min-width: 160px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #303f9f;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }

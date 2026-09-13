@@ -1,0 +1,240 @@
+/* Умумӣ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Шапка (Header) */
+header {
+    background: linear-gradient(135deg, #0b81f7, #0550b4);
+    color: #fff;
+    padding: 12px 20px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1200;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Бургер дар чап, Лого дар байн, Пайвандҳо дар рост */
+}
+
+/* Логотипи калони ранга дар байн */
+.logo {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    display: flex;
+    gap: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Дақиқ дар маркази шапка меистад */
+}
+
+/* Ранг додани ҳар як ҳарфи АЛИФБО */
+.logo span:nth-child(1) { color: #ff3366; } /* А */
+.logo span:nth-child(2) { color: #ff9900; } /* Л */
+.logo span:nth-child(3) { color: #33cc33; } /* И */
+.logo span:nth-child(4) { color: #00ffff; } /* Ф */
+.logo span:nth-child(5) { color: #ffcc00; } /* Б */
+.logo span:nth-child(6) { color: #ff5050; } /* О */
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: white;
+    color: #0b81f7;
+}
+
+/* Тугмаи Бургер (3 хатта) */
+.burger-container {
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1300;
+}
+
+.burger {
+    width: 32px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger span {
+    width: 100%;
+    height: 3.5px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Аниматсияи табдили 3 хатта ба Х */
+.burger-container.active .burger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-container.active .burger span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.burger-container.active .burger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Менюи Паҳлӯӣ (Аз тарафи чап) */
+.full-menu {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 380px; 
+    max-width: 85%; 
+    height: 100vh;
+    background: rgba(11, 23, 44, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1100;
+    padding: 95px 20px 30px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.full-menu.open {
+    transform: translateX(0);
+}
+
+.full-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.full-menu a {
+    display: block;
+    color: #e0e0ff;
+    text-decoration: none;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+}
+
+.full-menu a:hover {
+    background: #00d4ff;
+    color: #0b172c;
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+    border-color: #00d4ff;
+}
+
+.full-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.full-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+main{
+    margin-top: 200px;
+    align-items: center;
+    justify-content: center;
+    max-height: max-content;
+}
+section{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.alifbo{
+   font-family: Arial, sans-serif;
+   font-size: 4rem;
+  
+}
+.alifbo_text {
+     color: #2f00ff;
+
+   background: linear-gradient(45deg,
+   red,green);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: 
+   transparent;
+}
+.alifbo_text {
+    color: #0026ff;
+
+  background: linear-gradient(45deg,
+  red,green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: 
+  transparent;
+}
+.alifbo_text {
+    color: #0051ff;
+
+  background: linear-gradient(45deg,
+  red,green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: 
+  transparent;
+}
+
+
+/* Футер */
+footer {
+    background-color: #0b172c;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 1000px;
+    padding: 18px;
+    font-size: 0.9rem;
+}
+
+/* Барои экранҳои мобилӣ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex; /* Дар телефонҳо танҳо бургер ва лого мемонанд */
+    }
+    .logo {
+        font-size: 1.8rem;
+    }
+    .full-menu {
+        width: 300px;
+    }
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+ 
+}
