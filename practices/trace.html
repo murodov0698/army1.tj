@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Машқи навиштани ҳарфҳо</title>
+    <link rel="stylesheet" href="trace.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="top-bar">
+            <a href="../index.html">Асосӣ</a>
+            <a href="games.html">Бозӣ</a>
+            <a href="practice.html">Амалиёт</a>
+            <a id="back-lesson" hidden href="#">Ба дарс</a>
+        </div>
+        <h1>Машқи навиштани ҳарфҳо</h1>
+        <p class="hint">Бо ангушт ё муш аз рӯи хатҳои чидашуда ва тирчаҳо нависед. Аз рақами 1 сар кунед.</p>
+        <div class="letters" id="letters"></div>
+        <div class="row">
+            <button type="button" class="case-btn on" id="case-upper" aria-pressed="true">А</button>
+            <button type="button" class="case-btn" id="case-lower" aria-pressed="false">а</button>
+            <div class="meter" aria-hidden="true"><div id="meter-fill"></div></div>
+        </div>
+        <div class="status" id="status">Аз рақами 1 сар кунед</div>
+        <div class="actions">
+            <button type="button" class="act ghost" id="clear">Тоза</button>
+            <button type="button" class="act" id="demo">Нишон додан</button>
+            <button type="button" class="act ghost" id="prev">Қаблӣ</button>
+            <button type="button" class="act next" id="next">Навбатӣ</button>
+        </div>
+        <div class="board-wrap">
+            <div class="bravo" id="bravo" hidden>Офарин!</div>
+            <svg id="board" viewBox="0 0 220 300" role="img" aria-label="Лавҳаи навиштани ҳарф">
+                <rect x="0" y="0" width="220" height="300" fill="#fffef8"></rect>
+                <g id="rules"></g>
+                <g id="progress"></g>
+                <g id="guides"></g>
+                <g id="arrows"></g>
+                <g id="numbers"></g>
+                <g id="ink"></g>
+                <g id="demo-layer"></g>
+            </svg>
+        </div>
+    </div>
+    <script src="trace-letters.js"></script>
+    <script src="trace.js"></script>
+</body>
+</html>

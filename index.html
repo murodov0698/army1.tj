@@ -2,11 +2,16 @@
 <html lang="tg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>АЛИФБО</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="home-scene" aria-hidden="true">
+        <img class="scene-desk" src="images/home.png" alt="">
+        <img class="scene-phone" src="images/home-phone.png" alt="">
+    </div>
+
     <header>
         <div class="header-container">
             <div class="burger-container" id="burger">
@@ -16,17 +21,23 @@
                     <span></span>
                 </div>
             </div>
-            
+
+            <a class="logo" href="index.html" aria-label="Алифбо">
+                <span>А</span><span>Л</span><span>И</span><span>Ф</span><span>Б</span><span>О</span>
+            </a>
+
             <ul class="nav-links">
-                <li><a href="../index.html">Асосӣ</a></li>
-                <li><a href="../practices/practice.html">Амалиёт</a></li>
-                <li><a href="https://wa.me/992915774815" target="_blank" rel="noopener noreferrer">Тамос</a></li>
+                <li class="nav-home"><a class="active" href="index.html">Асосӣ</a></li>
+                <li><a href="practices/games.html">Бозӣ</a></li>
+                <li><a href="practices/practice.html">Амалиёт</a></li>
+                <li><a href="practices/trace.html">Пропис</a></li>
             </ul>
         </div>
     </header>
 
     <nav class="full-menu" id="menu">
         <ul>
+            <li><a href="practices/trace.html">Пропис — навиштани ҳарфҳо</a></li>
             <li><a href="lessons/lesson0.html">— Дарси 0</a></li>
             <li><a href="lessons/lesson1.html">Аа — Дарси 1</a></li>
             <li><a href="lessons/lesson2.html">Бб — Дарси 2</a></li>
@@ -65,22 +76,6 @@
             <li><a href="lessons/lesson35.html">Яя — Дарси 35</a></li>
         </ul>
     </nav>
-
-    <main>
-    <section>
-      <h1 class="alifbo">
-        <span class="alifbo_text">А Л</span>
-        <span class="alifbo_text">И Ф</span>
-        <span class="alifbo_text">Б О</span>
-      </h1>
-        <h1>Омӯзиши алифбои забони тоҷики барои наврасон </h1>
-        <h2>Осон ва зуд</h2>
-    </section>
-  </main>
-
-    <footer>
-        <p>&copy; 2026 Alifbo. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>

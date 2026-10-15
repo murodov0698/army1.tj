@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Маркази Бозиҳои Тоҷикӣ</title>
+    <title>Амалиёт</title>
     <style>
         :root {
             --primary-color: #3498db;
@@ -17,10 +17,12 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             margin: 0;
+            padding: 24px 0 40px;
             color: #2c3e50;
+            box-sizing: border-box;
         }
 
         .container {
@@ -34,7 +36,56 @@
             border: 6px solid var(--accent-color);
         }
 
-        /* Menu Styles */
+        .container.wide { max-width: 640px; }
+
+        .menu-btn.voice { background: #9b59b6; box-shadow: 0 5px 0 #6c3483; }
+        .menu-btn.voice:active { box-shadow: 0 2px 0 #6c3483; }
+
+        .mic-btn {
+            width: 90px; height: 90px; border-radius: 50%;
+            border: none; background: #9b59b6; color: white;
+            font-size: 40px; cursor: pointer;
+            box-shadow: 0 8px 0 #6c3483;
+            margin: 6px auto 10px;
+        }
+        .mic-btn.listening {
+            background: #e74c3c;
+            box-shadow: 0 8px 0 #c0392b;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .heard {
+            min-height: 28px; font-size: 20px; color: #7f8c8d; margin: 8px 0;
+        }
+        .result-img {
+            width: 100%; max-height: 280px; object-fit: contain;
+            border-radius: 18px; background: #f8f9fa;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .said-word {
+            min-height: 28px;
+            font-size: 20px;
+            color: #7f8c8d;
+            margin-top: 8px;
+        }
+        .under-word {
+            min-height: 56px;
+            font-size: 44px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            color: #9b59b6;
+        }
+        .under-word.ok { color: #27ae60; }
+        .under-word.bad { color: #e74c3c; }
+        .voice-hint { font-size: 16px; color: #7f8c8d; margin-bottom: 8px; }
+
         .menu-btn {
             display: block;
             width: 100%;
@@ -54,16 +105,13 @@
         .menu-btn.alt { background: var(--success-color); box-shadow: 0 5px 0 #27ae60; }
         .menu-btn.alt:active { box-shadow: 0 2px 0 #27ae60; }
 
-        /* Game Elements */
         .hidden { display: none; }
         .progress { color: #7f8c8d; font-size: 18px; margin-bottom: 10px; }
-        
-        /* Word Game Specific */
+
         .word-display { font-size: 50px; margin: 20px 0; font-weight: bold; }
         .part-one { color: #e67e22; }
         .part-two { color: #dcdde1; border-bottom: 5px dashed #dcdde1; }
 
-        /* Alphabet Game Specific */
         .letter-box {
             font-size: 90px; font-weight: bold; color: white;
             background: var(--success-color);
@@ -78,7 +126,7 @@
             gap: 10px;
             margin-top: 20px;
         }
-        
+
         .grid-2 { grid-template-columns: 1fr 1fr; }
 
         .opt-btn {
@@ -89,19 +137,61 @@
         }
 
         .opt-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #2980b9; }
-        
+
         #message { font-size: 22px; margin-top: 15px; height: 30px; font-weight: bold; }
+        .top-bar {
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .top-bar a {
+            text-decoration: none; font-weight: 700; color: #2980b9;
+            background: #ecf6fd; padding: 8px 14px; border-radius: 20px;
+        }
         .back-btn { margin-top: 20px; background: #95a5a6; font-size: 14px; padding: 10px; }
+        .vp-actions { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+        .opt-btn.hear { background: var(--primary-color); box-shadow: 0 4px 0 #2980b9; }
+        .vp-lessons {
+            display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+            max-height: 150px; overflow-y: auto; margin-bottom: 12px;
+        }
+        .vp-lesson-btn {
+            border: none; background: #ecf6fd; color: #2980b9;
+            font-weight: 700; padding: 6px 10px; border-radius: 16px;
+            cursor: pointer; font-size: 13px;
+        }
+        .vp-lesson-btn.on { background: #9b59b6; color: #fff; }
     </style>
 </head>
 <body>
 
     <div class="container" id="game-container">
-        <div id="main-menu">
-            <h1 style="font-size: 35px; margin-bottom: 10px;">Интихоби бозӣ</h1>
+        <div class="top-bar">
+            <a href="../index.html">Асосӣ</a>
+            <a href="games.html">Бозӣ</a>
+            <a href="trace.html">Пропис</a>
+        </div>
+        <div id="main-menu" class="hidden">
+            <h1 style="font-size: 35px; margin-bottom: 10px;">Амалиёт</h1>
             <p>Яке аз режимҳоро интихоб кунед:</p>
+            <button class="menu-btn voice" onclick="startVoiceGame()">🎤 Сурат, овоз ва голос (35 дарс)</button>
             <button class="menu-btn" onclick="startWordGame()">🧩 Калимасоз (20 марҳила)</button>
             <button class="menu-btn alt" onclick="startAlphaGame()">🅰️ Алифбо (35 ҳарф)</button>
+        </div>
+
+        <div id="voice-game" class="hidden">
+            <h2>Суратро бинед ва калима гӯед</h2>
+            <p class="voice-hint">Ҳамаи суратҳои 35 дарс. Калима гӯед — ҷавоби аслӣ дар таги сурат мебарояд.</p>
+            <div class="vp-lessons" id="vp-lessons"></div>
+            <div class="progress" id="voice-stat"></div>
+            <img id="voice-img" class="result-img" alt="Сурати дарс" src="">
+            <div class="said-word" id="said-word"></div>
+            <div class="under-word" .id="under-word"></div>
+            <div class="vp-actions">
+                <button id="hear-btn" class="opt-btn hear" type="button">🔊 Шунидан</button>
+                <button id="mic-btn" class="mic-btn" type="button">🎤</button>
+                <button class="opt-btn" type="button" onclick="nextPicture()">Навбатӣ ➡️</button>
+            </div>
+            <div class="heard" id="heard-text">Микрофонро пахш кунед ва калимаи суратро гӯед</div>
         </div>
 
         <div id="word-game" class="hidden">
@@ -122,18 +212,18 @@
         </div>
 
         <div id="message"></div>
-        <button id="back-to-menu" class="opt-btn back-btn hidden" onclick="resetToMenu()">⬅️ Ба меню баргаштан</button>
+        <button id="back-to-menu" class="opt-btn back-btn hidden" onclick="resetToMenu()">⬅️ Ба асосӣ</button>
     </div>
 
+<script src="voice-words.js"></script>
 <script>
-    // --- Data ---
     const wordLevels = [
         { first: "МО", correct: "ШИН", variants: ["ШИН", "ҲӢ", "ДАР", "ЛО"] },
         { first: "ТАР", correct: "БУЗ", variants: ["БУЗ", "ХОН", "ЛО", "МОН"] },
         { first: "КИ", correct: "ТОБ", variants: ["ТОБ", "ШЕР", "ЛАР", "РӮЗ"] },
         { first: "БА", correct: "НАН", variants: ["НАН", "ЧА", "ЛА", "ДАК"] },
-        { first: "МАК", correct: "ТАБ", variants: ["ТАБ", "НГО", "ЛА", "ДО"] },
-        { first: "РУЧ", correct: "КА", variants: ["КА", "БОҲ", "ДА", "МОЛ"] },
+        { first: "МАК", correct: "ТАБ", variants: ["КТАБ", "НГО", "ЛА", "ДО"] },
+        { first: "РУЧ", correct: "КА", variants: ["ЧКА", "БОҲ", "ДА", "МОЛ"] },
         { first: "СЕ", correct: "Б", variants: ["Б", "БИ", "ЛА", "КА"] },
         { first: "ХО", correct: "НА", variants: ["НА", "СА", "РА", "ША"] },
         { first: "ҶӮ", correct: "РОБ", variants: ["РОБ", "ҶА", "ҲО", "ДА"] },
@@ -192,17 +282,18 @@
     let score = 0;
     let activeMode = '';
 
-    // --- Core Logic ---
     function showScreen(id) {
         document.getElementById('main-menu').classList.add('hidden');
         document.getElementById('word-game').classList.add('hidden');
         document.getElementById('alpha-game').classList.add('hidden');
+        document.getElementById('voice-game').classList.add('hidden');
         document.getElementById('back-to-menu').classList.remove('hidden');
         document.getElementById(id).classList.remove('hidden');
+        document.getElementById('game-container').classList.toggle('wide', id === 'voice-game');
     }
 
     function resetToMenu() {
-        location.reload();
+        location.href = '../index.html';
     }
 
     function updateMessage(txt, color) {
@@ -211,7 +302,6 @@
         m.style.color = color;
     }
 
-    // --- Word Game Logic ---
     function startWordGame() {
         activeMode = 'word';
         currentIdx = 0;
@@ -229,7 +319,7 @@
         document.getElementById('w-first').innerText = level.first;
         document.getElementById('w-second').innerText = "...";
         document.getElementById('w-second').className = "part-two";
-        
+
         const container = document.getElementById('word-options');
         container.innerHTML = "";
         updateMessage("", "");
@@ -253,7 +343,6 @@
         });
     }
 
-    // --- Alphabet Game Logic ---
     function startAlphaGame() {
         activeMode = 'alpha';
         currentIdx = 0;
@@ -271,7 +360,7 @@
         document.getElementById('alpha-stat').innerText = `Ҳарфи ${currentIdx + 1} аз 35`;
         document.getElementById('alpha-letter').innerText = q.letter;
         document.getElementById('score-val').innerText = score;
-        
+
         const container = document.getElementById('alpha-options');
         container.innerHTML = "";
         updateMessage("", "");
@@ -301,6 +390,318 @@
             <button class="menu-btn" onclick="location.reload()">Баргаштан ба аввал</button>
         `;
     }
+
+    const ASSET = '../lessons/';
+    const WORD_ALIASES = {
+        'АНҶИР': ['анҷир', 'анжир', 'инжир', 'anjir'],
+        'АНГУР': ['ангур', 'виноград', 'angur'],
+        'АНОР': ['анор', 'гранат', 'анар', 'anor'],
+        'БУЗ': ['буз', 'коза', 'козел', 'buz'],
+        'ГУЛ': ['гул', 'цветок', 'роза', 'gul'],
+        'ШЕР': ['шер', 'лев', 'sher'],
+        'ФИЛ': ['фил', 'слон', 'fil'],
+        'ХОНА': ['хона', 'дом', 'xona', 'хона']
+    };
+    const TAJIK_LANGS = ['ru-RU', 'tg-TJ', 'tg'];
+    let recognition = null;
+    let listening = false;
+    let voiceAudio = null;
+    let speechLangIndex = 0;
+    let pictureList = [];
+    let pictureIdx = 0;
+    let wordShown = false;
+    let selectedLesson = 0;
+    let lockedUntil = 0;
+
+    function foldText(s) {
+        return String(s || '')
+            .toLowerCase()
+            .replace(/ҷ/g, 'ч').replace(/ғ/g, 'г').replace(/қ/g, 'к').replace(/ҳ/g, 'х')
+            .replace(/ӣ/g, 'и').replace(/ӯ/g, 'у').replace(/ё/g, 'е').replace(/э/g, 'е')
+            .replace(/дж/g, 'ч')
+            .replace(/[ъь'ʼ\-.,!?]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function toTajikSpeech(s) {
+        return String(s || '')
+            .replace(/дж/gi, 'ҷ')
+            .replace(/гъ/gi, 'ғ')
+            .replace(/къ/gi, 'қ')
+            .replace(/хъ/gi, 'ҳ')
+            .trim();
+    }
+
+    function levenshtein(a, b) {
+        if (a === b) return 0;
+        if (!a.length) return b.length;
+        if (!b.length) return a.length;
+        const row = Array.from({ length: b.length + 1 }, (_, i) => i);
+        for (let i = 1; i <= a.length; i++) {
+            let prev = i - 1;
+            row[0] = i;
+            for (let j = 1; j <= b.length; j++) {
+                const tmp = row[j];
+                const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+                row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + cost);
+                prev = tmp;
+            }
+        }
+        return row[b.length];
+    }
+
+    function currentPicture() {
+        return pictureList[pictureIdx];
+    }
+
+    function showCurrentPicture() {
+        const item = currentPicture();
+        if (!item) return;
+        wordShown = false;
+        document.getElementById('voice-img').src = ASSET + item.image;
+        document.getElementById('voice-img').alt = 'Сурати дарси ' + item.lesson;
+        document.getElementById('said-word').innerText = '';
+        document.getElementById('under-word').innerText = '';
+        document.getElementById('under-word').className = 'under-word';
+        document.getElementById('voice-stat').innerText =
+            `Дарси ${item.lesson} · ${item.letters || ''} · Сурати ${pictureIdx + 1} аз ${pictureList.length}`;
+        updateMessage('Суратро бинед ва калимаро гӯед', '#9b59b6');
+    }
+
+    function scoreHeard(heard, target) {
+        if (!heard || !target) return 0;
+        if (heard === target) return 100 + target.length;
+        if (target.includes(heard) && heard.length >= 2) return 80 + heard.length;
+        if (heard.includes(target) && target.length >= 2) return 80 + target.length;
+        const parts = target.split(' ').filter(Boolean);
+        const words = heard.split(' ').filter(Boolean);
+        let best = 0;
+        parts.forEach(p => {
+            words.forEach(w => {
+                if (p === w) best = Math.max(best, 70 + p.length);
+                else if (p.length >= 2 && w.length >= 2 && (p.startsWith(w) || w.startsWith(p))) {
+                    best = Math.max(best, 50 + Math.min(p.length, w.length));
+                } else {
+                    const maxLen = Math.max(p.length, w.length);
+                    const ratio = maxLen ? 1 - levenshtein(p, w) / maxLen : 0;
+                    if (ratio >= 0.55) best = Math.max(best, Math.round(55 + ratio * 40));
+                }
+            });
+        });
+        return best;
+    }
+
+    function findPictureBySpeech(spoken) {
+        const heard = foldText(toTajikSpeech(spoken));
+        let best = null;
+        let bestScore = 0;
+        pictureList.forEach((item, i) => {
+            const sc = scoreHeard(heard, foldText(item.word));
+            if (sc > bestScore) {
+                bestScore = sc;
+                best = i;
+            }
+        });
+        return bestScore >= 40 ? best : -1;
+    }
+
+    function playItemAudio(item) {
+        if (!item || !item.audio) return;
+        if (voiceAudio) { voiceAudio.pause(); voiceAudio = null; }
+        voiceAudio = new Audio(ASSET + item.audio);
+        voiceAudio.play().catch(() => {});
+    }
+
+    function revealWord(saidText) {
+        const item = currentPicture();
+        if (!item) return;
+        wordShown = true;
+        const heard = foldText(toTajikSpeech(saidText || ''));
+        const target = foldText(item.word);
+        const aliases = (WORD_ALIASES[item.word] || []).map(foldText);
+        const ok = !saidText || (heard && (scoreHeard(heard, target) >= 35 || aliases.some(a => a === heard || (a.length >= 2 && heard.includes(a)))));
+        document.getElementById('said-word').innerText = saidText
+            ? (ok ? 'Шумо гуфтед: ' + saidText : 'Шумо гуфтед: ' + saidText + ' (хато)')
+            : '';
+        const el = document.getElementById('under-word');
+        el.innerText = item.word;
+        el.className = 'under-word' + (saidText && ok ? ' ok' : (saidText && !ok ? ' bad' : ''));
+        updateMessage(ok && saidText ? 'Дуруст! ✨' : 'Ҷавоби аслӣ дар таги сурат', ok && saidText ? '#27ae60' : '#9b59b6');
+        playItemAudio(item);
+        if (ok && saidText) {
+            lockedUntil = Date.now() + 1600;
+            setTimeout(nextPicture, 1700);
+        }
+    }
+
+    function matchSpoken(raw) {
+        if (Date.now() < lockedUntil) return;
+        const text = (toTajikSpeech(raw) || raw).trim();
+        document.getElementById('heard-text').innerText = 'Шунидем: ' + text;
+        revealWord(text);
+    }
+
+    function nextPicture() {
+        if (!pictureList.length) return;
+        pictureIdx = (pictureIdx + 1) % pictureList.length;
+        showCurrentPicture();
+        document.getElementById('heard-text').innerText = 'Калимаи суратро гӯед';
+    }
+
+    function applyTajikGrammar(rec) {
+        const List = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+        if (!List || !rec) return;
+        const words = [...new Set((pictureList.length ? pictureList : VOICE_WORDS).map(w => w.word.toLowerCase()))].slice(0, 200);
+        const grammar = '#JSGF V1.0; grammar tajik; public <item> = ' + words.join(' | ') + ' ;';
+        const list = new List();
+        try {
+            list.addFromString(grammar, 1);
+            rec.grammars = list;
+        } catch (e) {}
+    }
+
+    function bestTranscript(result) {
+        const texts = [];
+        for (let i = 0; i < result.length; i++) {
+            if (result[i] && result[i].transcript) texts.push(result[i].transcript.trim());
+        }
+        const preferred = texts.find(t => /[ғқӯҳҷӣъё]/i.test(t)) || texts[0] || '';
+        return toTajikSpeech(preferred) || preferred;
+    }
+
+    function stopListening() {
+        listening = false;
+        const btn = document.getElementById('mic-btn');
+        if (btn) btn.classList.remove('listening');
+        if (recognition) {
+            try { recognition.onend = null; recognition.stop(); } catch (e) {}
+        }
+    }
+
+    function startRecognitionEngine() {
+        const Speech = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!Speech) return;
+        if (recognition) {
+            try { recognition.onend = null; recognition.stop(); } catch (e) {}
+            recognition = null;
+        }
+        recognition = new Speech();
+        recognition.lang = TAJIK_LANGS[speechLangIndex % TAJIK_LANGS.length] || 'ru-RU';
+        recognition.interimResults = true;
+        recognition.continuous = true;
+        recognition.maxAlternatives = 5;
+        applyTajikGrammar(recognition);
+        recognition.onresult = (event) => {
+            const last = event.results[event.results.length - 1];
+            if (!last) return;
+            const text = bestTranscript(last);
+            if (text && last.isFinal) matchSpoken(text);
+        };
+        recognition.onerror = (event) => {
+            if (event.error === 'not-allowed') {
+                updateMessage('Иҷозати микрофон лозим аст. Як бор Allow-ро пахш кунед.', '#e74c3c');
+                listening = false;
+                const btn = document.getElementById('mic-btn');
+                if (btn) btn.classList.remove('listening');
+                return;
+            }
+            if (event.error === 'no-speech' || event.error === 'aborted' || event.error === 'network') {
+                return;
+            }
+        };
+        recognition.onend = () => {
+            if (!listening) return;
+            try { recognition.start(); } catch (e) {}
+        };
+        listening = true;
+        const btn = document.getElementById('mic-btn');
+        if (btn) btn.classList.add('listening');
+        try { recognition.start(); } catch (e) {}
+    }
+
+    function toggleListening() {
+        const Speech = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!Speech) {
+            updateMessage('Микрофон дар ин браузер кор намекунад. Chrome ё Edge кушоед.', '#e67e22');
+            return;
+        }
+        if (listening) {
+            stopListening();
+            document.getElementById('heard-text').innerText = 'Микрофон хомӯш. Бори дигар пахш кунед.';
+            return;
+        }
+        document.getElementById('heard-text').innerText = 'Гӯш мекунам... калимаи суратро гӯед';
+        updateMessage('Микрофон кушода аст', '#9b59b6');
+        startRecognitionEngine();
+    }
+
+    function picturesForLesson(lesson) {
+        const all = (typeof VOICE_WORDS !== 'undefined' ? VOICE_WORDS : []).slice();
+        if (!lesson) return all;
+        return all.filter(item => item.lesson === lesson);
+    }
+
+    function highlightLesson(lesson) {
+        const picker = document.getElementById('vp-lessons');
+        if (!picker) return;
+        picker.querySelectorAll('button').forEach(btn => {
+            btn.classList.toggle('on', Number(btn.dataset.lesson) === Number(lesson || 0));
+        });
+    }
+
+    function buildLessonPicker() {
+        const picker = document.getElementById('vp-lessons');
+        if (!picker || picker.dataset.ready === '1') return;
+        picker.dataset.ready = '1';
+        const all = typeof VOICE_WORDS !== 'undefined' ? VOICE_WORDS : [];
+        const map = new Map();
+        all.forEach(w => { if (!map.has(w.lesson)) map.set(w.lesson, w.letters || ('Дарси ' + w.lesson)); });
+        const allBtn = document.createElement('button');
+        allBtn.type = 'button';
+        allBtn.className = 'vp-lesson-btn';
+        allBtn.dataset.lesson = '0';
+        allBtn.textContent = 'Ҳама 35 дарс';
+        allBtn.onclick = () => startVoiceGame(0);
+        picker.appendChild(allBtn);
+        [...map.entries()].sort((a, b) => a[0] - b[0]).forEach(entry => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'vp-lesson-btn';
+            btn.dataset.lesson = String(entry[0]);
+            btn.textContent = entry[0] + ' · ' + entry[1];
+            btn.onclick = () => startVoiceGame(entry[0]);
+            picker.appendChild(btn);
+        });
+    }
+
+    function startVoiceGame(lesson) {
+        activeMode = 'voice';
+        if (lesson == null) {
+            const q = new URLSearchParams(location.search).get('lesson');
+            selectedLesson = q && q !== 'all' ? parseInt(q, 10) || 0 : 0;
+        } else {
+            selectedLesson = lesson;
+        }
+        pictureList = picturesForLesson(selectedLesson);
+        pictureIdx = 0;
+        showScreen('voice-game');
+        buildLessonPicker();
+        highlightLesson(selectedLesson);
+        showCurrentPicture();
+        document.getElementById('heard-text').innerText = 'Гӯш мекунам... калимаи суратро гӯед';
+        startRecognitionEngine();
+    }
+
+    document.getElementById('mic-btn').addEventListener('click', toggleListening);
+    document.getElementById('hear-btn').addEventListener('click', () => {
+        const item = currentPicture();
+        playItemAudio(item);
+        if (item) document.getElementById('under-word').innerText = item.word;
+    });
+    document.getElementById('voice-img').addEventListener('click', () => revealWord());
+
+    startVoiceGame();
 </script>
 </body>
 </html>

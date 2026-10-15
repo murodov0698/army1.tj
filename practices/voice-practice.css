@@ -1,0 +1,152 @@
+.voice-practice,
+#voice-game {
+    width: 100%;
+    max-width: 640px;
+    margin: 24px auto 40px;
+    background: #fff;
+    border: 6px solid #f1c40f;
+    border-radius: 28px;
+    padding: 22px 18px 28px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.vp-title {
+    margin: 0 0 8px;
+    font-size: 26px;
+    color: #2c3e50;
+}
+
+.vp-hint {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin: 0 0 14px;
+}
+
+.vp-lessons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+
+.vp-lesson-btn {
+    border: none;
+    background: #ecf6fd;
+    color: #2980b9;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.vp-lesson-btn.on {
+    background: #9b59b6;
+    color: #fff;
+}
+
+.vp-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.voice-practice .progress,
+#voice-game .progress {
+    color: #7f8c8d;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.voice-practice .result-img,
+#voice-game .result-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 18px;
+    background: #f8f9fa;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.voice-practice .said-word,
+#voice-game .said-word {
+    min-height: 28px;
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-top: 8px;
+}
+
+.voice-practice .under-word,
+#voice-game .under-word {
+    min-height: 48px;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 6px 0 8px;
+    color: #e00635;
+}
+
+.under-word.ok { color: #27ae60; }
+.under-word.bad { color: #e74c3c; }
+
+.voice-practice .heard,
+#voice-game .heard {
+    min-height: 28px;
+    font-size: 18px;
+    color: #7f8c8d;
+    margin: 8px 0;
+}
+
+.mic-btn {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: none;
+    background: #9b59b6;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #6c3483;
+}
+
+.mic-btn.listening {
+    background: #e74c3c;
+    box-shadow: 0 8px 0 #c0392b;
+    animation: vp-pulse 1s ease-in-out infinite;
+}
+
+@keyframes vp-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.opt-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #2980b9;
+}
+
+.opt-btn.hear { background: #16a085; box-shadow: 0 4px 0 #0e6655; }
+
+.voice-practice #message,
+#voice-game #message {
+    font-size: 20px;
+    margin-top: 8px;
+    min-height: 28px;
+    font-weight: bold;
+}

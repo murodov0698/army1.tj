@@ -1,26 +1,64 @@
-/* Умумӣ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    height: 100dvh;
+    min-height: 100svh;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
     color: #333;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: #04d9ff;
 }
 
-/* Шапка (Header) */
+.home-scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.home-scene img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.scene-phone { display: none; }
+
+@media (max-width: 768px) {
+    .scene-desk { display: none; }
+    .scene-phone { display: block; }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .scene-desk { display: block; }
+    .scene-phone { display: none; }
+}
+
 header {
-    background: linear-gradient(135deg, #0b81f7, #0550b4);
+    background: linear-gradient(135deg, rgba(11, 129, 247, 0.82), rgba(5, 80, 180, 0.82));
     color: #fff;
     padding: 12px 20px;
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1200;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .header-container {
@@ -28,28 +66,29 @@ header {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Бургер дар чап, Лого дар байн, Пайвандҳо дар рост */
+    justify-content: space-between;
+    position: relative;
+    min-height: 48px;
 }
 
-/* Логотипи калони ранга дар байн */
 .logo {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 900;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
+    text-decoration: none;
     display: flex;
-    gap: 3px;
+    gap: 2px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Дақиқ дар маркази шапка меистад */
+    transform: translateX(-50%);
 }
 
-/* Ранг додани ҳар як ҳарфи АЛИФБО */
-.logo span:nth-child(1) { color: #ff3366; } /* А */
-.logo span:nth-child(2) { color: #ff9900; } /* Л */
-.logo span:nth-child(3) { color: #33cc33; } /* И */
-.logo span:nth-child(4) { color: #00ffff; } /* Ф */
-.logo span:nth-child(5) { color: #ffcc00; } /* Б */
-.logo span:nth-child(6) { color: #ff5050; } /* О */
+.logo span:nth-child(1) { color: #ff3366; }
+.logo span:nth-child(2) { color: #facc00; }
+.logo span:nth-child(3) { color: #33cc33; }
+.logo span:nth-child(4) { color: #7ef9ff; }
+.logo span:nth-child(5) { color: #ffcc00; }
+.logo span:nth-child(6) { color: #ff6b6b; }
 
 .nav-links {
     display: flex;
@@ -58,7 +97,7 @@ header {
 }
 
 .nav-links a {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     text-decoration: none;
     font-weight: 600;
     padding: 8px 18px;
@@ -66,16 +105,22 @@ header {
     transition: all 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     background-color: white;
     color: #0b81f7;
 }
 
-/* Тугмаи Бургер (3 хатта) */
 .burger-container {
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1300;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .burger {
@@ -94,46 +139,42 @@ header {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Аниматсияи табдили 3 хатта ба Х */
 .burger-container.active .burger span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
-
 .burger-container.active .burger span:nth-child(2) {
     opacity: 0;
     transform: translateX(-10px);
 }
-
 .burger-container.active .burger span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Менюи Паҳлӯӣ (Аз тарафи чап) */
 .full-menu {
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 380px; 
-    max-width: 85%; 
+    top: 0;
+    left: 0;
+    width: 380px;
+    max-width: 85%;
     height: 100vh;
     background: rgba(11, 23, 44, 0.98);
     backdrop-filter: blur(10px);
     z-index: 1100;
     padding: 95px 20px 30px;
+    padding-bottom: max(30px, env(safe-area-inset-bottom));
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transform: translateX(-100%);
     transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
     box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
 }
 
-.full-menu.open {
-    transform: translateX(0);
-}
+.full-menu.open { transform: translateX(0); }
 
 .full-menu ul {
     list-style: none;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -144,7 +185,6 @@ header {
     padding: 12px 15px;
     background: rgba(255, 255, 255, 0.04);
     border-radius: 8px;
-    text-align: left;
     font-size: 1.1rem;
     font-weight: 500;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -152,89 +192,249 @@ header {
 }
 
 .full-menu a:hover {
-    background: #00d4ff;
+    background: #ffeb3b;
     color: #0b172c;
     transform: translateX(8px);
-    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
-    border-color: #00d4ff;
+    border-color: #ff9800;
 }
 
-.full-menu::-webkit-scrollbar {
-    width: 6px;
-}
+.full-menu::-webkit-scrollbar { width: 6px; }
 .full-menu::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
 }
 
-main{
-    margin-top: 200px;
-    align-items: center;
-    justify-content: center;
-    max-height: max-content;
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 110px 20px 40px;
 }
-section{
-    align-items: center;
+
+.lesson-pill {
+    background: #ffe0b2;
+    border: 2px solid #ff9800;
+    border-radius: 20px;
+    padding: 6px 22px;
+    display: inline-block;
+    font-weight: 800;
+    color: #5d4037;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+    margin-bottom: 22px;
+}
+
+.book-spread {
+    display: grid;
+    grid-template-columns: 1fr 14px 1fr;
+    background: #fff;
+    border-radius: 8px 18px 18px 8px;
+    box-shadow:
+        0 18px 40px rgba(93, 64, 55, 0.18),
+        8px 8px 0 #e8d5b5;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.spine {
+    background: linear-gradient(90deg, #d7ccc8, #efebe9, #bcaaa4);
+}
+
+.page {
+    padding: 28px 24px;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0) 96%, rgba(0,0,0,0.04)),
+        #fff;
+}
+
+.page-left { border-right: 1px dashed #a0d8f0; }
+
+.title-letter {
+    background: #ffeb3b;
+    display: inline-flex;
+    gap: 8px;
+    padding: 8px 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.red-stroke { color: #e53935; }
+.green-stroke { color: #43a047; }
+
+.hand-lines {
+    margin: 8px auto 18px;
+    max-width: 280px;
+}
+.hand-lines div {
+    border-bottom: 1px dashed #a0d8f0;
+    height: 18px;
+}
+
+.alifbo {
+    display: flex;
     justify-content: center;
+    gap: 6px;
+    font-size: 3.4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 10px 0 12px;
+}
+.alifbo span:nth-child(1) { color: #e53935; }
+.alifbo span:nth-child(2) { color: #fb8c00; }
+.alifbo span:nth-child(3) { color: #43a047; }
+.alifbo span:nth-child(4) { color: #1e88e5; }
+.alifbo span:nth-child(5) { color: #fdd835; }
+.alifbo span:nth-child(6) { color: #8e24aa; }
+
+.lead {
+    color: #5d4037;
+    font-size: 1.15rem;
+    max-width: 360px;
+    margin: 0 auto 18px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 800;
+    padding: 12px 22px;
+    border-radius: 24px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.12);
+}
+
+.btn.primary {
+    background: #ffeb3b;
+    color: #333;
+    border: 2px solid #fbc02d;
+}
+.btn.secondary {
+    background: #0b81f7;
+    color: white;
+    border: 2px solid #0550b4;
+}
+
+.preview-row {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.preview-row figure { width: 130px; }
+.preview-row img {
+    width: 120px;
+    height: 90px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.preview-row figcaption {
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.color-dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 6px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.red { background: #e53935; }
+.dot.green { background: #43a047; }
+
+.abc-section {
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 22px 32px;
+    box-shadow: 0 10px 24px rgba(93, 64, 55, 0.1);
     text-align: center;
 }
-.alifbo{
-   font-family: Arial, sans-serif;
-   font-size: 4rem;
-  
+.abc-section h2 {
+    color: #0b81f7;
+    margin-bottom: 6px;
 }
-.alifbo_text {
-     color: #2f00ff;
-
-   background: linear-gradient(45deg,
-   red,green);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: 
-   transparent;
-}
-.alifbo_text {
-    color: #0026ff;
-
-  background: linear-gradient(45deg,
-  red,green);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: 
-  transparent;
-}
-.alifbo_text {
-    color: #0051ff;
-
-  background: linear-gradient(45deg,
-  red,green);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: 
-  transparent;
+.abc-section p {
+    color: #6d4c41;
+    margin-bottom: 18px;
 }
 
+.abc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 10px;
+}
 
-/* Футер */
+.abc-grid a {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.15rem;
+    padding: 14px 0;
+    border-radius: 12px;
+    color: #333;
+    background: #ffeb3b;
+    border: 2px solid #fbc02d;
+    box-shadow: 0 3px 0 #f9a825;
+    transition: transform 0.15s ease;
+}
+.abc-grid a:nth-child(6n+2) { background: #ffcdd2; border-color: #e57373; box-shadow: 0 3px 0 #e53935; }
+.abc-grid a:nth-child(6n+3) { background: #c8e6c9; border-color: #81c784; box-shadow: 0 3px 0 #43a047; }
+.abc-grid a:nth-child(6n+4) { background: #bbdefb; border-color: #64b5f6; box-shadow: 0 3px 0 #1e88e5; }
+.abc-grid a:nth-child(6n+5) { background: #ffe0b2; border-color: #ffb74d; box-shadow: 0 3px 0 #fb8c00; }
+.abc-grid a:nth-child(6n) { background: #e1bee7; border-color: #ba68c8; box-shadow: 0 3px 0 #8e24aa; }
+
+.abc-grid a:hover { transform: translateY(-3px); }
+
 footer {
-    background-color: #0b172c;
-    color: rgba(255, 255, 255, 0.7);
+    background: #0b172c;
+    color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    margin-top: 1000px;
-    padding: 18px;
-    font-size: 0.9rem;
+    padding: 22px 16px;
+    margin-top: 40px;
+    font-size: 0.95rem;
 }
 
-/* Барои экранҳои мобилӣ */
-@media (max-width: 768px) {
-    .nav-links {
-        display: flex; /* Дар телефонҳо танҳо бургер ва лого мемонанд */
+@media (max-width: 800px) {
+    .book-spread {
+        grid-template-columns: 1fr;
     }
+    .spine { display: none; }
+    .page-left { border-right: none; border-bottom: 1px dashed #a0d8f0; }
     .logo {
-        font-size: 1.8rem;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        position: static;
+        transform: none;
+        margin: 0 auto;
     }
+    .nav-home { display: none; }
+    .alifbo { font-size: 2.4rem; }
+    .nav-links { gap: 4px; }
+    .nav-links a { padding: 6px 10px; font-size: 0.85rem; }
     .full-menu {
-        width: 300px;
+        width: min(320px, 88vw);
+        padding-top: 80px;
     }
-    .hero-section h1 {
-        font-size: 1.8rem;
+    header {
+        padding: 8px 10px;
+        padding-top: max(8px, env(safe-area-inset-top));
     }
- 
 }

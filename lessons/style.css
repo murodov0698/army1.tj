@@ -5,7 +5,7 @@ body {
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            background: #f5f7fa;
+            background: #ffffff;
             font-family: Arial, sans-serif;
             font-size: 20px;
             text-align: center;
@@ -42,6 +42,9 @@ body {
             display: flex;
             gap: 10px;
             list-style: none;
+            margin: 0;
+            padding: 0;
+            min-width: 0;
         }
         
         .nav-links a {
@@ -51,6 +54,7 @@ body {
             padding: 8px 18px;
             border-radius: 20px;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
         
         .nav-links a:hover,
@@ -143,6 +147,39 @@ body {
           border-color: #00d4ff;
         }
 
+        .lesson-youtube {
+            width: min(800px, 95%);
+            margin: 28px auto 0;
+        }
+        .lesson-youtube h2 {
+            color: #0b81f7;
+            font-size: 1.4rem;
+            margin: 0 0 14px;
+        }
+        .lesson-video-frame {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+        .lesson-video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .lesson-video-open {
+            margin: 12px 0 0;
+        }
+        .lesson-video-open a {
+            color: #0b81f7;
+            font-weight: 700;
+        }
+
         /* Footer */
         footer {
          background-color: #1a237e;
@@ -161,13 +198,13 @@ body {
 
         section{
             color: #0b81f7;
-            margin-top: 200px;
+            margin-top: 100px;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
         .container {
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             border: 1px solid #ddd;
             padding: 30px 40px;
             width: 800px; /* Adjust as needed */
@@ -211,6 +248,22 @@ body {
             margin: 0;
             font-size: 3em;
             color: #333;
+        }
+        .trace-open { margin: 10px 0 0; }
+        .trace-open a {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            box-shadow: 0 4px 0 #2980b9;
+        }
+        .trace-open a:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #2980b9;
         }
         .handwriting-lines {
             flex-grow: 1;
@@ -411,19 +464,162 @@ body {
           transparent;
         }
 
+        /* Дарси 0 — муқаддима */
+        .container.intro-lesson {
+            width: min(960px, 95%);
+        }
+        body:has(.intro-lesson) footer {
+            margin-top: 48px;
+        }
+        .intro-heading {
+            margin: 36px 0 16px;
+            color: #0b81f7;
+            font-size: 1.35rem;
+        }
+        .intro-block {
+            margin-bottom: 24px;
+        }
+        .intro-lesson img {
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+        .intro-block img {
+            width: 100%;
+            max-width: 720px;
+        }
+        .intro-block.narrow img {
+            max-width: 420px;
+        }
+        .symbol-row,
+        .hero-grid,
+        .preview-grid {
+            display: grid;
+            gap: 18px;
+            margin-bottom: 12px;
+        }
+        .symbol-row {
+            grid-template-columns: 1fr 1fr;
+        }
+        .hero-grid {
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 8px;
+        }
+        .preview-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+        .symbol-row img,
+        .hero-grid img,
+        .preview-grid img {
+            width: 100%;
+            display: block;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            header {
+                padding: 8px 6px;
+            }
+            .header-container {
+                gap: 4px;
+                min-width: 0;
+            }
+            .burger-container {
+                flex-shrink: 0;
+                padding: 6px 2px;
+            }
+            .nav-links {
+                flex: 1;
+                justify-content: flex-end;
+                gap: 2px;
+            }
+            .nav-links a {
+                padding: 6px 5px;
+                font-size: 13px;
+            }
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            body {
+                justify-content: flex-start;
+                align-items: stretch;
+                margin-top: 0;
+                padding-top: 56px;
+                min-height: 100dvh;
+                font-size: 18px;
+            }
+            section {
+                margin-top: 4px;
+                padding: 0 12px;
+            }
+            section h1 {
+                font-size: 1.7rem;
+                margin: 0 0 2px;
+            }
+            section h2 {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+            .trace-open { margin: 8px 0 0; }
+            .trace-open a {
+                font-size: 16px;
+                padding: 6px 14px;
+            }
             .container {
-                width: 95%;
-                padding: 15px 20px;
+                box-sizing: border-box;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                padding: 12px 14px 20px;
             }
             .letter-section {
                 flex-direction: column;
                 align-items: center;
+                margin-bottom: 16px;
             }
             .letter-box {
                 margin-right: 0;
-                margin-bottom: 20px;
+                margin-bottom: 8px;
+                padding: 6px 16px;
+            }
+            .handwriting-lines {
+                width: 100%;
+                max-width: 220px;
+            }
+            .handwriting-lines div {
+                height: 22px;
+                margin-bottom: 2px;
+            }
+            .handwriting-lines .red-stroke,
+            .handwriting-lines .green-stroke {
+                font-size: 1.35em;
+                top: 0;
+            }
+            .bottom-section {
+                margin-bottom: 18px;
+            }
+            .bottom-section img {
+                box-sizing: border-box;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                max-height: 30vh;
+                object-fit: contain;
+                object-position: center;
+                margin-bottom: 8px;
+            }
+            .lesson-youtube {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 0 12px;
+            }
+            footer {
+                margin-top: 28px;
+                width: 100%;
             }
             .text-column {
                 width: 90%; /* Stack columns on small screens */
@@ -436,6 +632,11 @@ body {
                 border-bottom: none;
                 margin-bottom: 0;
                 padding-bottom: 0;
+            }
+            .symbol-row,
+            .hero-grid,
+            .preview-grid {
+                grid-template-columns: 1fr;
             }
         }
         .word {
