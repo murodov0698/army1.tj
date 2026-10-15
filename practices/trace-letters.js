@@ -200,7 +200,7 @@
             ]
         },
         {
-            lesson: 15, upper: "Қ", lower: "қ",
+            lesson: 15, upper: "К", lower: "к",
             upperStrokes: [
                 `M 58 ${T} L 58 ${D}`,
                 `M 58 140 L 168 ${T + 2}`,
@@ -347,7 +347,7 @@
             ]
         },
         {
-            lesson: 28, upper: "Ҳ", lower: "ҳ",
+            lesson: 28, upper: "Х", lower: "х",
             upperStrokes: [
                 `M 46 ${T} L 174 ${B}`,
                 `M 174 ${T} L 46 ${B}`,
